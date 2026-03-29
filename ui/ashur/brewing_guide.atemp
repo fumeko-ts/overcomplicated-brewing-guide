@@ -1,0 +1,115 @@
+{
+  "namespace": "brewing_guide",
+  "left_panel@global.empty_stack": {
+    "orientation": "horizontal",
+    "size": [183, 166],
+    "controls": [
+      {
+        "tabs@global.empty_stack": {
+          "orientation": "vertical",
+          "size": [35, 166],
+          "layer": 2,
+          "$base_id|default": "$brewing_guide:potion",
+          "controls": [
+            { "filler_1@global.empty_panel": { "size": [35, 3] } },
+            {
+              "potion_tab_toggle@brewing_guide.tab_template": {
+                "$is_default_active": true,
+                "$toggle_control_name": "potion_tab",
+                "$toggle_group_forced_index": 0
+              }
+            },
+            {
+              "splash_potion_tab_toggle@brewing_guide.tab_template": {
+                "$toggle_control_name": "splash_potion_tab",
+                "$base_id": "$brewing_guide:splash_potion",
+                "$toggle_group_forced_index": 1
+              }
+            },
+            {
+              "lingering_potion_tab_toggle@brewing_guide.tab_template": {
+                "$toggle_control_name": "lingering_potion_tab",
+                "$base_id": "$brewing_guide:lingering_potion",
+                "$toggle_group_forced_index": 2
+              }
+            },
+            { "filler_2@global.empty_panel": { "size": [35, "fill"] } }
+          ]
+        }
+      },
+      {
+        "book_half@global.empty_panel": {
+          "size": [147, 166],
+          "controls": [
+            {
+              "common_image@global.empty_image": {
+                "texture": "sprites/recipe_book.png",
+                "size": [147, 166],
+                "layer": 1,
+                "controls": [
+                  {
+                    "clipping_panel@global.empty_panel": {
+                      "size": [125, 100],
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right",
+                      "offset": [-11, 31],
+                      "$potion_type|default": "",
+                      "$base_id|default": "$brewing_guide:potion",
+                      "$visible_condition|default": "potion_tab",
+                      "$index_offset|default": 100,
+
+                      "controls": [
+                        { "potion@brewing_data.potion_grid": {} },
+                        {
+                          "splash_potion@brewing_data.potion_grid": {
+                            "$base_id": "$brewing_guide:splash_potion",
+                            "$visible_condition": "splash_potion_tab",
+                            "$index_offset": 200,
+                            "$potion_type": "splash"
+                          }
+                        },
+                        {
+                          "lingering_potion@brewing_data.potion_grid": {
+                            "$base_id": "$brewing_guide:lingering_potion",
+                            "$visible_condition": "lingering_potion_tab",
+                            "$index_offset": 300,
+                            "$potion_type": "linger"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "spacer@global.empty_panel": { "size": [1, 166] } }
+    ]
+  },
+  "tab_template@toggle.tab_toggle": {
+    "$size": [35, 27],
+    "$is_left_tab": true,
+    "$toggle_name": "navigation_tab",
+    "$tab_texture_unchecked_offset": [5, 0],
+    "$tab_texture_checked_offset": [3, 0],
+    "$icon_unchecked_offset": [-2, 0],
+    "$icon_checked_offset": [-4, 0],
+    "$extra_contents": "brewing_guide.tab_icons",
+    "$toggle_binding_value": "#toggle_state"
+  },
+  "tab_item_renderer@brewing_common.item_renderer": {
+    "layer": 6,
+    "$properties": {
+      "#item_id_aux": "(($base_id * 65536) + $brewing_guide:potion_of_invisibility)"
+    }
+  },
+  "tab_icons@global.empty_panel": {
+    "size": [24, 25],
+    "offset": [0, 0.6],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "controls": [{ "bottle@brewing_guide.tab_item_renderer": {} }]
+  }
+}

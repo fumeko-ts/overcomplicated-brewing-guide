@@ -1,0 +1,94 @@
+{
+  "namespace": "brewing_common",
+  "item_renderer@global.custom_renderer": {
+    "$type": "inventory_item_renderer",
+    "size": [16, 16],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "property_bag": "$properties"
+  },
+  
+  "brewing_item_base@global.empty_panel": {
+    "size": [18, 18],
+    "$base_id|default": "$brewing_guide:potion",
+    "$remainder|default": 0,
+    "$modifier_key|default": "",
+    "controls": [
+      {
+        "white@global.empty_image": {
+          "size": [18, 18],
+          "nineslice_size": 2,
+          "texture": "textures/ui/ashur/cell_icons/cell_white_transparent.png",
+          "alpha": 0.2,
+          "layer": 12
+        }
+      },
+      {
+        "cell_image_red@screen_content.image_element": {
+          "size": [18, 18],
+          "nineslice_size": 2,
+          "texture": "textures/ui/ashur/cell_icons/cell_red_transparent.png",
+          "layer": 3
+        }
+      },
+      {
+        "underlay@screen_content.image_element": {
+          "size": [16, 16],
+          "texture": "sprites/brewing_slot_underlay.png",
+          "layer": 0
+        }
+      },
+      {
+        "hover_text_button@brewing_slot_overlay.variables": {
+          "type": "button",
+          "size": [18, 18],
+          "default_focus_precedence": 1,
+          "hover_control": "hover_text",
+          "consume_event": false,
+          "layer": 2,
+          "button_mappings": [
+            { "to_button_id": "button.container_slot_hovered", "mapping_type": "pressed", "consume_event": false }
+          ],
+          "controls": [
+            {
+              "hover_text@global.empty_panel": {
+                "ignored": "$touch",
+                "layer": 500,
+                "controls": [
+                  {
+                    "hover_text_java@global.custom_renderer": {
+                      "allow_clipping": false,
+                      "$type": "bundle_tooltip_renderer",
+                      "layer": 29,
+                      "controls": [{ "1@brewing_data.java_tooltip": {} }]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "renderer@brewing_common.item_renderer": {
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 4
+        }
+      },
+      {
+        "reset_key@toggle.radio_toggle": {
+          "$size": [18, 18],
+          "$toggle_group_forced_index": -1,
+          "$toggle_name|default": "brewing_items",
+          "layer": 1,
+          "$toggle_control_name": "brewing_reset",
+          "$toggle_binding_value": "#item_brewing_reset"
+        }
+      }
+    ],
+    "$properties|default": {
+      "#item_id_aux": "(($base_id * 65536) + $remainder)"
+    }
+  }
+}

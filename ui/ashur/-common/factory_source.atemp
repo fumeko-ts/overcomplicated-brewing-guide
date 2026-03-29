@@ -1,0 +1,125 @@
+{
+  "namespace": "factory_source",
+  // factory is done like this to make it so i can re-use it without redeclairing, a new factory
+  "factory": {
+    "type": "panel",
+    "size": [18, 18],
+    "$factory_name|default": "Minecraft",// set collection name so i can use #collection_index on the elements that use this with the same collection name(it can be almost eanything even !!LEMON!!)
+    "$mundane_potion_action|default": "",
+    "$thick_potion_action|default": "",
+    "$awkward_potion_action|default": "",
+    "$night_vision_action|default": "",
+    "$invisibility_action|default": "",
+    "$leaping_action|default": "",
+    "$fire_resistance_action|default": "",
+    "$swiftness_action|default": "",
+    "$slowness_action|default": "",
+    "$water_breathing_action|default": "",
+    "$healing_action|default": "",
+    "$harming_action|default": "",
+    "$poison_action|default": "",
+    "$regeneration_action|default": "",
+    "$strength_action|default": "",
+    "$weakness_action|default": "",
+    "$turtle_master_action|default": "",
+    "$slow_falling_action|default": "",
+    "$wind_charging_action|default": "",
+    "$weaving_action|default": "",
+    "$oozing_action|default": "",
+    "$infestation_action|default": "",
+
+    "$factory_control_identifiers|default": {
+      "is_mundane_potion": "$mundane_potion_action",
+      "is_thick_potion": "$thick_potion_action",
+      "is_awkward_potion": "$awkward_potion_action",
+      "is_night_vision": "$night_vision_action",
+      "is_invisibility": "$invisibility_action",
+      "is_leaping": "$leaping_action",
+      "is_fire_resistance": "$fire_resistance_action",
+      "is_swiftness": "$swiftness_action",
+      "is_slowness": "$slowness_action",
+      "is_water_breathing": "$water_breathing_action",
+      "is_healing": "$healing_action",
+      "is_harming": "$harming_action",
+      "is_poison": "$poison_action",
+      "is_regeneration": "$regeneration_action",
+      "is_strength": "$strength_action",
+      "is_weakness": "$weakness_action",
+      "is_turtle_master": "$turtle_master_action",
+      "is_slow_falling": "$slow_falling_action",
+      "is_wind_charging": "$wind_charging_action",
+      "is_weaving": "$weaving_action",
+      "is_oozing": "$oozing_action",
+      "is_infestation": "$infestation_action"
+    },
+
+    "$factory_binding_values|default": {
+      "#item_index_1": ["is_mundane_potion"],
+      "#item_index_2": ["is_thick_potion"],
+      "#item_index_3": ["is_awkward_potion"],
+      "#item_index_4": ["is_night_vision"],
+      "#item_index_5": ["is_invisibility"],
+      "#item_index_6": ["is_leaping"],
+      "#item_index_7": ["is_fire_resistance"],
+      "#item_index_8": ["is_swiftness"],
+      "#item_index_9": ["is_slowness"],
+      "#item_index_10": ["is_water_breathing"],
+      "#item_index_11": ["is_healing"],
+      "#item_index_12": ["is_harming"],
+      "#item_index_13": ["is_poison"],
+      "#item_index_14": ["is_regeneration"],
+      "#item_index_15": ["is_strength"],
+      "#item_index_16": ["is_weakness"],
+      "#item_index_17": ["is_turtle_master"],
+      "#item_index_18": ["is_slow_falling"],
+      "#item_index_19": ["is_wind_charging"],
+      "#item_index_20": ["is_weaving"],
+      "#item_index_21": ["is_oozing"],
+      "#item_index_22": ["is_infestation"]
+    },
+    "$factory_binding_refrence|default": "factory_bindings.bindings",// used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
+
+
+    "$brewing_factory_variables|default": [
+      "$mundane_potion_action",
+      "$thick_potion_action",
+      "$awkward_potion_action",
+      "$night_vision_action",
+      "$invisibility_action",
+      "$leaping_action",
+      "$fire_resistance_action",
+      "$swiftness_action",
+      "$slowness_action",
+      "$water_breathing_action",
+      "$healing_action",
+      "$harming_action",
+      "$poison_action",
+      "$regeneration_action",
+      "$strength_action",
+      "$weakness_action",
+      "$turtle_master_action",
+      "$slow_falling_action",
+      "$wind_charging_action",
+      "$weaving_action",
+      "$oozing_action",
+      "$infestation_action"
+    ],
+
+    "controls": [
+      {
+        "$factory_name@$factory_binding_refrence": {
+          "type": "collection_panel",
+          "size": [18, 18],
+          "collection_name": "$factory_name",// same as the factory name for simplicity
+          "factory": {
+            "name": "$factory_name",
+            "max_children_size": 1,// set to 1 because i only want 1 collection item for each control to render
+            "control_ids": "$factory_control_identifiers",// actual controls that will be renderd
+            "factory_variables": "$brewing_factory_variables"
+          },
+          "property_bag": "$factory_binding_values"
+        }
+      }
+    ]
+  }
+}

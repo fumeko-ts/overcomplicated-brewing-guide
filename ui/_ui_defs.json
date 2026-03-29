@@ -1,0 +1,17 @@
+{
+  "ui_defs": [
+    "ui/ashur/brewing_data.atemp",
+    "ui/ashur/brewing_guide.atemp",
+    "ui/ashur/brewing_slot_overlay.atemp",
+    "ui/ashur/page_data.atemp",
+    "ui/ashur/-common/brewing_animations.atemp",
+    "ui/ashur/-common/brewing_common.atemp",
+    "ui/ashur/-common/factory_source.atemp",
+    "ui/ashur/-common/compatibility/extensions.atemp",
+    "ui/ashur/bindings/factory_bindings.atemp",
+    "ui/ashur/brewing_items/brewing_grid_items.atemp",
+    "ui/ashur/brewing_items/ingredient_slot.atemp",
+    "ui/ashur/brewing_items/potion_slot.atemp",
+    "ui/ashur/brewing_items/splash_potion_slot.atemp"
+  ]
+}

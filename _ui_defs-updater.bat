@@ -1,0 +1,3 @@
+@echo off
+python -c "import os, json; ROOT_DIR = 'ui'; VALID_EXTENSIONS = {''}; ui_defs = []; [ui_defs.append(f'ui/{os.path.relpath(os.path.join(root, file), ROOT_DIR).replace(chr(92), chr(47))}') for root, _, files in os.walk(ROOT_DIR) if root != ROOT_DIR for file in files if any(file.endswith(ext) for ext in VALID_EXTENSIONS) and '_ui_defs.json' not in os.path.join(root, file)]; output = {'ui_defs': ui_defs}; out_path = os.path.join(ROOT_DIR, '_ui_defs.json'); open(out_path, 'w', encoding='utf-8').write(json.dumps(output, indent=2)); print(f'{out_path} created with {len(ui_defs)} entries.')"
+pause

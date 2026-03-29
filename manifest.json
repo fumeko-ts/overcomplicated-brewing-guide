@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Brewing Guide",
+    "description": "§1§l!",
+    "uuid": "e906ab62-3207-4023-8c5f-3a0b36ee4cc2",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 100]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "d818ee4b-45b5-4407-8eb0-8faa9f723a44",
+      "version": [1, 0, 0]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "namespace": "brewing_animations",
+  "animation_base": {
+    "anim_type": "offset",
+    "duration": 2,
+    "from": "$frame",
+    "to": "$frame",
+    "$frame": [0, -2000],
+    "next": "(@brewing_animations. + $next_frame)"
+  },
+  "mundane_frame_0@brewing_animations.animation_base": {"$frame": [0, 0],"$next_frame": "mundane_frame_1"},
+  "mundane_frame_1@brewing_animations.animation_base": {"$next_frame": "mundane_frame_2"},
+  "mundane_frame_2@brewing_animations.animation_base": {"$next_frame": "mundane_frame_3"},
+  "mundane_frame_3@brewing_animations.animation_base": {"$next_frame": "mundane_frame_4"},
+  "mundane_frame_4@brewing_animations.animation_base": {"$next_frame": "mundane_frame_5"},
+  "mundane_frame_5@brewing_animations.animation_base": {"$next_frame": "mundane_frame_6"},
+  "mundane_frame_6@brewing_animations.animation_base": {"$next_frame": "mundane_frame_7"},
+  "mundane_frame_7@brewing_animations.animation_base": {"$next_frame": "mundane_frame_8"},
+  "mundane_frame_8@brewing_animations.animation_base": {"$next_frame": "mundane_frame_9"},
+  "mundane_frame_9@brewing_animations.animation_base": {"$next_frame": "mundane_frame_10"},
+  "mundane_frame_10@brewing_animations.animation_base": {"$next_frame": "mundane_frame_11"},
+  "mundane_frame_11@brewing_animations.animation_base": {"$next_frame": "mundane_frame_0"}
+}

@@ -1,0 +1,58 @@
+{
+  "$brewing_content": "brewing_guide.left_panel",
+  "$ashur:brewing_guide": true,
+
+  //ingredients
+  "$brewing_guide:nether_wart": 323,
+  "$brewing_guide:gunpowder": 360,
+  "$brewing_guide:rabbit_foot": 567,
+  "$brewing_guide:blaze_powder": 462,
+  "$brewing_guide:sugar": 448,
+  "$brewing_guide:ghast_tear": 457,
+  "$brewing_guide:spider_eye": 307,
+  "$brewing_guide:magma_cream": 463,
+  "$brewing_guide:glistering_melon": 467,
+  "$brewing_guide:golden_carrot": 312,
+  "$brewing_guide:pufferfish": 296,
+  "$brewing_guide:turtle_shell": 612,
+  "$brewing_guide:phantom_membrane": 613,
+  "$brewing_guide:fermented_spider_eye": 461,
+  "$brewing_guide:redstone": 405,
+  "$brewing_guide:glowstone_dust": 426,
+  "$brewing_guide:dragons_breath": 599,
+  "$brewing_guide:stone": 1,
+  "$brewing_guide:breeze_rod": 281,
+  "$brewing_guide:cobweb": 30,
+  "$brewing_guide:slime_block": 165,
+
+
+  //base potion ids
+  "$brewing_guide:potion": 459,
+  "$brewing_guide:splash_potion": 600,
+  "$brewing_guide:lingering_potion": 601,
+
+  //potion remainder ids
+  "$brewing_guide:mundane_potion": 1,
+  "$brewing_guide:long_mundane_potion": 2,
+  "$brewing_guide:thick_potion": 3,
+  "$brewing_guide:awkward_potion": 4,
+  "$brewing_guide:potion_of_night_vision": 6,
+  "$brewing_guide:potion_of_invisibility": 8,
+  "$brewing_guide:potion_of_leaping": 11,
+  "$brewing_guide:potion_of_fire_resistance": 13,
+  "$brewing_guide:potion_of_swiftness": 16,
+  "$brewing_guide:potion_of_slowness": 42,
+  "$brewing_guide:potion_of_water_breathing": 20,
+  "$brewing_guide:potion_of_healing": 22,
+  "$brewing_guide:potion_of_harming": 24,
+  "$brewing_guide:potion_of_poison": 27,
+  "$brewing_guide:potion_of_regeneration": 30,
+  "$brewing_guide:potion_of_strength": 33,
+  "$brewing_guide:potion_of_weakness": 35,
+  "$brewing_guide:potion_of_the_turtle_master": 39,
+  "$brewing_guide:potion_of_slow_falling": 41,
+  "$brewing_guide:potion_of_wind_charging": 43,
+  "$brewing_guide:potion_of_weaving": 44,
+  "$brewing_guide:potion_of_oozing": 45,
+  "$brewing_guide:potion_of_infestation": 46
+}

@@ -1,0 +1,374 @@
+{
+  "namespace": "brewing_data",
+  "variables": {
+    "$mundane_key|default": "potion.mundane.name",
+    "$thick_potion_key|default": "potion.thick.name",
+    "$awkward_potion_key|default": "potion.awkward.name",
+    "$night_vision_key|default": "potion.nightVision.name",
+    "$invisibility_key|default": "potion.invisibility.name",
+    "$leaping_key|default": "potion.jump.name",
+    "$fire_resistance_key|default": "potion.fireResistance.name",
+    "$swiftness_key|default": "potion.moveSpeed.name",
+    "$slowness_key|default": "potion.moveSlowdown.name",
+    "$water_breathing_key|default": "potion.waterBreathing.name",
+    "$healing_key|default": "potion.heal.name",
+    "$harming_key|default": "potion.harm.name",
+    "$poison_key|default": "potion.poison.name",
+    "$regeneration_key|default": "potion.regeneration.name",
+    "$strength_key|default": "potion.damageBoost.name",
+    "$weakness_key|default": "potion.weakness.name",
+    "$the_turtle_master_key|default": "potion.turtleMaster.name",
+    "$slow_falling_key|default": "potion.slowFalling.name",
+    "$wind_charging_key|default": "potion.windCharged.name",
+    "$weaving_key|default": "potion.weaving.name",
+    "$oozing_key|default": "potion.oozing.name",
+    "$infestation_key|default": "potion.infested.name",
+    "variables": [
+      {
+        "requires": "($base_id = $brewing_guide:splash_potion)",
+        "$mundane_key|default": "potion.mundane.splash.name",
+        "$thick_potion_key|default": "potion.thick.splash.name",
+        "$awkward_potion_key|default": "potion.awkward.splash.name",
+        "$night_vision_key|default": "potion.nightVision.splash.name",
+        "$invisibility_key|default": "potion.invisibility.splash.name",
+        "$leaping_key|default": "potion.jump.splash.name",
+        "$fire_resistance_key|default": "potion.fireResistance.splash.name",
+        "$swiftness_key|default": "potion.moveSpeed.splash.name",
+        "$slowness_key|default": "potion.moveSlowdown.splash.name",
+        "$water_breathing_key|default": "potion.waterBreathing.splash.name",
+        "$healing_key|default": "potion.heal.splash.name",
+        "$harming_key|default": "potion.harm.splash.name",
+        "$poison_key|default": "potion.poison.splash.name",
+        "$regeneration_key|default": "potion.regeneration.splash.name",
+        "$strength_key|default": "potion.damageBoost.splash.name",
+        "$weakness_key|default": "potion.weakness.splash.name",
+        "$the_turtle_master_key|default": "potion.turtleMaster.splash.name",
+        "$slow_falling_key|default": "potion.slowFalling.splash.name",
+        "$wind_charging_key|default": "potion.windCharged.splash.name",
+        "$weaving_key|default": "potion.weaving.splash.name",
+        "$oozing_key|default": "potion.oozing.splash.name",
+        "$infestation_key|default": "potion.infested.splash.name"
+      },
+      {
+        "requires": "($base_id = $brewing_guide:lingering_potion)",
+        "$mundane_key|default": "potion.mundane.linger.name",
+        "$thick_potion_key|default": "potion.thick.linger.name",
+        "$awkward_potion_key|default": "potion.awkward.linger.name",
+        "$night_vision_key|default": "potion.nightVision.linger.name",
+        "$invisibility_key|default": "potion.invisibility.linger.name",
+        "$leaping_key|default": "potion.jump.linger.name",
+        "$fire_resistance_key|default": "potion.fireResistance.linger.name",
+        "$swiftness_key|default": "potion.moveSpeed.linger.name",
+        "$slowness_key|default": "potion.moveSlowdown.linger.name",
+        "$water_breathing_key|default": "potion.waterBreathing.linger.name",
+        "$healing_key|default": "potion.heal.linger.name",
+        "$harming_key|default": "potion.harm.linger.name",
+        "$poison_key|default": "potion.poison.linger.name",
+        "$regeneration_key|default": "potion.regeneration.linger.name",
+        "$strength_key|default": "potion.damageBoost.linger.name",
+        "$weakness_key|default": "potion.weakness.linger.name",
+        "$the_turtle_master_key|default": "potion.turtleMaster.linger.name",
+        "$slow_falling_key|default": "potion.slowFalling.linger.name",
+        "$wind_charging_key|default": "potion.windCharged.linger.name",
+        "$weaving_key|default": "potion.weaving.linger.name",
+        "$oozing_key|default": "potion.oozing.linger.name",
+        "$infestation_key|default": "potion.infested.linger.name"
+      }
+    ]
+  },
+   "potion_grid@brewing_data.variables": {
+    "type": "grid",
+    "grid_dimensions": [5, 10], 
+    "size": [125, 250],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$remainder|default": "$brewing_guide:mundane_potion",
+    "controls": [
+      //row 0
+      {"grid_item_@brewing_grid_items.mundane_potion"                 :{}},
+      {"grid_item_@brewing_grid_items.thick_potion"                   :{}},
+      {"grid_item_@brewing_grid_items.awkward_potion"                 :{}},
+      {"grid_item_@brewing_grid_items.potion_of_night_vision"         :{}},
+
+      //row 1
+      {"grid_item_@brewing_grid_items.potion_of_invisibility"         :{}},
+      {"grid_item_@brewing_grid_items.potion_of_leaping"              :{}},
+      {"grid_item_@brewing_grid_items.potion_of_leaping_II"           :{}},
+      {"grid_item_@brewing_grid_items.potion_of_fire_resistance"      :{}},
+      {"grid_item_@brewing_grid_items.potion_of_swiftness"            :{}},
+
+      //row 2
+      {"grid_item_@brewing_grid_items.potion_of_swiftness_II"         :{}},
+      {"grid_item_@brewing_grid_items.potion_of_slowness"             :{}},
+      {"grid_item_@brewing_grid_items.potion_of_slowness_II"          :{}},
+      {"grid_item_@brewing_grid_items.potion_of_water_breathing"      :{}},
+      {"grid_item_@brewing_grid_items.potion_of_healing"              :{}},
+
+      //row 3
+      {"grid_item_@brewing_grid_items.potion_of_healing_II"           :{}},
+      {"grid_item_@brewing_grid_items.potion_of_harming"              :{}},
+      {"grid_item_@brewing_grid_items.potion_of_harming_II"           :{}},
+      {"grid_item_@brewing_grid_items.potion_of_poison"               :{}},
+      {"grid_item_@brewing_grid_items.potion_of_poison_II"            :{}},
+
+      //row 4
+      {"grid_item_@brewing_grid_items.potion_of_regeneration"         :{}},
+      {"grid_item_@brewing_grid_items.potion_of_regeneration_II"      :{}},
+      {"grid_item_@brewing_grid_items.potion_of_strength"             :{}},
+      {"grid_item_@brewing_grid_items.potion_of_strength_II"          :{}},
+      {"grid_item_@brewing_grid_items.potion_of_weakness"             :{}},
+
+      //row 5
+      {"grid_item_@brewing_grid_items.potion_of_the_turtle_master"    :{}},
+      {"grid_item_@brewing_grid_items.potion_of_the_turtle_master_II" :{}},
+      {"grid_item_@brewing_grid_items.potion_of_slow_falling"         :{}},
+      {"grid_item_@brewing_grid_items.potion_of_wind_charging"        :{}},
+      {"grid_item_@brewing_grid_items.potion_of_weaving"              :{}},
+
+      //row 6
+      {"grid_item_@brewing_grid_items.potion_of_oozing"               :{}},
+      {"grid_item_@brewing_grid_items.potion_of_infestation"          :{}},
+      {"filler_1@brewing_grid_items.filler_1"                        :{}},
+      {"filler_2@brewing_grid_items.filler_2"                        :{}},
+      {"filler_3@brewing_grid_items.filler_3"                        :{}}
+    ],
+    //"collection_name": "custom_brewing_collection",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$visible_condition",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  "item@toggle.radio_toggle": {
+    "$size": [25, 25],
+    "$toggle_group_forced_index": "($remainder + $index_offset)",
+    "$toggle_name|default": "brewing_items",
+
+    "$toggle_control_name|default": "('potion_item_' + ($remainder + $index_offset))",
+    "$toggle_binding_value|default": "('#item_' + ($remainder + $index_offset))",
+
+    "$localization_key|default": "",
+    "$modifier_key|default": "",
+    "$modifier_color|default": [1.0, 0.3294, 0.3294, 1.0],
+    "$level_key|default": "",
+
+    "$properties|default": {
+      "#item_id_aux": "(($base_id * 65536) + $remainder)"
+    },
+    "$controls": [     
+      /*{// this is a test on what can be done with custom collections  (seems not mutch can be done)
+        "test@global.empty_label": {
+          "text": "#text",
+          "size": ["default", 10],
+          "layer": 999,
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "color": "cyan",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "custom_brewing_collection",
+              "binding_name": "#collection_index"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('id: ' + #collection_index)",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      },*/
+      {
+        "renderer_holder@global.empty_panel": {
+          "size": [24, 24],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "renderer@brewing_common.item_renderer": {
+                "layer": 4
+              }
+            }
+          ]
+        }
+      },
+      { "recipe_button_bg@brewing_data.toggle_texture": {} },
+      {
+        "hover_text_button": {
+          "type": "button",
+          "size": [25, 25],
+          "default_focus_precedence": 1,
+          "hover_control": "hover_text",
+          "consume_event": false,
+          "button_mappings": [
+            { "to_button_id": "button.container_slot_hovered", "mapping_type": "pressed", "consume_event": false }
+          ],
+          "controls": [
+            {
+              "hover_text@global.empty_panel": {
+                "ignored": "$touch",
+                "layer": 500,
+                "controls": [
+                  {
+                    "hover_text_java@global.custom_renderer": {
+                      "allow_clipping": false,
+                      "$type": "bundle_tooltip_renderer",
+                      "layer": 29,
+                      "controls": [{ "1@brewing_data.java_tooltip": {} }]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "toggle_texture@screen_content.image_element": {
+    "texture": "sprites/slot_craftable",
+    "layer": 2,
+    "size": [25, 25],
+    "controls": [
+      {
+        "collection": {
+          "type": "collection_panel",
+          "size": [25, 25],
+          "layer": 40,
+          "collection_name": "brewing_result_items",
+          "controls": [
+            { "slot_0@brewing_data.item_remove": { "collection_index": 0 } },
+            { "slot_1@brewing_data.item_remove": { "collection_index": 1 } },
+            { "slot_2@brewing_data.item_remove": { "collection_index": 2 } }
+          ]
+        }
+      }
+    ]
+  },
+  "item_remove": {
+    "type": "input_panel",
+    "size": [25, 25],
+    "always_listen_to_input": true,
+    "consume_hover_events": false,
+    "bindings": [
+      { "binding_type": "collection_details", "binding_collection_name": "brewing_result_items" },
+      {
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection",
+        "binding_collection_name": "brewing_result_items"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#item_id_aux = -1))",
+        "target_property_name": "#visible"
+      }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed",
+        "consume_event": false
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed",
+        "consume_event": false
+      }
+    ]
+  },
+  "java_tooltip@global.empty_panel": {
+    "size": ["200%c", "200%c"],
+    "layer": 50,
+    "controls": [
+      {
+        "tooltip_base@screen_content.image_element": {
+          "size": ["100%c + 8px", "100%c + 8px"],
+          "texture": "textures/ui/purpleBorder.png",
+          "nineslice_size": 2,
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [30, 5],
+
+          "controls": [
+            {
+              "label_holder@global.empty_stack": {
+                "size": ["100%cm", "100%c"],
+                "orientation": "vertical",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [4, 4],
+                "controls": [
+                  {
+                    "hover_text@global.empty_label": {
+                      "size": ["default", 10],
+                      "layer": 300,
+                      "localize": true,
+                      "text": "$localization_key",
+                      "shadow": true
+                    }
+                  },
+                  {
+                    "modifier_panel@global.empty_panel": {
+                      "size": ["100%cm", 12],
+                      "ignored": "($modifier_key = '')",
+                      "controls": [
+                        {
+                          "gap@global.empty_panel": {
+                            "size": [10, 2]
+                          }
+                        },
+                        {
+                          "modifier_and_value@global.empty_stack": {
+                            "orientation": "horizontal",
+                            "size": ["100%c", 10],
+                            "controls": [
+                              {
+                                "modifier@global.empty_label": {
+                                  "size": ["default", 10],
+                                  "layer": 300,
+                                  "localize": true,
+                                  "color": "$modifier_color",
+                                  "text": "$modifier_key",
+                                  "shadow": true
+                                }
+                              },
+                              {
+                                "level_panel@global.empty_stack": {
+                                  "orientation": "horizontal",
+                                  "size": ["100%c", 10],
+                                  "ignored": "($level_key = '')",
+                                  "controls": [
+                                    { "filler@global.empty_panel": { "size": [3, 10] } },
+                                    {
+                                      "level@global.empty_label": {
+                                        "size": ["default", 10],
+                                        "layer": 300,
+                                        "localize": true,
+                                        "color": "$modifier_color",
+                                        "text": "$level_key",
+                                        "shadow": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

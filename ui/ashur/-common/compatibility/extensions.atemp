@@ -1,0 +1,149 @@
+{
+  "namespace": "jc-extensions",
+
+  /* - - |  brewing guide  |  - - */
+
+  "brewing_stand_screen": {
+    "type": "panel",
+    "size": [176, 166],
+    "controls": [
+      {
+        "bottle_slots_holder": {
+          "type": "panel",
+          "size": [121, 75],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            {
+              "brewing_input_overlay": {
+                "type": "panel",
+                "size": [98, 34],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "controls": [
+                  {
+                    "potion@ingredient_slot.ingredient_slot_factory": {
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "collection_index_0": {
+                "type": "panel",
+                "size": [18, 68],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "slot_holder@global.empty_panel": {
+                      "size": [18, 18],
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle",
+                      "controls": [
+                        {"potion@potion_slot.potion_slot_factory": {"$collection_name": "input_potion_1"}},
+                        {"splash_potion@splash_potion_slot.splash_potion_slot_factory": {"$collection_name": "splash_input_potion_1"}}
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "collection_index_1": {
+                "type": "panel",
+                "size": [98, 75],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "controls": [ 
+                  {
+                    "slot_holder@global.empty_panel": {
+                      "size": [18, 18],
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left",
+                      "controls": [
+                        {"potion@potion_slot.potion_slot_factory": {"$collection_name": "input_potion_2"}},
+                        {"splash_potion@splash_potion_slot.splash_potion_slot_factory": {"$collection_name": "splash_input_potion_2"}}
+                      ]
+                    }
+                  }  
+                ]
+              }
+            },
+            {
+              "collection_index_2": {
+                "type": "panel",
+                "size": [75, 68],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "controls": [
+                  {
+                    "slot_holder@global.empty_panel": {
+                      "size": [18, 18],
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left",
+                      "controls": [
+                        {"potion@potion_slot.potion_slot_factory": {"$collection_name": "input_potion_3"}},
+                        {"splash_potion@splash_potion_slot.splash_potion_slot_factory": {"$collection_name": "splash_input_potion_3"}}
+                      ]
+                    }
+                  } 
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /* - - | defaults | - - */
+
+  "mount_screen@jc-extensions.campatibility": {},
+  "anvil_screen@jc-extensions.campatibility": {},
+  "barrel_screen@jc-extensions.campatibility": {},
+  "beacon_screen@jc-extensions.campatibility": {},
+  "blast_furnace_screen@jc-extensions.campatibility": {},
+  "cartography_screen@jc-extensions.campatibility": {},
+  "crafter_screen@jc-extensions.campatibility": {},
+  "crafting_screen@jc-extensions.campatibility": {},
+  "creative_inventory@jc-extensions.campatibility": {},
+  "dispenser_screen@jc-extensions.campatibility": {},
+  "double_chest_screen@jc-extensions.campatibility": {},
+  "dropper_screen@jc-extensions.campatibility": {},
+  "enchanting_screen@jc-extensions.campatibility": {},
+  "ender_chest_screen@jc-extensions.campatibility": {},
+  "furnace_screen@jc-extensions.campatibility": {},
+  "grindstone_screen@jc-extensions.campatibility": {},
+  "hopper_screen@jc-extensions.campatibility": {},
+  "inventory_screen@jc-extensions.campatibility": {},
+  "loom_screen@jc-extensions.campatibility": {},
+  "shulker_screen@jc-extensions.campatibility": {},
+  "small_chest_screen@jc-extensions.campatibility": {},
+  "smithing_table_screen@jc-extensions.campatibility": {},
+  "smoker_screen@jc-extensions.campatibility": {},
+  "stonecutter_screen@jc-extensions.campatibility": {},
+  "tradeing_screen@jc-extensions.campatibility": {},
+
+  "campatibility": {
+    // this is a example use case
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "element@global.empty_image": {
+          "ignored": true,
+          "texture": "textures/ui/white",
+          "nineslice_size": 2,
+          "size": [24, 24],
+          "layer": 50,
+          "offset": [5, 0],
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_right"
+        }
+      }
+    ]
+  }
+}
