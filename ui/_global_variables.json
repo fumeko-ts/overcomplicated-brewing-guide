@@ -33,7 +33,6 @@
 
   //potion remainder ids
   "$brewing_guide:mundane_potion": 1,
-  "$brewing_guide:long_mundane_potion": 2,
   "$brewing_guide:thick_potion": 3,
   "$brewing_guide:awkward_potion": 4,
   "$brewing_guide:potion_of_night_vision": 6,
