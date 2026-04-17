@@ -1,186 +1,41 @@
 {
   "namespace": "brewing_grid_items",
-  // ROW 0
-  "mundane_potion@brewing_data.item": {
-    "$localization_key": "$mundane_key",
-    "$remainder": "$brewing_guide:mundane_potion",
-    "grid_position": [0, 0]
-  },
-  "thick_potion@brewing_data.item": {
-    "$localization_key": "$thick_potion_key",
-    "$remainder": "$brewing_guide:thick_potion",
-    "grid_position": [1, 0]
-  },
-  "awkward_potion@brewing_data.item": {
-    "$localization_key": "$awkward_potion_key",
-    "$remainder": "$brewing_guide:awkward_potion",
-    "grid_position": [2, 0]
-  },
-  "potion_of_night_vision@brewing_data.item": {
-    "$localization_key": "$night_vision_key",
-    "$remainder": "$brewing_guide:potion_of_night_vision",
-    "grid_position": [3, 0]
-  },
-  "potion_of_invisibility@brewing_data.item": {
-    "$localization_key": "$invisibility_key",
-    "$remainder": "$brewing_guide:potion_of_invisibility",
-    "grid_position": [4, 0]
-  },
-
-  // ROW 1
-  "potion_of_leaping@brewing_data.item": {
-    "$localization_key": "$leaping_key",
-    "$remainder": "$brewing_guide:potion_of_leaping",
-    "grid_position": [0, 1]
-  },
-  "potion_of_leaping_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$leaping_key",
-    "$remainder": "$brewing_guide:potion_of_leaping",
-    "grid_position": [1, 1]
-  },
-  "potion_of_fire_resistance@brewing_data.item": {
-    "$localization_key": "$fire_resistance_key",
-    "$remainder": "$brewing_guide:potion_of_fire_resistance",
-    "grid_position": [2, 1]
-  },
-  "potion_of_swiftness@brewing_data.item": {
-    "$localization_key": "$swiftness_key",
-    "$remainder": "$brewing_guide:potion_of_swiftness",
-    "grid_position": [3, 1]
-  },
-  "potion_of_swiftness_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$swiftness_key",
-    "$remainder": "$brewing_guide:potion_of_swiftness",
-    "grid_position": [4, 1]
-  },
-
-  // ROW 2
-  "potion_of_slowness@brewing_data.item": {
-    "$localization_key": "$slowness_key",
-    "$remainder": "$brewing_guide:potion_of_slowness",
-    "grid_position": [0, 2]
-  },
-  "potion_of_slowness_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$slowness_key",
-    "$remainder": "$brewing_guide:potion_of_slowness",
-    "grid_position": [1, 2]
-  },
-  "potion_of_water_breathing@brewing_data.item": {
-    "$localization_key": "$water_breathing_key",
-    "$remainder": "$brewing_guide:potion_of_water_breathing",
-    "grid_position": [2, 2]
-  },
-  "potion_of_healing@brewing_data.item": {
-    "$localization_key": "$healing_key",
-    "$remainder": "$brewing_guide:potion_of_healing",
-    "grid_position": [3, 2]
-  },
-  "potion_of_healing_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$healing_key",
-    "$remainder": "$brewing_guide:potion_of_healing",
-    "grid_position": [4, 2]
-  },
-
-  // ROW 3
-  "potion_of_harming@brewing_data.item": {
-    "$modifier_key": "potion.harm",
-    "$localization_key": "$harming_key",
-    "$remainder": "$brewing_guide:potion_of_harming",
-    "grid_position": [0, 3]
-  },
-  "potion_of_harming_II@brewing_data.item": {
-    "$modifier_key": "potion.harm",
-    "$level_key": "II",
-    "$localization_key": "$harming_key",
-    "$remainder": "$brewing_guide:potion_of_harming",
-    "grid_position": [1, 3]
-  },
-  "potion_of_poison@brewing_data.item": {
-    "$localization_key": "$poison_key",
-    "$remainder": "$brewing_guide:potion_of_poison",
-    "grid_position": [2, 3]
-  },
-  "potion_of_poison_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$poison_key",
-    "$remainder": "$brewing_guide:potion_of_poison",
-    "grid_position": [3, 3]
-  },
-  "potion_of_regeneration@brewing_data.item": {
-    "$localization_key": "$regeneration_key",
-    "$remainder": "$brewing_guide:potion_of_regeneration",
-    "grid_position": [4, 3]
-  },
-
-  // ROW 4
-  "potion_of_regeneration_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$regeneration_key",
-    "$remainder": "$brewing_guide:potion_of_regeneration",
-    "grid_position": [0, 4]
-  },
-  "potion_of_strength@brewing_data.item": {
-    "$localization_key": "$strength_key",
-    "$remainder": "$brewing_guide:potion_of_strength",
-    "grid_position": [1, 4]
-  },
-  "potion_of_strength_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$strength_key",
-    "$remainder": "$brewing_guide:potion_of_strength",
-    "grid_position": [2, 4]
-  },
-  "potion_of_weakness@brewing_data.item": {
-    "$localization_key": "$weakness_key",
-    "$remainder": "$brewing_guide:potion_of_weakness",
-    "grid_position": [3, 4]
-  },
-  "potion_of_the_turtle_master@brewing_data.item": {
-    "$localization_key": "$the_turtle_master_key",
-    "$remainder": "$brewing_guide:potion_of_the_turtle_master",
-    "grid_position": [4, 4]
-  },
-
-  // ROW 5
-  "potion_of_the_turtle_master_II@brewing_data.item": {
-    "$modifier_key": "II",
-    "$localization_key": "$the_turtle_master_key",
-    "$remainder": "$brewing_guide:potion_of_the_turtle_master",
-    "grid_position": [0, 5]
-  },
-  "potion_of_slow_falling@brewing_data.item": {
-    "$localization_key": "$slow_falling_key",
-    "$remainder": "$brewing_guide:potion_of_slow_falling",
-    "grid_position": [1, 5]
-  },
-  "potion_of_wind_charging@brewing_data.item": {
-    "$localization_key": "$wind_charging_key",
-    "$remainder": "$brewing_guide:potion_of_wind_charging",
-    "grid_position": [2, 5]
-  },
-  "potion_of_weaving@brewing_data.item": {
-    "$localization_key": "$weaving_key",
-    "$remainder": "$brewing_guide:potion_of_weaving",
-    "grid_position": [3, 5]
-  },
-  "potion_of_oozing@brewing_data.item": {
-    "$localization_key": "$oozing_key",
-    "$remainder": "$brewing_guide:potion_of_oozing",
-    "grid_position": [4, 5]
-  },
-
-  // ROW 6
-  "potion_of_infestation@brewing_data.item": {
-    "$localization_key": "$infestation_key",
-    "$remainder": "$brewing_guide:potion_of_infestation",
-    "grid_position": [0, 6]
-  },
-  "filler_1@global.empty_panel": { "grid_position": [1, 6] },
-  "filler_2@global.empty_panel": { "grid_position": [2, 6] },
-  "filler_3@global.empty_panel": { "grid_position": [3, 6] },
-  "filler_4@global.empty_panel": { "grid_position": [4, 6] }
+  //row0
+  "mundane_potion@brewing_data.item"                 : { "$collection_index": 1 , "$localization_key": "$mundane_key"           },
+  "thick_potion@brewing_data.item"                   : { "$collection_index": 2 , "$localization_key": "$thick_potion_key"      },
+  "awkward_potion@brewing_data.item"                 : { "$collection_index": 3 , "$localization_key": "$awkward_potion_key"    },
+  "potion_of_night_vision@brewing_data.item"         : { "$collection_index": 4 , "$localization_key": "$night_vision_key"      },
+  "potion_of_invisibility@brewing_data.item"         : { "$collection_index": 5 , "$localization_key": "$invisibility_key"      },
+  //row1
+  "potion_of_leaping@brewing_data.item"              : { "$collection_index": 6 , "$localization_key": "$leaping_key"           },
+  "potion_of_leaping_II@brewing_data.item"           : { "$collection_index": 7 , "$localization_key": "$leaping_key"           },
+  "potion_of_fire_resistance@brewing_data.item"      : { "$collection_index": 8 , "$localization_key": "$fire_resistance_key"   },
+  "potion_of_swiftness@brewing_data.item"            : { "$collection_index": 9 , "$localization_key": "$swiftness_key"         },
+  "potion_of_swiftness_II@brewing_data.item"         : { "$collection_index": 10, "$localization_key": "$swiftness_key"         },
+  //row2
+  "potion_of_slowness@brewing_data.item"             : { "$collection_index": 11, "$localization_key": "$slowness_key"          },
+  "potion_of_slowness_II@brewing_data.item"          : { "$collection_index": 12, "$localization_key": "$slowness_key"          },
+  "potion_of_water_breathing@brewing_data.item"      : { "$collection_index": 13, "$localization_key": "$water_breathing_key"   },
+  "potion_of_healing@brewing_data.item"              : { "$collection_index": 14, "$localization_key": "$healing_key"           },
+  "potion_of_healing_II@brewing_data.item"           : { "$collection_index": 15, "$localization_key": "$healing_key"           },
+  //row3
+  "potion_of_harming@brewing_data.item"              : { "$collection_index": 16, "$localization_key": "$harming_key"           },
+  "potion_of_harming_II@brewing_data.item"           : { "$collection_index": 17, "$localization_key": "$harming_key"           },
+  "potion_of_poison@brewing_data.item"               : { "$collection_index": 18, "$localization_key": "$poison_key"            },
+  "potion_of_poison_II@brewing_data.item"            : { "$collection_index": 19, "$localization_key": "$poison_key"            },
+  "potion_of_regeneration@brewing_data.item"         : { "$collection_index": 20, "$localization_key": "$regeneration_key"      },
+  //row4
+  "potion_of_regeneration_II@brewing_data.item"      : { "$collection_index": 21, "$localization_key": "$regeneration_key"      },
+  "potion_of_strength@brewing_data.item"             : { "$collection_index": 22, "$localization_key": "$strength_key"          },
+  "potion_of_strength_II@brewing_data.item"          : { "$collection_index": 23, "$localization_key": "$strength_key"          },
+  "potion_of_weakness@brewing_data.item"             : { "$collection_index": 24, "$localization_key": "$weakness_key"          },
+  "potion_of_the_turtle_master@brewing_data.item"    : { "$collection_index": 25, "$localization_key": "$the_turtle_master_key" },
+  //row5
+  "potion_of_the_turtle_master_II@brewing_data.item" : { "$collection_index": 26, "$localization_key": "$the_turtle_master_key" },
+  "potion_of_slow_falling@brewing_data.item"         : { "$collection_index": 27, "$localization_key": "$slow_falling_key"      },
+  "potion_of_wind_charging@brewing_data.item"        : { "$collection_index": 28, "$localization_key": "$wind_charging_key"     },
+  "potion_of_weaving@brewing_data.item"              : { "$collection_index": 29, "$localization_key": "$weaving_key"           },
+  "potion_of_oozing@brewing_data.item"               : { "$collection_index": 30, "$localization_key": "$oozing_key"            },
+  //row6
+  "potion_of_infestation@brewing_data.item"          : { "$collection_index": 31, "$localization_key": "$infestation_key"       }
 }

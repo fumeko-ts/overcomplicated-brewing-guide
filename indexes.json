@@ -1,0 +1,243 @@
+{
+  "simple_recipes": {
+   //made this json so i can understand easier cause the recipes are quite complicated for me to comprehend 
+    "refs": ["base", "+", "item", "=", "result"],
+    "small_recipes": [
+      //mapped to the vanilla translation keys
+      {
+        "base": "potion.awkward.name",
+        "item": "item.blaze_powder.name",
+        "result": "potion.damageBoost.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.magma_cream.name",
+        "result": "potion.fireResistance.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.ghast_tear.name",
+        "result": "potion.regeneration.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.pufferfish.name",
+        "result": "potion.waterBreathing.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.phantom_membrane.name",
+        "result": "potion.slowFalling.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.turtle_helmet.name",
+        "result": "potion.turtleMaster.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.breeze_rod.name",
+        "result": "potion.windCharged.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "tile.stone.stone.name",
+        "result": "potion.infested.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.weakness.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "tile.web.name",
+        "result": "potion.weaving.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "tile.slime.name",
+        "result": "potion.oozing.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.sugar.name",
+        "result": "potion.moveSpeed.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.rabbit_foot.name",
+        "result": "potion.jump.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.spider_eye.name",
+        "result": "potion.poison.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.speckled_melon.name",
+        "result": "potion.heal.name"
+      },
+      {
+        "base": "potion.awkward.name",
+        "item": "item.golden_carrot.name",
+        "result": "potion.nightVision.name"
+      },
+      {
+        "base": "potion.moveSpeed.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.moveSlowdown.name"
+      },
+      {
+        "base": "potion.jump.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.moveSlowdown.name"
+      },
+      {
+        "base": "potion.poison.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.harm.name"
+      },
+      {
+        "base": "potion.heal.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.harm.name"
+      },
+      {
+        "base": "potion.nightVision.name",
+        "item": "item.fermented_spider_eye.name",
+        "result": "potion.invisibility.name"
+      }
+    ]
+  }
+}
+/*
+Potion of Harming
+Instant Damage 
+
+Potion of Harming
+Instant Damage II
+
+Potion of Healing
+Instant Health 
+
+Potion of Healing
+Instant Health II
+
+Potion of Night Vision
+Night Vision (8:00)
+
+Potion of Night Vision
+Night Vision (3:00)
+
+Potion of Water Breathing
+Water Breathing (3:00)
+
+Potion of Water Breathing
+Water Breathing (8:00)
+
+Potion of Fire Resistance
+Fire Resistance (3:00)
+
+Potion of Fire Resistance
+Fire Resistance (8:00)
+
+Potion of Invisibility
+Invisibility (3:00)
+
+Potion of Invisibility
+Invisibility (8:00)
+
+Potion of Slow Falling
+Slow Falling (1:30)
+
+Potion of Slow Falling
+Slow Falling (4:00)
+
+Potion of Leaping
+Jump Boost II (1:30)
+
+Potion of Leaping
+Jump Boost (3:00)
+
+Potion of Leaping
+Jump Boost (8:00)
+
+Potion of Regeneration
+Regeneration (0:45)
+
+Potion of Regeneration
+Regeneration (2:00)
+
+Potion of Regeneration
+Regeneration II (0:22)
+
+Potion of Poison
+Poison II (0:22)
+
+Potion of Poison
+Poison (2:00)
+
+Potion of Poison
+Poison (0:45)
+
+Potion of Weaving
+Weaving (3:00)
+
+Potion of Wind Charging
+Wind Charged (3:00)
+
+Potion of Oozing
+Oozing (3:00)
+
+Potion of Infestation
+Infested (3:00)
+
+Potion of Swiftness
+Speed II (1:30)
+
+Potion of Swiftness
+Speed (3:00)
+
+Potion of Swiftness
+Speed (8:00)
+
+Potion of Slowness
+Slowness IV (0:20)
+
+Potion of Slowness
+Slowness (1:30)
+
+Potion of Slowness
+Slowness (4:00)
+
+Potion of Strength
+Strength II (1:30)
+
+Potion of Strength
+Strength (3:00)
+
+Potion of Strength
+Strength (8:00)
+
+Potion of Weakness
+Weakness (4:00)
+
+Potion of Weakness
+Weakness (1:30)
+
+
+Potion of the Turtle Master
+Slowness VI (0:20)
+Resistance IV (0:20)
+
+Potion of the Turtle Master
+Slowness IV (0:40)
+Resistance III (0:40)
+
+Potion of the Turtle Master
+Slowness IV (0:20)
+Resistance III (0:20)
+
+*/

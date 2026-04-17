@@ -76,63 +76,58 @@
       }
     ]
   },
-   "potion_grid@brewing_data.variables": {
+  "potion_grid@brewing_data.variables": {
     "type": "grid",
-    "grid_dimensions": [5, 10], 
-    "size": [125, 250],
+    "grid_dimensions": [5, 7],
+    "size": [125, 175],
     "anchor_from": "top_left",
     "anchor_to": "top_left",
-    "$remainder|default": "$brewing_guide:mundane_potion",
+
     "controls": [
-      //row 0
-      {"grid_item_@brewing_grid_items.mundane_potion"                 :{}},
-      {"grid_item_@brewing_grid_items.thick_potion"                   :{}},
-      {"grid_item_@brewing_grid_items.awkward_potion"                 :{}},
-      {"grid_item_@brewing_grid_items.potion_of_night_vision"         :{}},
+      {"0@brewing_grid_items.mundane_potion"                  : {"grid_position": [0, 0] , "$remainder": "$brewing_guide:mundane_potion"              }},
+      {"1@brewing_grid_items.thick_potion"                    : {"grid_position": [1, 0] , "$remainder": "$brewing_guide:thick_potion"                }},
+      {"2@brewing_grid_items.awkward_potion"                  : {"grid_position": [2, 0] , "$remainder": "$brewing_guide:awkward_potion"              }},
+      {"3@brewing_grid_items.potion_of_night_vision"          : {"grid_position": [3, 0] , "$remainder": "$brewing_guide:potion_of_night_vision"      }},
+      {"4@brewing_grid_items.potion_of_invisibility"          : {"grid_position": [4, 0] , "$remainder": "$brewing_guide:potion_of_invisibility"      }},
 
-      //row 1
-      {"grid_item_@brewing_grid_items.potion_of_invisibility"         :{}},
-      {"grid_item_@brewing_grid_items.potion_of_leaping"              :{}},
-      {"grid_item_@brewing_grid_items.potion_of_leaping_II"           :{}},
-      {"grid_item_@brewing_grid_items.potion_of_fire_resistance"      :{}},
-      {"grid_item_@brewing_grid_items.potion_of_swiftness"            :{}},
+      {"5@brewing_grid_items.potion_of_leaping"               : {"grid_position": [0, 1] , "$remainder": "$brewing_guide:potion_of_leaping"           }},
+      {"6@brewing_grid_items.potion_of_leaping_II"            : {"grid_position": [1, 1] , "$remainder": "$brewing_guide:potion_of_leaping"           }},
+      {"7@brewing_grid_items.potion_of_fire_resistance"       : {"grid_position": [2, 1] , "$remainder": "$brewing_guide:potion_of_fire_resistance"   }},
+      {"8@brewing_grid_items.potion_of_swiftness"             : {"grid_position": [3, 1] , "$remainder": "$brewing_guide:potion_of_swiftness"         }},
+      {"9@brewing_grid_items.potion_of_swiftness_II"          : {"grid_position": [4, 1] , "$remainder": "$brewing_guide:potion_of_swiftness"         }},
 
-      //row 2
-      {"grid_item_@brewing_grid_items.potion_of_swiftness_II"         :{}},
-      {"grid_item_@brewing_grid_items.potion_of_slowness"             :{}},
-      {"grid_item_@brewing_grid_items.potion_of_slowness_II"          :{}},
-      {"grid_item_@brewing_grid_items.potion_of_water_breathing"      :{}},
-      {"grid_item_@brewing_grid_items.potion_of_healing"              :{}},
+      {"10@brewing_grid_items.potion_of_slowness"             : {"grid_position": [0, 2] , "$remainder": "$brewing_guide:potion_of_slowness"          }},
+      {"11@brewing_grid_items.potion_of_slowness_II"          : {"grid_position": [1, 2] , "$remainder": "$brewing_guide:potion_of_slowness"          }},
+      {"12@brewing_grid_items.potion_of_water_breathing"      : {"grid_position": [2, 2] , "$remainder": "$brewing_guide:potion_of_water_breathing"   }},
+      {"13@brewing_grid_items.potion_of_healing"              : {"grid_position": [3, 2] , "$remainder": "$brewing_guide:potion_of_healing"           }},
+      {"14@brewing_grid_items.potion_of_healing_II"           : {"grid_position": [4, 2] , "$remainder": "$brewing_guide:potion_of_healing"           }},
 
-      //row 3
-      {"grid_item_@brewing_grid_items.potion_of_healing_II"           :{}},
-      {"grid_item_@brewing_grid_items.potion_of_harming"              :{}},
-      {"grid_item_@brewing_grid_items.potion_of_harming_II"           :{}},
-      {"grid_item_@brewing_grid_items.potion_of_poison"               :{}},
-      {"grid_item_@brewing_grid_items.potion_of_poison_II"            :{}},
+      {"15@brewing_grid_items.potion_of_harming"              : {"grid_position": [0, 3] , "$remainder": "$brewing_guide:potion_of_harming"           }},
+      {"16@brewing_grid_items.potion_of_harming_II"           : {"grid_position": [1, 3] , "$remainder": "$brewing_guide:potion_of_harming"           }},
+      {"17@brewing_grid_items.potion_of_poison"               : {"grid_position": [2, 3] , "$remainder": "$brewing_guide:potion_of_poison"            }},
+      {"18@brewing_grid_items.potion_of_poison_II"            : {"grid_position": [3, 3] , "$remainder": "$brewing_guide:potion_of_poison"            }},
+      {"19@brewing_grid_items.potion_of_regeneration"         : {"grid_position": [4, 3] , "$remainder": "$brewing_guide:potion_of_regeneration"      }},
 
-      //row 4
-      {"grid_item_@brewing_grid_items.potion_of_regeneration"         :{}},
-      {"grid_item_@brewing_grid_items.potion_of_regeneration_II"      :{}},
-      {"grid_item_@brewing_grid_items.potion_of_strength"             :{}},
-      {"grid_item_@brewing_grid_items.potion_of_strength_II"          :{}},
-      {"grid_item_@brewing_grid_items.potion_of_weakness"             :{}},
+      {"20@brewing_grid_items.potion_of_regeneration_II"      : {"grid_position": [0, 4] , "$remainder": "$brewing_guide:potion_of_regeneration"      }},
+      {"21@brewing_grid_items.potion_of_strength"             : {"grid_position": [1, 4] , "$remainder": "$brewing_guide:potion_of_strength"          }},
+      {"22@brewing_grid_items.potion_of_strength_II"          : {"grid_position": [2, 4] , "$remainder": "$brewing_guide:potion_of_strength"          }},
+      {"23@brewing_grid_items.potion_of_weakness"             : {"grid_position": [3, 4] , "$remainder": "$brewing_guide:potion_of_weakness"          }},
+      {"24@brewing_grid_items.potion_of_the_turtle_master"    : {"grid_position": [4, 4] , "$remainder": "$brewing_guide:potion_of_the_turtle_master" }},
 
-      //row 5
-      {"grid_item_@brewing_grid_items.potion_of_the_turtle_master"    :{}},
-      {"grid_item_@brewing_grid_items.potion_of_the_turtle_master_II" :{}},
-      {"grid_item_@brewing_grid_items.potion_of_slow_falling"         :{}},
-      {"grid_item_@brewing_grid_items.potion_of_wind_charging"        :{}},
-      {"grid_item_@brewing_grid_items.potion_of_weaving"              :{}},
+      {"25@brewing_grid_items.potion_of_the_turtle_master_II" : {"grid_position": [0, 5] , "$remainder": "$brewing_guide:potion_of_the_turtle_master" }},
+      {"26@brewing_grid_items.potion_of_slow_falling"         : {"grid_position": [1, 5] , "$remainder": "$brewing_guide:potion_of_slow_falling"      }},
+      {"27@brewing_grid_items.potion_of_wind_charging"        : {"grid_position": [2, 5] , "$remainder": "$brewing_guide:potion_of_wind_charging"     }},
+      {"28@brewing_grid_items.potion_of_weaving"              : {"grid_position": [3, 5] , "$remainder": "$brewing_guide:potion_of_weaving"           }},
+      {"29@brewing_grid_items.potion_of_oozing"               : {"grid_position": [4, 5] , "$remainder": "$brewing_guide:potion_of_oozing"            }},
 
-      //row 6
-      {"grid_item_@brewing_grid_items.potion_of_oozing"               :{}},
-      {"grid_item_@brewing_grid_items.potion_of_infestation"          :{}},
-      {"filler_1@brewing_grid_items.filler_1"                        :{}},
-      {"filler_2@brewing_grid_items.filler_2"                        :{}},
-      {"filler_3@brewing_grid_items.filler_3"                        :{}}
+      {"30@brewing_grid_items.potion_of_infestation"          : {"grid_position": [0, 6] , "$remainder": "$brewing_guide:potion_of_infestation"       }},
+
+      { "31@global.empty_panel": { "grid_position": [1, 6] } },
+      { "32@global.empty_panel": { "grid_position": [2, 6] } },
+      { "33@global.empty_panel": { "grid_position": [3, 6] } },
+      { "34@global.empty_panel": { "grid_position": [4, 6] } }
     ],
-    //"collection_name": "custom_brewing_collection",
+    "collection_name": "brewing_recipe_items",
     "bindings": [
       {
         "binding_type": "view",
@@ -142,45 +137,44 @@
       }
     ]
   },
-  "item@toggle.radio_toggle": {
+  "item_toggle@toggle.radio_toggle": {
+    "$item_index_id|default": "($collection_index + $index_offset)"
+  },
+  "item@brewing_data.item_toggle": {
     "$size": [25, 25],
-    "$toggle_group_forced_index": "($remainder + $index_offset)",
-    "$toggle_name|default": "brewing_items",
+    "$toggle_group_forced_index": "$item_index_id",
+    "$toggle_name": "brewing_items",
 
-    "$toggle_control_name|default": "('potion_item_' + ($remainder + $index_offset))",
-    "$toggle_binding_value|default": "('#item_' + ($remainder + $index_offset))",
+    "$toggle_control_name": "('potion_item_' + $item_index_id)",
+    "$toggle_binding_value": "('#item_' + $item_index_id)",
 
     "$localization_key|default": "",
-    "$modifier_key|default": "",
-    "$modifier_color|default": [1.0, 0.3294, 0.3294, 1.0],
-    "$level_key|default": "",
-
     "$properties|default": {
       "#item_id_aux": "(($base_id * 65536) + $remainder)"
     },
-    "$controls": [     
-      /*{// this is a test on what can be done with custom collections  (seems not mutch can be done)
-        "test@global.empty_label": {
-          "text": "#text",
-          "size": ["default", 10],
-          "layer": 999,
-          "anchor_from": "center",
-          "anchor_to": "center",
-          "color": "cyan",
+    "$controls": [
+      {
+        "test@global.empty_image": {
+          "texture": "textures/ui/white",
+          "layer": 6,
+          "uv": [2, 2],
+          "uv_size": [3, 1],
+          "nineslice_size": 1,
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "size": [16, 1],
+          "offset": [4, -4],
+          "color": [0.682, 1.000, 0.620],
           "bindings": [
             {
-              "binding_type": "collection_details",
-              "binding_collection_name": "custom_brewing_collection",
-              "binding_name": "#collection_index"
-            },
-            {
               "binding_type": "view",
-              "source_property_name": "('id: ' + #collection_index)",
-              "target_property_name": "#text"
+              "source_control_name": "$toggle_control_name",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
             }
           ]
         }
-      },*/
+      },
       {
         "renderer_holder@global.empty_panel": {
           "size": [24, 24],
@@ -310,57 +304,6 @@
                       "localize": true,
                       "text": "$localization_key",
                       "shadow": true
-                    }
-                  },
-                  {
-                    "modifier_panel@global.empty_panel": {
-                      "size": ["100%cm", 12],
-                      "ignored": "($modifier_key = '')",
-                      "controls": [
-                        {
-                          "gap@global.empty_panel": {
-                            "size": [10, 2]
-                          }
-                        },
-                        {
-                          "modifier_and_value@global.empty_stack": {
-                            "orientation": "horizontal",
-                            "size": ["100%c", 10],
-                            "controls": [
-                              {
-                                "modifier@global.empty_label": {
-                                  "size": ["default", 10],
-                                  "layer": 300,
-                                  "localize": true,
-                                  "color": "$modifier_color",
-                                  "text": "$modifier_key",
-                                  "shadow": true
-                                }
-                              },
-                              {
-                                "level_panel@global.empty_stack": {
-                                  "orientation": "horizontal",
-                                  "size": ["100%c", 10],
-                                  "ignored": "($level_key = '')",
-                                  "controls": [
-                                    { "filler@global.empty_panel": { "size": [3, 10] } },
-                                    {
-                                      "level@global.empty_label": {
-                                        "size": ["default", 10],
-                                        "layer": 300,
-                                        "localize": true,
-                                        "color": "$modifier_color",
-                                        "text": "$level_key",
-                                        "shadow": true
-                                      }
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ]
                     }
                   }
                 ]

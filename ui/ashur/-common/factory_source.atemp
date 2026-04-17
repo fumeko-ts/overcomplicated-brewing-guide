@@ -79,8 +79,7 @@
     },
     "$factory_binding_refrence|default": "factory_bindings.bindings",// used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
 
-
-    "$brewing_factory_variables|default": [
+    "$brewing_factory_variables|default": [// passes static values from above to the the generated controls and inner parts
       "$mundane_potion_action",
       "$thick_potion_action",
       "$awkward_potion_action",
