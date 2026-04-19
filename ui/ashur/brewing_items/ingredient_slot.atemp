@@ -4,8 +4,6 @@
     "$factory_name": "ingredient_slot_factory",
     "$factory_binding_refrence": "factory_bindings.potion_bindings",
 
-    "$mundane_potion_action": "ingredient_slot.mundane_ingredients",
-    "$thick_potion_action": "ingredient_slot.thick_ingredients",
     "$awkward_potion_action": "ingredient_slot.awkward_ingredients",
     "$night_vision_action": "ingredient_slot.night_vision_ingredients",
     "$invisibility_action": "ingredient_slot.invisibility_ingredients",
@@ -28,8 +26,6 @@
     "$infestation_action": "ingredient_slot.infestation_ingredients"
   },
   
-  "mundane_ingredients@brewing_common.brewing_item_base"         : {"$base_id": "$brewing_guide:redstone",             "$localization_key": "redstone_key"             },
-  "thick_ingredients@brewing_common.brewing_item_base"           : {"$base_id": "$brewing_guide:glowstone_dust",       "$localization_key": "glowstone_dust_key"       },
   "awkward_ingredients@brewing_common.brewing_item_base"         : {"$base_id": "$brewing_guide:nether_wart",          "$localization_key": "nether_wart_key"          },
   "night_vision_ingredients@brewing_common.brewing_item_base"    : {"$base_id": "$brewing_guide:golden_carrot",        "$localization_key": "golden_carrot_key"        },
   "invisibility_ingredients@brewing_common.brewing_item_base"    : {"$base_id": "$brewing_guide:fermented_spider_eye", "$localization_key": "fermented_spider_eye_key" },

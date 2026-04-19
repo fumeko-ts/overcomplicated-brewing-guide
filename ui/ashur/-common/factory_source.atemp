@@ -5,8 +5,7 @@
     "type": "panel",
     "size": [18, 18],
     "$factory_name|default": "Minecraft",// set collection name so i can use #collection_index on the elements that use this with the same collection name(it can be almost eanything even !!LEMON!!)
-    "$mundane_potion_action|default": "",
-    "$thick_potion_action|default": "",
+
     "$awkward_potion_action|default": "",
     "$night_vision_action|default": "",
     "$invisibility_action|default": "",
@@ -29,8 +28,6 @@
     "$infestation_action|default": "",
 
     "$factory_control_identifiers|default": {
-      "is_mundane_potion": "$mundane_potion_action",
-      "is_thick_potion": "$thick_potion_action",
       "is_awkward_potion": "$awkward_potion_action",
       "is_night_vision": "$night_vision_action",
       "is_invisibility": "$invisibility_action",
@@ -54,34 +51,30 @@
     },
 
     "$factory_binding_values|default": {
-      "#item_index_1": ["is_mundane_potion"],
-      "#item_index_2": ["is_thick_potion"],
-      "#item_index_3": ["is_awkward_potion"],
-      "#item_index_4": ["is_night_vision"],
-      "#item_index_5": ["is_invisibility"],
-      "#item_index_6": ["is_leaping"],
-      "#item_index_7": ["is_fire_resistance"],
-      "#item_index_8": ["is_swiftness"],
-      "#item_index_9": ["is_slowness"],
-      "#item_index_10": ["is_water_breathing"],
-      "#item_index_11": ["is_healing"],
-      "#item_index_12": ["is_harming"],
-      "#item_index_13": ["is_poison"],
-      "#item_index_14": ["is_regeneration"],
-      "#item_index_15": ["is_strength"],
-      "#item_index_16": ["is_weakness"],
-      "#item_index_17": ["is_turtle_master"],
-      "#item_index_18": ["is_slow_falling"],
-      "#item_index_19": ["is_wind_charging"],
-      "#item_index_20": ["is_weaving"],
-      "#item_index_21": ["is_oozing"],
-      "#item_index_22": ["is_infestation"]
+      "#item_index_1": ["is_awkward_potion"],
+      "#item_index_2": ["is_night_vision"],
+      "#item_index_3": ["is_invisibility"],
+      "#item_index_4": ["is_leaping"],
+      "#item_index_5": ["is_fire_resistance"],
+      "#item_index_6": ["is_swiftness"],
+      "#item_index_7": ["is_slowness"],
+      "#item_index_8": ["is_water_breathing"],
+      "#item_index_9": ["is_healing"],
+      "#item_index_10": ["is_harming"],
+      "#item_index_11": ["is_poison"],
+      "#item_index_12": ["is_regeneration"],
+      "#item_index_13": ["is_strength"],
+      "#item_index_14": ["is_weakness"],
+      "#item_index_15": ["is_turtle_master"],
+      "#item_index_16": ["is_slow_falling"],
+      "#item_index_17": ["is_wind_charging"],
+      "#item_index_18": ["is_weaving"],
+      "#item_index_19": ["is_oozing"],
+      "#item_index_20": ["is_infestation"]
     },
     "$factory_binding_refrence|default": "factory_bindings.bindings",// used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
 
     "$brewing_factory_variables|default": [// passes static values from above to the the generated controls and inner parts
-      "$mundane_potion_action",
-      "$thick_potion_action",
       "$awkward_potion_action",
       "$night_vision_action",
       "$invisibility_action",

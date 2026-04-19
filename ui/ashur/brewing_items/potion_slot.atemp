@@ -4,8 +4,6 @@
     "$factory_name": "potion_slot_factory",
     "$factory_binding_refrence": "factory_bindings.potion_bindings",
 
-    "$mundane_potion_action": "potion_slot.water_bottle",
-    "$thick_potion_action": "potion_slot.water_bottle",
     "$awkward_potion_action": "potion_slot.water_bottle",
     "$night_vision_action": "potion_slot.awkward_potion",
     "$invisibility_action": "potion_slot.night_vision",
@@ -29,7 +27,6 @@
   },
 
   "water_bottle@brewing_common.brewing_item_base":        {                                                         "$localization_key": "water_bottle_key"   },
-  "mundane_potion@brewing_common.brewing_item_base":      { "$remainder": "$brewing_guide:mundane_potion"         , "$localization_key": "mundane_key"        },
   "thick_potion@brewing_common.brewing_item_base":        { "$remainder": "$brewing_guide:thick_potion"           , "$localization_key": "thick_potion_key"   },
   "awkward_potion@brewing_common.brewing_item_base":      { "$remainder": "$brewing_guide:awkward_potion"         , "$localization_key": "awkward_potion_key" },
   "night_vision@brewing_common.brewing_item_base":        { "$remainder": "$brewing_guide:potion_of_night_vision" , "$localization_key": "night_vision_key"   },
