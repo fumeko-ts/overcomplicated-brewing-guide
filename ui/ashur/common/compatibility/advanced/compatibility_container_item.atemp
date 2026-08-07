@@ -1,0 +1,24 @@
+{
+  "namespace": "compatibility_container_item",
+
+  "container_item_bridge@global.empty_panel": {
+    "$custom_slot_content|default": "global.empty_panel",
+    "variables": [
+      {
+        "requires": "($item_collection = 'brewing_input_item')", //ingredient item slot
+        "$custom_slot_content": "ingredient_slot.ingredient_slot_factory"
+      },
+      {
+        "requires": "($item_collection = 'brewing_result_items')", //potion bottle slots
+        "$custom_slot_content": "compatibility_container_item.brewing_result_item_slot"
+      }
+    ]
+  },
+  "brewing_result_item_slot": {
+    "type": "panel",
+    "controls": [
+      { "potion@potion_slot.potion_slot_factory": { "$collection_name": "input_potion_1" } },
+      { "splash_potion@splash_potion_slot.splash_potion_slot_factory": { "$collection_name": "splash_input_potion_1" } }
+    ]
+  }
+}

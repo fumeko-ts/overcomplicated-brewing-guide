@@ -1,6 +1,10 @@
 {
-  "$brewing_content": "brewing_guide.left_panel",
-  "$ashur:brewing_guide": true,
+  "$is_overcomplicated_brewing_guide": true,
+
+  //base potion ids
+  "$brewing_guide:potion": 430,
+  "$brewing_guide:splash_potion": 571,
+  "$brewing_guide:lingering_potion": 572,
 
   //ingredients
   "$brewing_guide:nether_wart": 323,
@@ -24,12 +28,6 @@
   "$brewing_guide:breeze_rod": 281,
   "$brewing_guide:cobweb": 30,
   "$brewing_guide:slime_block": 165,
-
-
-  //base potion ids
-  "$brewing_guide:potion": 459,
-  "$brewing_guide:splash_potion": 600,
-  "$brewing_guide:lingering_potion": 601,
 
   //potion remainder ids
   "$brewing_guide:awkward_potion": 4,

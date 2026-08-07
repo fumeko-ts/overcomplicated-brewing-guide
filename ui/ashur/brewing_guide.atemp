@@ -1,6 +1,6 @@
 {
   "namespace": "brewing_guide",
-  "left_panel@global.empty_stack": {
+  "recipe_book@global.empty_stack": {
     "orientation": "horizontal",
     "size": [183, 166],
     "controls": [

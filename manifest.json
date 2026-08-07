@@ -1,17 +1,27 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "header": {
-    "name": "Brewing Guide",
-    "description": "§1§l!",
-    "uuid": "e906ab62-3207-4023-8c5f-3a0b36ee4cc2",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 21, 100]
+    "name": "§lOvercomplicated brewing guide§r",
+    "description": "By @Ashura_temps\n§fDiscord: §bhttps://discord.gg/sFnE7zv75t§r",
+    "uuid": "3442d616-dd02-430d-9d76-7db6a6e6a1a6",
+    "version": "1.0.8",
+    "min_engine_version": "1.26.40"
   },
   "modules": [
     {
       "type": "resources",
-      "uuid": "d818ee4b-45b5-4407-8eb0-8faa9f723a44",
-      "version": [1, 0, 0]
+      "description": "Created by Ashura_temps",
+      "uuid": "cc95655b-6262-4bf6-a617-188ed587dfb8",
+      "version": "1.0.8"
     }
-  ]
+  ],
+  "metadata": {
+    "authors": [
+      //ui code creator
+      "Ashura_temps",
+      //discord link
+      "https://discord.gg/sFnE7zv75t"
+    ]
+  },
+  "capabilities": ["pbr"]
 }
