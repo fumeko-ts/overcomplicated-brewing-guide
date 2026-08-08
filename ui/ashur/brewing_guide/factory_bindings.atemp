@@ -30,6 +30,35 @@
       }
     ]
   },
+  "lingering_potion_bindings": {
+    "bindings": [
+      {"binding_type": "view","source_control_name": "potion_item_301","source_property_name":"#toggle_state","target_property_name":"#is_awkward_potion"  },
+      {"binding_type": "view","source_control_name": "potion_item_302","source_property_name":"#toggle_state","target_property_name":"#is_night_vision"    },
+      {"binding_type": "view","source_control_name": "potion_item_303","source_property_name":"#toggle_state","target_property_name":"#is_invisibility"    },
+      {"binding_type": "view","source_control_name": "potion_item_304","source_property_name":"#toggle_state","target_property_name":"#is_leaping"         },
+      {"binding_type": "view","source_control_name": "potion_item_305","source_property_name":"#toggle_state","target_property_name":"#is_fire_resistance" },
+      {"binding_type": "view","source_control_name": "potion_item_306","source_property_name":"#toggle_state","target_property_name":"#is_swiftness"       },
+      {"binding_type": "view","source_control_name": "potion_item_307","source_property_name":"#toggle_state","target_property_name":"#is_slowness"        },
+      {"binding_type": "view","source_control_name": "potion_item_308","source_property_name":"#toggle_state","target_property_name":"#is_water_breathing" },
+      {"binding_type": "view","source_control_name": "potion_item_309","source_property_name":"#toggle_state","target_property_name":"#is_healing"         },
+      {"binding_type": "view","source_control_name": "potion_item_310","source_property_name":"#toggle_state","target_property_name":"#is_harming"         },
+      {"binding_type": "view","source_control_name": "potion_item_311","source_property_name":"#toggle_state","target_property_name":"#is_poison"          },
+      {"binding_type": "view","source_control_name": "potion_item_312","source_property_name":"#toggle_state","target_property_name":"#is_regeneration"    },
+      {"binding_type": "view","source_control_name": "potion_item_313","source_property_name":"#toggle_state","target_property_name":"#is_strength"        },
+      {"binding_type": "view","source_control_name": "potion_item_314","source_property_name":"#toggle_state","target_property_name":"#is_weakness"        },
+      {"binding_type": "view","source_control_name": "potion_item_315","source_property_name":"#toggle_state","target_property_name":"#is_turtle_master"   },
+      {"binding_type": "view","source_control_name": "potion_item_316","source_property_name":"#toggle_state","target_property_name":"#is_slow_falling"    },
+      {"binding_type": "view","source_control_name": "potion_item_317","source_property_name":"#toggle_state","target_property_name":"#is_wind_charging"   },
+      {"binding_type": "view","source_control_name": "potion_item_318","source_property_name":"#toggle_state","target_property_name":"#is_weaving"         },
+      {"binding_type": "view","source_control_name": "potion_item_319","source_property_name":"#toggle_state","target_property_name":"#is_oozing"          },
+      {"binding_type": "view","source_control_name": "potion_item_320","source_property_name":"#toggle_state","target_property_name":"#is_infestation"     },
+      {
+        "binding_type": "view",
+        "source_property_name": "('#item_index_' + ((#is_awkward_potion * 1) + (#is_night_vision * 2) + (#is_invisibility * 3) + (#is_leaping * 4) + (#is_fire_resistance * 5) + (#is_swiftness * 6) + (#is_slowness * 7) + (#is_water_breathing * 8) + (#is_healing * 9) + (#is_harming * 10) + (#is_poison * 11) + (#is_regeneration * 12) + (#is_strength * 13) + (#is_weakness * 14) + (#is_turtle_master * 15) + (#is_slow_falling * 16) + (#is_wind_charging * 17) + (#is_weaving * 18) + (#is_oozing * 19) + (#is_infestation * 20)))",
+        "target_property_name": "#collection_length"
+      }
+    ]
+  },
   "splash_potion_bindings": {
     "bindings": [
       {"binding_type": "view","source_control_name": "potion_item_201","source_property_name":"#toggle_state","target_property_name":"#is_awkward_potion"  },

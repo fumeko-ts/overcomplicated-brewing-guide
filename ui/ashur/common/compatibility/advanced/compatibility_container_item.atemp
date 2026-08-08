@@ -7,7 +7,7 @@
     "variables": [
       {
         "requires": "($item_collection = 'brewing_input_item')", //ingredient item slot
-        "$custom_slot_content": "brewing_potion_slot.ingredient_factory"
+        "$custom_slot_content": "compatibility_container_item.brewing_ingredient_item_slot"
       },
       {
         "requires": "($item_collection = 'brewing_result_items')", //potion bottle slots
@@ -18,8 +18,17 @@
   "brewing_result_item_slot": {
     "type": "panel",
     "controls": [
-      { "potion@brewing_potion_slot.potion_factory": { "$collection_name": "input_potion_1" } },
-      { "splash_potion@brewing_potion_slot.splash_potion_factory": { "$collection_name": "splash_input_potion_1" } }
+      { "potion@brewing_potion_slot.potion_factory": {} },
+      { "splash_potion@brewing_potion_slot.splash_potion_factory": {} },
+      { "lingering_potion@brewing_potion_slot.lingering_potion_factory": {} }
+    ]
+  },
+  "brewing_ingredient_item_slot": {
+    "type": "panel",
+    "controls": [
+      { "potion_ingredients@brewing_potion_slot.potion_ingredient_factory": {} },
+      { "splash_potion_ingredients@brewing_potion_slot.splash_potion_ingredient_factory": {} },
+      { "lingering_potion_ingredients@brewing_potion_slot.lingering_potion_ingredient_factory": {} }
     ]
   }
 }

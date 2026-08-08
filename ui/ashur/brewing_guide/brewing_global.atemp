@@ -16,6 +16,7 @@
     "$toggle_name": "brewing_items",
     "$toggle_control_name": "brewing_reset",
     "$toggle_binding_value": "#item_brewing_reset",
+
     "$controls": [
       {
         "white_overlay@global.empty_image": {
@@ -53,16 +54,15 @@
     ]
   },
 
-
   // factory is done like this to make it so i can re-use it without redeclairing, a new factory
   "factory": {
     "type": "panel",
     "size": [18, 18],
-    
+
     "$remainder|default": 0,
     "$base_id|default": 0,
 
-    "$factory_name|default": "Minecraft",// set collection name so i can use #collection_index on the elements that use this with the same collection name(it can be almost eanything even !!LEMON!!)
+    "$factory_name|default": "Minecraft", // set collection name so i can use #collection_index on the elements that use this with the same collection name(it can be almost eanything even !!LEMON!!)
 
     "$awkward_potion_action|default": "",
     "$night_vision_action|default": "",
@@ -130,9 +130,10 @@
       "#item_index_19": ["is_oozing"],
       "#item_index_20": ["is_infestation"]
     },
-    "$factory_binding_refrence|default": "factory_bindings.bindings",// used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
+    "$factory_binding_refrence|default": "factory_bindings.bindings", // used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
 
-    "$brewing_factory_variables|default": [// passes static values from above to the the generated controls and inner parts
+    "$brewing_factory_variables|default": [
+      // passes static values from above to the the generated controls and inner parts
       "$awkward_potion_action",
       "$night_vision_action",
       "$invisibility_action",
@@ -163,11 +164,11 @@
         "$factory_name@$factory_binding_refrence": {
           "type": "collection_panel",
           "size": [18, 18],
-          "collection_name": "$factory_name",// same as the factory name for simplicity
+          "collection_name": "$factory_name", // same as the factory name for simplicity
           "factory": {
             "name": "$factory_name",
-            "max_children_size": 1,// set to 1 because i only want 1 collection item for each control to render
-            "control_ids": "$factory_control_identifiers",// actual controls that will be renderd
+            "max_children_size": 1, // set to 1 because i only want 1 collection item for each control to render
+            "control_ids": "$factory_control_identifiers", // actual controls that will be renderd
             "factory_variables": "$brewing_factory_variables"
           },
           "property_bag": "$factory_binding_values"
@@ -255,6 +256,9 @@
     "consume_event": false,
     "layer": 18,
     "consume_hover_events": false,
+    "property_bag_for_children": {
+      "#output_text": "('%' + $localization_keys + '\n§base_id: ' + $base_id + '\nremainder: ' + $remainder + '§z')"
+    },
     "controls": [
       {
         "follow": {
@@ -287,10 +291,24 @@
                   {
                     "hover_text_label": {
                       "type": "label",
-                      "text": "$localization_keys",
+                      "text": "#text",
                       "shadow": true,
                       "size": ["default", "default"],
-                      "layer": 2
+                      "layer": 2,
+                      "bindings": [
+                        {
+                          "binding_type": "collection",
+                          "binding_condition": "always",
+                          "binding_collection_name": "brewing_result_items",
+                          "binding_name": "#item_id_aux"
+                        },
+                        {
+                          "binding_type": "view",
+                          "binding_condition": "always",
+                          "source_property_name": "(#output_text + '\nslot has item: ' + (not (#item_id_aux = -1)))",
+                          "target_property_name": "#text"
+                        }
+                      ]
                     }
                   }
                 ]

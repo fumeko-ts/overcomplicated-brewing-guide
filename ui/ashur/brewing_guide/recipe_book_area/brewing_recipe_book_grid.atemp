@@ -30,7 +30,8 @@
       { "potion_20@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [4, 3], "$collection_index": 20, "$localization_keys": "$infestation_key"       , "$remainder": "$brewing_guide:potion_of_infestation" } }
     ],
 
-    "collection_name": "brewing_recipe_items",
+    "collection_name": "$item_collection",
+    "$item_collection": "brewing_recipe_items",
     "bindings": [
       {
         "binding_type": "view",
