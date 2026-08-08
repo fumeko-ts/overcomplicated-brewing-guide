@@ -1,0 +1,304 @@
+{
+  "namespace": "brewing_global",
+  "item_renderer@global.custom_renderer": {
+    "$type": "inventory_item_renderer",
+    "size": [16, 16],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "property_bag": {
+      "#item_id_aux": "(($base_id * 65536) + $remainder)"
+    }
+  },
+
+  "container_item_slot_overlay@toggle.radio_toggle": {
+    "size": [18, 18],
+    "$toggle_group_forced_index": -1,
+    "$toggle_name": "brewing_items",
+    "$toggle_control_name": "brewing_reset",
+    "$toggle_binding_value": "#item_brewing_reset",
+    "$controls": [
+      {
+        "white_overlay@global.empty_image": {
+          "size": [18, 18],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "nineslice_size": 2,
+          "texture": "textures/ui/ashur/cell_icons/cell_white.png",
+          "layer": 12,
+          "alpha": 0.1915
+        }
+      },
+      {
+        "uncraftable_slot@global.empty_image": {
+          "size": ["100%", "100%"],
+          "nineslice_size": 2,
+          "color": [0.996, 0.0, 0.008],
+          "alpha": 0.19,
+          "layer": 5,
+          "texture": "textures/ui/ashur/cell_icons/cell_white.png"
+        }
+      },
+      {
+        "hover_text_element@brewing_global.custom_hover_text_renderer": {
+          "size": [18, 18]
+        }
+      },
+      {
+        "renderer@brewing_global.item_renderer": {
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 6
+        }
+      }
+    ]
+  },
+
+
+  // factory is done like this to make it so i can re-use it without redeclairing, a new factory
+  "factory": {
+    "type": "panel",
+    "size": [18, 18],
+    
+    "$remainder|default": 0,
+    "$base_id|default": 0,
+
+    "$factory_name|default": "Minecraft",// set collection name so i can use #collection_index on the elements that use this with the same collection name(it can be almost eanything even !!LEMON!!)
+
+    "$awkward_potion_action|default": "",
+    "$night_vision_action|default": "",
+    "$invisibility_action|default": "",
+    "$leaping_action|default": "",
+    "$fire_resistance_action|default": "",
+    "$swiftness_action|default": "",
+    "$slowness_action|default": "",
+    "$water_breathing_action|default": "",
+    "$healing_action|default": "",
+    "$harming_action|default": "",
+    "$poison_action|default": "",
+    "$regeneration_action|default": "",
+    "$strength_action|default": "",
+    "$weakness_action|default": "",
+    "$turtle_master_action|default": "",
+    "$slow_falling_action|default": "",
+    "$wind_charging_action|default": "",
+    "$weaving_action|default": "",
+    "$oozing_action|default": "",
+    "$infestation_action|default": "",
+
+    "$factory_control_identifiers|default": {
+      "is_awkward_potion": "$awkward_potion_action",
+      "is_night_vision": "$night_vision_action",
+      "is_invisibility": "$invisibility_action",
+      "is_leaping": "$leaping_action",
+      "is_fire_resistance": "$fire_resistance_action",
+      "is_swiftness": "$swiftness_action",
+      "is_slowness": "$slowness_action",
+      "is_water_breathing": "$water_breathing_action",
+      "is_healing": "$healing_action",
+      "is_harming": "$harming_action",
+      "is_poison": "$poison_action",
+      "is_regeneration": "$regeneration_action",
+      "is_strength": "$strength_action",
+      "is_weakness": "$weakness_action",
+      "is_turtle_master": "$turtle_master_action",
+      "is_slow_falling": "$slow_falling_action",
+      "is_wind_charging": "$wind_charging_action",
+      "is_weaving": "$weaving_action",
+      "is_oozing": "$oozing_action",
+      "is_infestation": "$infestation_action"
+    },
+
+    "$factory_binding_values|default": {
+      "#item_index_1": ["is_awkward_potion"],
+      "#item_index_2": ["is_night_vision"],
+      "#item_index_3": ["is_invisibility"],
+      "#item_index_4": ["is_leaping"],
+      "#item_index_5": ["is_fire_resistance"],
+      "#item_index_6": ["is_swiftness"],
+      "#item_index_7": ["is_slowness"],
+      "#item_index_8": ["is_water_breathing"],
+      "#item_index_9": ["is_healing"],
+      "#item_index_10": ["is_harming"],
+      "#item_index_11": ["is_poison"],
+      "#item_index_12": ["is_regeneration"],
+      "#item_index_13": ["is_strength"],
+      "#item_index_14": ["is_weakness"],
+      "#item_index_15": ["is_turtle_master"],
+      "#item_index_16": ["is_slow_falling"],
+      "#item_index_17": ["is_wind_charging"],
+      "#item_index_18": ["is_weaving"],
+      "#item_index_19": ["is_oozing"],
+      "#item_index_20": ["is_infestation"]
+    },
+    "$factory_binding_refrence|default": "factory_bindings.bindings",// used to customise whats input for the #collection_length (collection length accepts a array like this ["control_id_you_want_to_render"])
+
+    "$brewing_factory_variables|default": [// passes static values from above to the the generated controls and inner parts
+      "$awkward_potion_action",
+      "$night_vision_action",
+      "$invisibility_action",
+      "$leaping_action",
+      "$fire_resistance_action",
+      "$swiftness_action",
+      "$slowness_action",
+      "$water_breathing_action",
+      "$healing_action",
+      "$harming_action",
+      "$poison_action",
+      "$regeneration_action",
+      "$strength_action",
+      "$weakness_action",
+      "$turtle_master_action",
+      "$slow_falling_action",
+      "$wind_charging_action",
+      "$weaving_action",
+      "$oozing_action",
+      "$infestation_action",
+      "$base_id",
+      "$remainder",
+      "$item_collection"
+    ],
+
+    "controls": [
+      {
+        "$factory_name@$factory_binding_refrence": {
+          "type": "collection_panel",
+          "size": [18, 18],
+          "collection_name": "$factory_name",// same as the factory name for simplicity
+          "factory": {
+            "name": "$factory_name",
+            "max_children_size": 1,// set to 1 because i only want 1 collection item for each control to render
+            "control_ids": "$factory_control_identifiers",// actual controls that will be renderd
+            "factory_variables": "$brewing_factory_variables"
+          },
+          "property_bag": "$factory_binding_values"
+        }
+      }
+    ]
+  },
+
+  //the def that centralizes all localization keys
+  "text_keys": {
+    "type": "panel",
+    "$awkward_potion_key|default": "potion.awkward.name",
+    "$night_vision_key|default": "potion.nightVision.name",
+    "$invisibility_key|default": "potion.invisibility.name",
+    "$leaping_key|default": "potion.jump.name",
+    "$fire_resistance_key|default": "potion.fireResistance.name",
+    "$swiftness_key|default": "potion.moveSpeed.name",
+    "$slowness_key|default": "potion.moveSlowdown.name",
+    "$water_breathing_key|default": "potion.waterBreathing.name",
+    "$healing_key|default": "potion.heal.name",
+    "$harming_key|default": "potion.harm.name",
+    "$poison_key|default": "potion.poison.name",
+    "$regeneration_key|default": "potion.regeneration.name",
+    "$strength_key|default": "potion.damageBoost.name",
+    "$weakness_key|default": "potion.weakness.name",
+    "$the_turtle_master_key|default": "potion.turtleMaster.name",
+    "$slow_falling_key|default": "potion.slowFalling.name",
+    "$wind_charging_key|default": "potion.windCharged.name",
+    "$weaving_key|default": "potion.weaving.name",
+    "$oozing_key|default": "potion.oozing.name",
+    "$infestation_key|default": "potion.infested.name",
+    "variables": [
+      {
+        "requires": "($base_id = $brewing_guide:splash_potion)",
+        "$awkward_potion_key|default": "potion.awkward.splash.name",
+        "$night_vision_key|default": "potion.nightVision.splash.name",
+        "$invisibility_key|default": "potion.invisibility.splash.name",
+        "$leaping_key|default": "potion.jump.splash.name",
+        "$fire_resistance_key|default": "potion.fireResistance.splash.name",
+        "$swiftness_key|default": "potion.moveSpeed.splash.name",
+        "$slowness_key|default": "potion.moveSlowdown.splash.name",
+        "$water_breathing_key|default": "potion.waterBreathing.splash.name",
+        "$healing_key|default": "potion.heal.splash.name",
+        "$harming_key|default": "potion.harm.splash.name",
+        "$poison_key|default": "potion.poison.splash.name",
+        "$regeneration_key|default": "potion.regeneration.splash.name",
+        "$strength_key|default": "potion.damageBoost.splash.name",
+        "$weakness_key|default": "potion.weakness.splash.name",
+        "$the_turtle_master_key|default": "potion.turtleMaster.splash.name",
+        "$slow_falling_key|default": "potion.slowFalling.splash.name",
+        "$wind_charging_key|default": "potion.windCharged.splash.name",
+        "$weaving_key|default": "potion.weaving.splash.name",
+        "$oozing_key|default": "potion.oozing.splash.name",
+        "$infestation_key|default": "potion.infested.splash.name"
+      },
+      {
+        "requires": "($base_id = $brewing_guide:lingering_potion)",
+        "$awkward_potion_key|default": "potion.awkward.linger.name",
+        "$night_vision_key|default": "potion.nightVision.linger.name",
+        "$invisibility_key|default": "potion.invisibility.linger.name",
+        "$leaping_key|default": "potion.jump.linger.name",
+        "$fire_resistance_key|default": "potion.fireResistance.linger.name",
+        "$swiftness_key|default": "potion.moveSpeed.linger.name",
+        "$slowness_key|default": "potion.moveSlowdown.linger.name",
+        "$water_breathing_key|default": "potion.waterBreathing.linger.name",
+        "$healing_key|default": "potion.heal.linger.name",
+        "$harming_key|default": "potion.harm.linger.name",
+        "$poison_key|default": "potion.poison.linger.name",
+        "$regeneration_key|default": "potion.regeneration.linger.name",
+        "$strength_key|default": "potion.damageBoost.linger.name",
+        "$weakness_key|default": "potion.weakness.linger.name",
+        "$the_turtle_master_key|default": "potion.turtleMaster.linger.name",
+        "$slow_falling_key|default": "potion.slowFalling.linger.name",
+        "$wind_charging_key|default": "potion.windCharged.linger.name",
+        "$weaving_key|default": "potion.weaving.linger.name",
+        "$oozing_key|default": "potion.oozing.linger.name",
+        "$infestation_key|default": "potion.infested.linger.name"
+      }
+    ]
+  },
+
+  "custom_hover_text_renderer": {
+    "type": "button",
+    "hover_control": "custom_tooltip",
+    "consume_event": false,
+    "layer": 18,
+    "consume_hover_events": false,
+    "controls": [
+      {
+        "follow": {
+          "type": "input_panel",
+          /*
+            since this element is not stuck in the visible state it is always visible meaning the tooltip dosent jump around on rehover
+          */
+          "follows_cursor": true,
+          "consume_hover_events": false,
+          "always_listen_to_input": false,
+          "always_handle_pointer": true,
+          "focus_enabled": false,
+          "focus_magnet_enabled": false,
+          "prevent_touch_input": true,
+          "button_mappings": [],
+          "controls": [
+            {
+              "custom_tooltip@global.empty_image": {
+                "texture": "textures/ui/purpleBorder",
+                "size": ["100%c + 10px", "100%c + 8px"],
+                "nineslice_size": 3,
+                "offset": [20, -10],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 200,
+                "allow_clipping": false,
+                "propagate_alpha": true,
+                "alpha": "((not ($localization_keys = '')) * 1)",
+                "controls": [
+                  {
+                    "hover_text_label": {
+                      "type": "label",
+                      "text": "$localization_keys",
+                      "shadow": true,
+                      "size": ["default", "default"],
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

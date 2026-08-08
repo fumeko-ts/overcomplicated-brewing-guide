@@ -3,10 +3,11 @@
 
   "container_item_bridge@global.empty_panel": {
     "$custom_slot_content|default": "global.empty_panel",
+    "$base_id|default": "$brewing_guide:potion",
     "variables": [
       {
         "requires": "($item_collection = 'brewing_input_item')", //ingredient item slot
-        "$custom_slot_content": "ingredient_slot.ingredient_slot_factory"
+        "$custom_slot_content": "brewing_potion_slot.ingredient_factory"
       },
       {
         "requires": "($item_collection = 'brewing_result_items')", //potion bottle slots
@@ -17,8 +18,8 @@
   "brewing_result_item_slot": {
     "type": "panel",
     "controls": [
-      { "potion@potion_slot.potion_slot_factory": { "$collection_name": "input_potion_1" } },
-      { "splash_potion@splash_potion_slot.splash_potion_slot_factory": { "$collection_name": "splash_input_potion_1" } }
+      { "potion@brewing_potion_slot.potion_factory": { "$collection_name": "input_potion_1" } },
+      { "splash_potion@brewing_potion_slot.splash_potion_factory": { "$collection_name": "splash_input_potion_1" } }
     ]
   }
 }
