@@ -15,6 +15,7 @@
             {
               "potion_tab_toggle@brewing_recipe_book.tab_template": {
                 "$is_default_active": true,
+                "$extra_contents": "brewing_recipe_book.center_item_icon",
                 "$toggle_control_name": "potion_tab",
                 "$toggle_group_forced_index": 0
               }
@@ -22,6 +23,7 @@
             {
               "splash_potion_tab_toggle@brewing_recipe_book.tab_template": {
                 "$toggle_control_name": "splash_potion_tab",
+                "$extra_contents": "brewing_recipe_book.center_item_icon",
                 "$base_id": "$brewing_guide:splash_potion",
                 "$toggle_group_forced_index": 1
               }
@@ -29,6 +31,7 @@
             {
               "lingering_potion_tab_toggle@brewing_recipe_book.tab_template": {
                 "$toggle_control_name": "lingering_potion_tab",
+                "$extra_contents": "brewing_recipe_book.center_item_icon",
                 "$base_id": "$brewing_guide:lingering_potion",
                 "$toggle_group_forced_index": 2
               }
@@ -88,5 +91,19 @@
     "$tab_texture_checked_offset": [3, 0],
     "$icon_unchecked_offset": [0, 0],
     "$icon_checked_offset": [-2, 0]
+  },
+
+  "center_item_icon@global.empty_panel": {
+    "$remainder|default": 0,
+    "controls": [
+      {
+        "single_tab_icons@brewing_global.item_renderer": {
+          "offset": [14, 5],
+          "layer": 7,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
   }
 }

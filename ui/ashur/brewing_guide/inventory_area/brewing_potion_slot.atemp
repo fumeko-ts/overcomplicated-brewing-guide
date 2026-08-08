@@ -1,8 +1,21 @@
 {
   "namespace": "brewing_potion_slot",
-  
+  "slot_factory_template@brewing_global.factory": {
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection",
+        "binding_name": "#item_id_aux"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
   //ingredient slot overlay  
-  "potion_ingredient_factory@brewing_global.factory": {
+  "potion_ingredient_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "potion_ingredient_slot_factory",
     "$factory_binding_refrence": "factory_bindings.potion_bindings",
 
@@ -26,8 +39,8 @@
     "$weaving_action": "brewing_potion_slot.weaving_ingredients",
     "$oozing_action": "brewing_potion_slot.oozing_ingredients",
     "$infestation_action": "brewing_potion_slot.infestation_ingredients"
-  },
-  "splash_potion_ingredient_factory@brewing_global.factory": {
+  }, 
+  "splash_potion_ingredient_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "splash_potion_ingredient_slot_factory",
     "$factory_binding_refrence": "factory_bindings.splash_potion_bindings",
 
@@ -52,7 +65,7 @@
     "$oozing_action": "brewing_potion_slot.gunpowder_ingredient",
     "$infestation_action": "brewing_potion_slot.gunpowder_ingredient"
   },
-  "lingering_potion_ingredient_factory@brewing_global.factory": {
+  "lingering_potion_ingredient_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "lingering_potion_ingredient_slot_factory",
     "$factory_binding_refrence": "factory_bindings.lingering_potion_bindings",
 
@@ -79,7 +92,7 @@
   },
 
   //potion slot overlay  
-  "potion_factory@brewing_global.factory": {
+  "potion_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "potion_slot_factory",
     "$factory_binding_refrence": "factory_bindings.potion_bindings",
 
@@ -107,7 +120,7 @@
   },
 
   //splash potion slot overlay
-  "splash_potion_factory@brewing_global.factory": {
+  "splash_potion_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "splash_potion_slot_factory",
     "$factory_binding_refrence": "factory_bindings.splash_potion_bindings",
     "$base_id": "$brewing_guide:potion",
@@ -135,7 +148,7 @@
   },
 
   //lingering potion slot overlay
-  "lingering_potion_factory@brewing_global.factory": {
+  "lingering_potion_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "lingering_potion_slot_factory",
     "$factory_binding_refrence": "factory_bindings.lingering_potion_bindings",
     "$base_id": "$brewing_guide:splash_potion",
