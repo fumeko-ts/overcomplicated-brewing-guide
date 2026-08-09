@@ -55,8 +55,7 @@
   },
 
   // factory is done like this to make it so i can re-use it without redeclairing, a new factory
-  "factory": {
-    "type": "panel",
+  "factory@brewing_global.text_keys": {
     "size": [18, 18],
 
     "$remainder|default": 0,
@@ -156,7 +155,52 @@
       "$infestation_action",
       "$base_id",
       "$remainder",
-      "$item_collection"
+      "$item_collection",
+
+      //translation keys
+      "$awkward_potion_key",
+      "$night_vision_key",
+      "$invisibility_key",
+      "$leaping_key",
+      "$fire_resistance_key",
+      "$swiftness_key",
+      "$slowness_key",
+      "$water_breathing_key",
+      "$healing_key",
+      "$harming_key",
+      "$poison_key",
+      "$regeneration_key",
+      "$strength_key",
+      "$weakness_key",
+      "$the_turtle_master_key",
+      "$slow_falling_key",
+      "$wind_charging_key",
+      "$weaving_key",
+      "$oozing_key",
+      "$infestation_key",
+
+      //ingredient translation key passthrews
+      "$fermented_spider_eye_key",
+      "$turtle_shell_key",
+      "$water_bottle_key",
+      "$slime_block_key",
+      "$stone_key",
+      "$blaze_powder_key",
+      "$breeze_rod_key",
+      "$ghast_tear_key",
+      "$phantom_membrane_key",
+      "$spider_eye_key",
+      "$sugar_key",
+      "$nether_wart_key",
+      "$golden_carrot_key",
+      "$magma_cream_key",
+      "$glistering_melon_key",
+      "$pufferfish_key",
+      "$rabbit_foot_key",
+      "$cobweb_key",
+      "$gunpowder_key",
+      "$turtle_master_key",
+      "$dragons_breath_key"
     ],
 
     "controls": [
@@ -180,6 +224,7 @@
   //the def that centralizes all localization keys
   "text_keys": {
     "type": "panel",
+    //default potion keys
     "$awkward_potion_key|default": "potion.awkward.name",
     "$night_vision_key|default": "potion.nightVision.name",
     "$invisibility_key|default": "potion.invisibility.name",
@@ -200,6 +245,29 @@
     "$weaving_key|default": "potion.weaving.name",
     "$oozing_key|default": "potion.oozing.name",
     "$infestation_key|default": "potion.infested.name",
+    //ingredient translation keys
+    "$fermented_spider_eye_key|default": "item.fermented_spider_eye.name",
+    "$turtle_shell_key|default": "item.turtle_helmet.name",
+    "$water_bottle_key|default": "potion.emptyPotion.name",
+    "$slime_block_key|default": "tile.slime.name",
+    "$stone_key|default": "tile.stone.stone.name",
+    "$blaze_powder_key|default": "item.blaze_powder.name",
+    "$breeze_rod_key|default": "item.breeze_rod.name",
+    "$ghast_tear_key|default": "item.ghast_tear.name",
+    "$phantom_membrane_key|default": "item.phantom_membrane.name",
+    "$spider_eye_key|default": "item.spider_eye.name",
+    "$sugar_key|default": "item.sugar.name",
+    "$nether_wart_key|default": "item.nether_wart.name",
+    "$golden_carrot_key|default": "item.golden_carrot.name",
+    "$magma_cream_key|default": "item.magma_cream.name",
+    "$glistering_melon_key|default": "item.speckled_melon.name",
+    "$pufferfish_key|default": "item.pufferfish.name",
+    "$rabbit_foot_key|default": "item.rabbit_foot.name",
+    "$cobweb_key|default": "tile.web.name",
+    "$gunpowder_key|default": "item.gunpowder.name",
+    "$turtle_master_key|default": "potion.turtleMaster.name",
+    "$dragons_breath_key|default": "item.dragon_breath.name",
+    //potion variant changeing keys
     "variables": [
       {
         "requires": "($base_id = $brewing_guide:splash_potion)",
@@ -257,7 +325,7 @@
     "layer": 18,
     "consume_hover_events": false,
     "property_bag_for_children": {
-      "#output_text": "('%' + $localization_keys + '\n§base_id: ' + $base_id + '\nremainder: ' + $remainder + '§z')"
+      "#output_text": "('%' + $localization_keys + '\n§bbase_id§7:§r ' + $base_id + '\n§bremainder§7: §r' + $remainder + '§z')"
     },
     "controls": [
       {
@@ -305,7 +373,7 @@
                         {
                           "binding_type": "view",
                           "binding_condition": "always",
-                          "source_property_name": "(#output_text + '\nslot has item: ' + (not (#item_id_aux = -1)))",
+                          "source_property_name": "(#output_text + '\n§bslot has item§7: §r' + (not (#item_id_aux = -1)))",
                           "target_property_name": "#text"
                         }
                       ]
