@@ -191,7 +191,7 @@
   "regeneration_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_regeneration"      , "$localization_keys": "$regeneration_key"    },
   "strength_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_strength"          , "$localization_keys": "$strength_key"        },
   "weakness_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_weakness"          , "$localization_keys": "$weakness_key"        },
-  "turtle_master_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_the_turtle_master" , "$localization_keys": "$turtle_master_key"   },
+  "turtle_master_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_the_turtle_master" , "$localization_keys": "$the_turtle_master_key"   },
   "slow_falling_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_slow_falling"      , "$localization_keys": "$slow_falling_key"    },
   "wind_charging_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_wind_charging"     , "$localization_keys": "$wind_charging_key"   },
   "weaving_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_weaving"           , "$localization_keys": "$weaving_key"         },

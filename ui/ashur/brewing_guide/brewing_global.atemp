@@ -10,13 +10,18 @@
     }
   },
 
+  "item_slot_variables": {
+    "always_listen_to_input": true,
+    "consume_hover_events": false
+  },
+
   "container_item_slot_overlay@toggle.radio_toggle": {
     "size": [18, 18],
     "$toggle_group_forced_index": -1,
     "$toggle_name": "brewing_items",
     "$toggle_control_name": "brewing_reset",
     "$toggle_binding_value": "#item_brewing_reset",
-
+    "$toggle_variables": "brewing_global.item_slot_variables",
     "$controls": [
       {
         "white_overlay@global.empty_image": {
@@ -199,7 +204,6 @@
       "$rabbit_foot_key",
       "$cobweb_key",
       "$gunpowder_key",
-      "$turtle_master_key",
       "$dragons_breath_key",
 
       //modifiers
@@ -273,7 +277,6 @@
     "$rabbit_foot_key|default": "%item.rabbit_foot.name",
     "$cobweb_key|default": "%tile.web.name",
     "$gunpowder_key|default": "%item.gunpowder.name",
-    "$turtle_master_key|default": "%potion.turtleMaster.name",
     "$dragons_breath_key|default": "%item.dragon_breath.name",
 
     //potion variant changing keys
@@ -477,8 +480,8 @@
     "type": "button",
     "hover_control": "custom_tooltip",
     "consume_event": false,
-    "layer": 18,
     "consume_hover_events": false,
+    "layer": 18,
     /*
       to translate multiple keys in 1 label use % to concat them like '%somekey %someotherkey'  
       the % denotes a new translateable point (the space is not required but its best to have it)
