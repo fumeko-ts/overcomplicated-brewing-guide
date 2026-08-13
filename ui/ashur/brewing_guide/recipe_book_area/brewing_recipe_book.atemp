@@ -1,17 +1,33 @@
+/**
+// © 2026 ashura_temps,    All Rights Reserved.
+//
+// This UI is custom-made. You are allowed to use it **only as-is**, inside the game.
+// Do not modify, extract, reuse, or share any part of this UI including .json, .atemp files,
+// layout structure, or design.
+//
+// Not allowed:
+//   - Editing the UI (even for private/personal use)
+//   - Using parts of the code or layout in your own pack
+//   - Reuploading, redistributing, or hosting these files elsewhere
+//   - Converting texture packs to Bedrock using this UI
+//
+// By using this project, you agree to these terms.
+*/
+
 {
   "namespace": "brewing_recipe_book",
-  "recipe_book@global.empty_stack": {
+  "recipe_book@brewing_global.empty_stack": {
     "orientation": "horizontal",
     "size": [183, 166],
     "controls": [
       {
-        "tabs@global.empty_stack": {
+        "tabs@brewing_global.empty_stack": {
           "orientation": "vertical",
           "size": [35, 166],
           "layer": 2,
           "$base_id|default": "$brewing_guide:potion",
           "controls": [
-            { "filler_1@global.empty_panel": { "size": [35, 3] } },
+            { "filler_1@brewing_global.empty_panel": { "size": [35, 3] } },
             {
               "potion_tab_toggle@brewing_recipe_book.tab_template": {
                 "$is_default_active": true,
@@ -33,69 +49,51 @@
                 "$toggle_group_forced_index": 2
               }
             },
-            { "filler_2@global.empty_panel": { "size": [35, "fill"] } }
+            { "filler_2@brewing_global.empty_panel": { "size": [35, "fill"] } }
           ]
         }
       },
       {
-        "recipe_book_content@global.root_panel": {
+        "recipe_book_content@brewing_global.root_panel": {
           "size": [147, 166],
           "controls": [
             {
-              "book_half@global.empty_image": {
-                "texture": "sprites/recipe_book.png",
+              "book_half@brewing_global.empty_image": {
+                "texture": "assets/recipe_book.png",
                 "size": [147, 166],
                 "layer": 1,
                 "controls": [
                   {
-                    "holder@global.empty_stack": {
+                    "holder@brewing_global.empty_stack": {
                       "orientation": "vertical",
                       "anchor_to": "top_right",
                       "anchor_from": "top_right",
                       "size": [122, 28],
                       "controls": [
-                        { "buffer_1@global.empty_panel": { "size": [122, 12] } },
+                        { "buffer_1@brewing_global.empty_panel": { "size": [122, 12] } },
                         {
-                          "search_and_filter@global.empty_stack": {
+                          "search_and_filter@brewing_global.empty_stack": {
                             "orientation": "horizontal",
                             "size": [122, 16],
                             "controls": [
                               {
-                                "search_holder@global.empty_stack": {
+                                "search_holder@brewing_global.empty_stack": {
                                   "orientation": "vertical",
                                   "size": [81, 16],
                                   "controls": [
-                                    { "buffer_1@global.empty_panel": { "size": [81, 1] } },
+                                    { "buffer_1@brewing_global.empty_panel": { "size": [81, 1] } },
                                     {
-                                      "text_edit_control@text_edit_area.text_edit_box": {
-                                        "size": [81, 14],
-                                        "$edit_label_offset": [2, 0],
-                                        "$place_holder_text_offset": [3, 0],
-                                        "layer": 4,
-                                        "property_bag": {
-                                          "#enabled": false
-                                        },
-                                        "$place_holder_text_color": [0.659, 0.659, 0.659],
-                                        "$place_holder_text_shadow_color": [0.165, 0.165, 0.165],
-                                        "$place_holder_text": "atemp.recipe_book.searchBox",
-                                        "$default_control": "screen_content.text_field",
-                                        "$locked_control": "screen_content.text_field",
-                                        "$hover_control": "screen_content.text_field_highlighted",
-                                        "$pressed_control": "screen_content.text_field_highlighted"
-                                      }
+                                      "text_edit_control@brewing_recipe_book.edit_box_image": {}
                                     },
-                                    { "buffer_2@global.empty_panel": { "size": [81, 1] } }
+                                    { "buffer_2@brewing_global.empty_panel": { "size": [81, 1] } }
                                   ]
                                 }
                               },
-                              { "buffer_1@global.empty_panel": { "size": [4, 16] } },
+                              { "buffer_1@brewing_global.empty_panel": { "size": [4, 16] } },
                               {
-                                "recipe_filter@crafting_common.filter_toggle": {
-                                  "$locked": "brewing_recipe_book.filter_locked",
-                                  "$toggle_enabled": false
-                                }
+                                "recipe_filter@brewing_recipe_book.filter_locked": {}
                               },
-                              { "buffer_2@global.empty_panel": { "size": [11, 16] } }
+                              { "buffer_2@brewing_global.empty_panel": { "size": [11, 16] } }
                             ]
                           }
                         }
@@ -103,7 +101,7 @@
                     }
                   },
                   {
-                    "recipe_grids_holder@global.empty_panel": {
+                    "recipe_grids_holder@brewing_global.empty_panel": {
                       "size": [125, 100],
                       "anchor_from": "top_right",
                       "anchor_to": "top_right",
@@ -137,7 +135,7 @@
           ]
         }
       },
-      { "spacer@global.empty_panel": { "size": [1, 166] } }
+      { "spacer@brewing_global.empty_panel": { "size": [1, 166] } }
     ],
     "bindings": [
       {
@@ -149,7 +147,7 @@
     ]
   },
 
-  "tab_template@toggle.tab_toggle": {
+  "tab_template@brewing_toggle.tab_toggle": {
     "size": [35, 27],
     "$is_left_tab": true,
     "$default_selected_index": 0,
@@ -161,7 +159,7 @@
     "$icon_checked_offset": [-2, 0]
   },
 
-  "center_item_icon@global.empty_panel": {
+  "center_item_icon@brewing_global.empty_panel": {
     "$remainder|default": 0,
     "controls": [
       {
@@ -175,9 +173,54 @@
     ]
   },
 
-
-  "filter_locked@screen_content.image_element": {
+  "filter_locked@brewing_global.empty_image": {
     "size": [26, 16],
-    "texture": "sprites/filter_locked"
+    "texture": "assets/sprites/recipe_book/filter_locked"
+  },
+
+  "edit_box_image@brewing_global.empty_image": {
+    "texture": "assets/sprites/recipe_book/text_field.png",
+    "size": [81, 14],
+    "nineslice_size": 3,
+    "layer": 4,
+    "controls": [
+      {
+        "place_holder_text_label@brewing_global.empty_panel": {
+          "size": ["100%", "100%"],
+          "offset": [3, 0],
+          "controls": [
+            {
+              "overlay@brewing_recipe_book.search_label_template": {
+                "layer": 3,
+                "color": [0.443, 0.443, 0.443]
+              }
+            },
+            {
+              "underlay@brewing_recipe_book.search_label_template": {
+                "offset": [1, 1]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "layout_toggle@compatibility_common.recipe_layout_toggle": {
+    "$recipe_book_open_control_name": "brewing_guide_toggle",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [16, 49]
+  },
+
+  "search_label_template@brewing_global.empty_label": {
+    "size": ["default", 10],
+    "text": "§o%realmsSettingsScreen.searchBox",
+    "color": [0.165, 0.165, 0.165],
+    "localize": true,
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "font_size": "normal",
+    "text_alignment": "left"
   }
 }

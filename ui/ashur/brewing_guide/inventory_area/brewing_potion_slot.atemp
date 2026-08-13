@@ -1,3 +1,19 @@
+/**
+// © 2026 ashura_temps,    All Rights Reserved.
+//
+// This UI is custom-made. You are allowed to use it **only as-is**, inside the game.
+// Do not modify, extract, reuse, or share any part of this UI including .json, .atemp files,
+// layout structure, or design.
+//
+// Not allowed:
+//   - Editing the UI (even for private/personal use)
+//   - Using parts of the code or layout in your own pack
+//   - Reuploading, redistributing, or hosting these files elsewhere
+//   - Converting texture packs to Bedrock using this UI
+//
+// By using this project, you agree to these terms.
+*/
+
 {
   "namespace": "brewing_potion_slot",
   "slot_factory_template@brewing_global.factory": {
@@ -13,6 +29,42 @@
         "target_property_name": "#visible"
       }
     ] 
+  },
+
+  "brewing_result_item_slot": {
+    "type": "panel",
+    "controls": [
+      { "1@brewing_potion_slot.potion_factory": {} },
+      { "2@brewing_potion_slot.splash_potion_factory": {} },
+      { "3@brewing_potion_slot.lingering_potion_factory": {} },
+
+      { "4@modifier_brewing_potion_slot.duration_potion_factory": {} },
+      { "5@modifier_brewing_potion_slot.potency_potion_factory": {} },
+
+      { "6@modifier_brewing_potion_slot.duration_splash_potion_factory": {} },
+      { "7@modifier_brewing_potion_slot.potency_splash_potion_factory": {} },
+
+      { "8@modifier_brewing_potion_slot.duration_lingering_potion_factory": {} },
+      { "9@modifier_brewing_potion_slot.potency_lingering_potion_factory": {} }
+    ]
+  },
+
+  "brewing_ingredient_item_slot": {
+    "type": "panel",
+    "controls": [
+      { "1@brewing_potion_slot.potion_ingredient_factory": {} },
+      { "2@brewing_potion_slot.splash_potion_ingredient_factory": {} },
+      { "3@brewing_potion_slot.lingering_potion_ingredient_factory": {} },
+
+      { "4@modifier_brewing_potion_slot.duration_ingredient_potion_factory": {} },
+      { "5@modifier_brewing_potion_slot.potency_ingredient_potion_factory": {} },
+
+      { "6@modifier_brewing_potion_slot.duration_ingredient_splash_potion_factory": {} },
+      { "7@modifier_brewing_potion_slot.potency_ingredient_splash_potion_factory": {} },
+
+      { "8@modifier_brewing_potion_slot.duration_ingredient_lingering_potion_factory": {} },
+      { "9@modifier_brewing_potion_slot.potency_ingredient_lingering_potion_factory": {} }
+    ]
   },
   "fuel_input_slot@brewing_global.text_keys": {
     "$remainder|default": 0,
@@ -194,31 +246,10 @@
   },
 
   //lingering potion slot overlay
-  "lingering_potion_factory@brewing_potion_slot.slot_factory_template": {
+  "lingering_potion_factory@brewing_potion_slot.splash_potion_factory": {
     "$factory_name": "lingering_potion_slot_factory",
     "$factory_binding_refrence": "factory_bindings.lingering_potion_bindings",
-    "$base_id": "$brewing_guide:splash_potion",
-
-    "$awkward_potion_action": "brewing_potion_slot.awkward_potion",
-    "$night_vision_action": "brewing_potion_slot.night_vision_potion",
-    "$invisibility_action": "brewing_potion_slot.invisibility_potion",
-    "$leaping_action": "brewing_potion_slot.leaping_potion",
-    "$fire_resistance_action": "brewing_potion_slot.fire_resistance_potion",
-    "$swiftness_action": "brewing_potion_slot.swiftness_potion",
-    "$slowness_action": "brewing_potion_slot.slowness_potion",
-    "$water_breathing_action": "brewing_potion_slot.water_breathing_potion",
-    "$healing_action": "brewing_potion_slot.healing_potion",
-    "$harming_action": "brewing_potion_slot.harming_potion",
-    "$poison_action": "brewing_potion_slot.poison_potion",
-    "$regeneration_action": "brewing_potion_slot.regeneration_potion",
-    "$strength_action": "brewing_potion_slot.strength_potion",
-    "$weakness_action": "brewing_potion_slot.weakness_potion",
-    "$turtle_master_action": "brewing_potion_slot.turtle_master_potion",
-    "$slow_falling_action": "brewing_potion_slot.slow_falling_potion",
-    "$wind_charging_action": "brewing_potion_slot.wind_charging_potion",
-    "$weaving_action": "brewing_potion_slot.weaving_potion",
-    "$oozing_action": "brewing_potion_slot.oozing_potion",
-    "$infestation_action": "brewing_potion_slot.infestation_potion"
+    "$base_id": "$brewing_guide:splash_potion"
   },
 
   //potion slot items

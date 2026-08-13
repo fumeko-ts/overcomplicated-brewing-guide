@@ -1,6 +1,22 @@
+/**
+// © 2026 ashura_temps,    All Rights Reserved.
+//
+// This UI is custom-made. You are allowed to use it **only as-is**, inside the game.
+// Do not modify, extract, reuse, or share any part of this UI including .json, .atemp files,
+// layout structure, or design.
+//
+// Not allowed:
+//   - Editing the UI (even for private/personal use)
+//   - Using parts of the code or layout in your own pack
+//   - Reuploading, redistributing, or hosting these files elsewhere
+//   - Converting texture packs to Bedrock using this UI
+//
+// By using this project, you agree to these terms.
+*/
+
 {
   "namespace": "brewing_global",
-  "item_renderer@global.custom_renderer": {
+  "item_renderer@brewing_global.custom_renderer": {
     "$type": "inventory_item_renderer",
     "size": [16, 16],
     "anchor_from": "center",
@@ -9,13 +25,12 @@
       "#item_id_aux": "(($base_id * 65536) + $remainder)"
     }
   },
-
   "item_slot_variables": {
     "always_listen_to_input": true,
     "consume_hover_events": false
   },
 
-  "container_item_slot_overlay@toggle.radio_toggle": {
+  "container_item_slot_overlay@brewing_toggle.radio_toggle": {
     "size": [18, 18],
     "$button_volume": 0,
     "$toggle_group_forced_index": -1,
@@ -27,9 +42,10 @@
       "requires": "$touch",
       "$mapping_type": "double_pressed"
     },
+    "$flip_tooltip|default": true,
     "$controls": [
       {
-        "white_overlay@global.empty_image": {
+        "white_overlay@brewing_global.empty_image": {
           "size": [18, 18],
           "nineslice_size": 2,
           "texture": "textures/ui/ashur/cell_icons/cell_white.png",
@@ -38,7 +54,7 @@
         }
       },
       {
-        "uncraftable_slot@global.empty_image": {
+        "uncraftable_slot@brewing_global.empty_image": {
           "size": [18, 18],
           "nineslice_size": 2,
           "color": [0.996, 0.0, 0.008],
@@ -49,6 +65,11 @@
       },
       {
         "hover_text_element@brewing_global.custom_hover_text_renderer": {
+          "variables": {
+            "requires": "$touch",
+            "$tooltip_offset": [-21, 0],
+            "$tooltip_anchor": "top_right"
+          },
           "size": [18, 18]
         }
       },
@@ -423,21 +444,23 @@
     "consume_event": false,
     "consume_hover_events": false,
     "$translation_keys": "('#' + $potion_prefix + $potion_key_type)",
-    "layer": 18,
+    "layer": 5,
     /*
       to translate multiple keys in 1 label use % to concat them like '%somekey%someotherkey'  
       the % denotes a new translateable point with this you can translate text and add 
       custom text with bindings in the same label
     */
+    "$tooltip_anchor|default": "top_left",
+    "$tooltip_offset|default": [21, 0],
     "controls": [
       {
         "follow": {
           "type": "input_panel",
+          "size": ["100%", "100%"],
+          "layer": 200,
           /*
             since this element is not stuck in the visible state it is always visible meaning the tooltip dosent jump around on rehover
           */
-          "size": ["100%", "100%"],
-          "layer": 200,
           "follows_cursor": true,
           "consume_hover_events": false,
           "always_listen_to_input": false,
@@ -448,13 +471,13 @@
           "button_mappings": [],
           "controls": [
             {
-              "custom_tooltip@global.empty_image": {
+              "custom_tooltip@brewing_global.empty_image": {
                 "texture": "textures/ui/purpleBorder",
                 "size": ["100%c + 10px", "100%c + 8px"],
-                "nineslice_size": 3,
-                "offset": [21, 0],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
+                "nineslice_size": 4,
+                "offset": "$tooltip_offset",
+                "anchor_from": "$tooltip_anchor",
+                "anchor_to": "$tooltip_anchor",
                 "allow_clipping": false,
                 "controls": [
                   {
@@ -474,6 +497,72 @@
           ]
         }
       }
+    ]
+  },
+
+  "empty_panel": {
+    "type": "panel"
+  },
+  "empty_label": {
+    "type": "label"
+  },
+  "empty_image": {
+    "type": "image"
+  },
+  "empty_stack": {
+    "type": "stack_panel"
+  },
+  "empty_grid": {
+    "type": "grid"
+  },
+  "custom_renderer": {
+    "type": "custom",
+    "renderer": "$type"
+  },
+  "empty_collection": {
+    "type": "collection_panel"
+  },
+  "root_panel": {
+    "type": "input_panel",
+    "button_mappings": [
+      {
+        "from_button_id": "button.controller_back",
+        "to_button_id": "button.container_reset_held",
+        "mapping_type": "pressed",
+        "ignored": "(not $is_ps4)"
+      },
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.container_reset_held",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_secondary_select",
+        "to_button_id": "button.container_reset_held",
+        "mapping_type": "pressed"
+      },
+      { "from_button_id": "button.menu_ok", "to_button_id": "button.container_reset_held", "mapping_type": "pressed" },
+      { "from_button_id": "button.return", "to_button_id": "button.return", "mapping_type": "global" },
+      { "from_button_id": "button.arrow_up", "to_button_id": "button.arrow_key", "mapping_type": "global" },
+      { "from_button_id": "button.arrow_down", "to_button_id": "button.arrow_key", "mapping_type": "global" },
+      { "from_button_id": "button.arrow_left", "to_button_id": "button.arrow_key", "mapping_type": "global" },
+      { "from_button_id": "button.arrow_right", "to_button_id": "button.arrow_key", "mapping_type": "global" },
+      {
+        "from_button_id": "button.controller_select",
+        "to_button_id": "button.container_reset_held",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_secondary_select",
+        "to_button_id": "button.container_reset_held",
+        "mapping_type": "pressed"
+      },
+      { "from_button_id": "button.turn_up", "to_button_id": "button.scroll_up", "mapping_type": "global" },
+      { "from_button_id": "button.turn_down", "to_button_id": "button.scroll_down", "mapping_type": "global" },
+      { "from_button_id": "button.turn_left", "to_button_id": "button.scroll_left", "mapping_type": "global" },
+      { "from_button_id": "button.turn_right", "to_button_id": "button.scroll_right", "mapping_type": "global" },
+      { "from_button_id": "button.inventory_left", "to_button_id": "button.inventory_left", "mapping_type": "global" },
+      { "from_button_id": "button.inventory_right", "to_button_id": "button.inventory_right", "mapping_type": "global" }
     ]
   }
 }

@@ -1,0 +1,55 @@
+{
+  "brewing_stand_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "remove",
+        "control_name": "root_panel"
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_before",
+        "control_name": "flying_item_renderer",
+        "value": [
+          {
+            "screen_stack_panel": {
+              "type": "stack_panel",
+              "orientation": "horizontal",
+              "size": ["100%c", "100%cm"],
+              "controls": [
+                { "recipe_book_panel@brewing_recipe_book.recipe_book": {} },
+                {
+                  "brewing_inventory_half@common.root_panel": {
+                    "layer": 1,
+                    "controls": [
+                      { "common_panel@common.common_panel": {} },
+                      {
+                        "furnace_screen_inventory": {
+                          "type": "panel",
+                          "layer": 5,
+                          "controls": [
+                            {
+                              "layout_toggle@brewing_recipe_book.layout_toggle": {"offset": [11, 49]}
+                            },
+                            { "brewing_panel_top_half@brewing_stand.brewing_panel_top_half": {} },
+                            {
+                              "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {}
+                            },
+                            { "hotbar_grid@common.hotbar_grid_template": {} },
+                            { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                          ]
+                        }
+                      },
+                      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+                      { "gamepad_cursor@common.gamepad_cursor_button": {} }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

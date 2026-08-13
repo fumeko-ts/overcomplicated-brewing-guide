@@ -1,3 +1,19 @@
+/**
+// © 2026 ashura_temps,    All Rights Reserved.
+//
+// This UI is custom-made. You are allowed to use it **only as-is**, inside the game.
+// Do not modify, extract, reuse, or share any part of this UI including .json, .atemp files,
+// layout structure, or design.
+//
+// Not allowed:
+//   - Editing the UI (even for private/personal use)
+//   - Using parts of the code or layout in your own pack
+//   - Reuploading, redistributing, or hosting these files elsewhere
+//   - Converting texture packs to Bedrock using this UI
+//
+// By using this project, you agree to these terms.
+*/
+
 {
   "namespace": "brewing_recipe_book_grid",
   "recipe_book_grid@brewing_global.text_keys": {
@@ -50,7 +66,7 @@
     ]
   },
 
-  "item_toggle@toggle.radio_toggle": {
+  "item_toggle@brewing_toggle.radio_toggle": {
     "$item_index_id|default": "($collection_index + $index_offset)"
   },
   "recipe_grid_item@brewing_recipe_book_grid.item_toggle": {
@@ -65,9 +81,9 @@
     "$controls": [
       { "craftable_slot@brewing_recipe_book_grid.craftable_slot": {} },
       {
-        "overlay_noclick_area@global.root_panel": {
+        "overlay_noclick_area@brewing_global.root_panel": {
           "size": ["100%c", "100%c"],
-          "layer": 50,
+          "layer": 13,
 
           "$potency_toggle_index|default": "(1000 + $secondary_index)",
 
@@ -79,13 +95,13 @@
           "offset": [0, -1],
           "controls": [
             {
-              "recipe_overlay@screen_content.image_element": {
+              "recipe_overlay@brewing_global.empty_image": {
                 "size": ["100%c + 8px", "100%c + 8px"],
                 "nineslice_size": 3,
-                "texture": "sprites/crafting_overlay",
+                "texture": "assets/sprites/recipe_book/crafting_overlay",
                 "controls": [
                   {
-                    "additional_toggle_stack@global.empty_stack": {
+                    "additional_toggle_stack@brewing_global.empty_stack": {
                       "size": ["100%c", 25],
                       "orientation": "horizontal",
                       "anchor_from": "center",
@@ -138,8 +154,23 @@
       }
     ]
   },
-  "craftable_slot@screen_content.image_element": {
-    "texture": "sprites/slot_craftable",
+  "potency_toggle@brewing_toggle.secondary_radio_toggle": {
+    "size": [25, 25],
+    "ignored": "(not $has_potency)",
+    "$secondary_toggle_group_forced_index": "$potency_toggle_index",
+    "$secondary_toggle_control_name": "('potion_item_' + $potency_toggle_index)",
+    "$secondary_toggle_binding_value": "('#is_potion_item_' + $potency_toggle_index)",
+    "$potion_prefix|default": "potency_",
+    "$secondary_controls": [
+      {
+        "slot_icon@brewing_recipe_book_grid.craftable_slot": {
+          "$toggle_control_name": "$secondary_toggle_control_name"
+        }
+      }
+    ]
+  },
+  "craftable_slot@brewing_global.empty_image": {
+    "texture": "assets/sprites/recipe_book/slot_craftable",
     "layer": 2,
     "size": [25, 25],
     "$checkmark_bindings|default": [
@@ -153,35 +184,20 @@
     "controls": [
       { "hover_text@brewing_global.custom_hover_text_renderer": {} },
       {
-        "checkmark@screen_content.image_element": {
-          "texture": "sprites/slot_craftable_secondary_checked",
+        "checkmark@brewing_global.empty_image": {
+          "texture": "assets/sprites/recipe_book/slot_craftable_secondary_checked",
           "size": [25, 25],
           "layer": 5,
           "bindings": "$checkmark_bindings"
         }
       },
       {
-        "renderer_holder@global.empty_panel": {
+        "renderer_holder@brewing_global.empty_panel": {
           "size": [24, 24],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "layer": 4,
           "controls": [{ "renderer@brewing_global.item_renderer": { "layer": 4 } }]
-        }
-      }
-    ]
-  },
-  "potency_toggle@toggle.secondary_radio_toggle": {
-    "size": [25, 25],
-    "ignored": "(not $has_potency)",
-    "$secondary_toggle_group_forced_index": "$potency_toggle_index",
-    "$secondary_toggle_control_name": "('potion_item_' + $potency_toggle_index)",
-    "$secondary_toggle_binding_value": "('#is_potion_item_' + $potency_toggle_index)",
-    "$potion_prefix|default": "potency_",
-    "$secondary_controls": [
-      {
-        "slot_icon@brewing_recipe_book_grid.craftable_slot": {
-          "$toggle_control_name": "$secondary_toggle_control_name"
         }
       }
     ]

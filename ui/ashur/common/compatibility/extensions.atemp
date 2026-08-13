@@ -1,0 +1,10 @@
+{
+  "compatibility": {
+    "variables": [
+      {
+        "requires": "$is_brewing_stand_screen",
+        "$compatibility_content": "brewing_recipe_book.layout_toggle"
+      }
+    ]
+  }
+}
