@@ -4,30 +4,38 @@
     "type": "grid",
     "grid_dimensions": [5, 4],
     "size": [125, 100],
+
+    //shrinks the control horizontal size so i can see it all at once
+    "$grid_item|default": "brewing_recipe_book_grid.recipe_grid_item",
+                                 
+    "$has_duration|default": true,
+    "$has_potency|default": true,      
+    
+    "$potion_prefix|default": "",
     "controls": [
-      { "potion_1@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [0, 0], "$collection_index": 1 , "$localization_keys": "$awkward_potion_key"    , "$remainder": "$brewing_guide:awkward_potion"  } },
-      { "potion_2@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [1, 0], "$collection_index": 2 , "$localization_keys": "$night_vision_key"      , "$remainder": "$brewing_guide:potion_of_night_vision" } },
-      { "potion_3@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [2, 0], "$collection_index": 3 , "$localization_keys": "$invisibility_key"      , "$remainder": "$brewing_guide:potion_of_invisibility" } },
-      { "potion_4@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [3, 0], "$collection_index": 4 , "$localization_keys": "$leaping_key"           , "$remainder": "$brewing_guide:potion_of_leaping" } },
-      { "potion_5@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [4, 0], "$collection_index": 5 , "$localization_keys": "$fire_resistance_key"   , "$remainder": "$brewing_guide:potion_of_fire_resistance" } },
+      {"potion_1@$grid_item" :{"$has_potency": false,"$has_duration": false ,"grid_position":[0,0],"$collection_index":1,"$potion_key_type":"is_awkward_potion_key" ,"$remainder":"$brewing_guide:awkward_potion"}},
+      {"potion_2@$grid_item" :{"$has_potency": false                        ,"grid_position":[1,0],"$collection_index":2,"$potion_key_type":"is_night_vision_key"   ,"$remainder":"$brewing_guide:potion_of_night_vision"}},
+      {"potion_3@$grid_item" :{"$has_potency": false                        ,"grid_position":[2,0],"$collection_index":3,"$potion_key_type":"is_invisibility_key"   ,"$remainder":"$brewing_guide:potion_of_invisibility"}},
+      {"potion_4@$grid_item" :{                                              "grid_position":[3,0],"$collection_index":4,"$potion_key_type":"is_leaping_key"        ,"$remainder":"$brewing_guide:potion_of_leaping"}},
+      {"potion_5@$grid_item" :{"$has_potency": false                        ,"grid_position":[4,0],"$collection_index":5,"$potion_key_type":"is_fire_resistance_key","$remainder":"$brewing_guide:potion_of_fire_resistance"}},
 
-      { "potion_6@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [0, 1], "$collection_index": 6 , "$localization_keys": "$swiftness_key"         , "$remainder": "$brewing_guide:potion_of_swiftness" } },
-      { "potion_7@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [1, 1], "$collection_index": 7 , "$localization_keys": "$slowness_key"          , "$remainder": "$brewing_guide:potion_of_slowness" } },
-      { "potion_8@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [2, 1], "$collection_index": 8 , "$localization_keys": "$water_breathing_key"   , "$remainder": "$brewing_guide:potion_of_water_breathing" } },
-      { "potion_9@brewing_recipe_book_grid.recipe_grid_item" : { "grid_position": [3, 1], "$collection_index": 9 , "$localization_keys": "$healing_key"           , "$remainder": "$brewing_guide:potion_of_healing" } },
-      { "potion_10@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [4, 1], "$collection_index": 10, "$localization_keys": "$harming_key"           , "$remainder": "$brewing_guide:potion_of_harming" } },
+      {"potion_6@$grid_item" :{                                              "grid_position":[0,1],"$collection_index":6,"$potion_key_type":"is_swiftness_key"      ,"$remainder":"$brewing_guide:potion_of_swiftness"}},
+      {"potion_7@$grid_item" :{                                              "grid_position":[1,1],"$collection_index":7,"$potion_key_type":"is_slowness_key"       ,"$remainder":"$brewing_guide:potion_of_slowness"}},
+      {"potion_8@$grid_item" :{"$has_potency": false                        ,"grid_position":[2,1],"$collection_index":8,"$potion_key_type":"is_water_breathing_key","$remainder":"$brewing_guide:potion_of_water_breathing"}},
+      {"potion_9@$grid_item" :{"$has_duration": false                       ,"grid_position":[3,1],"$collection_index":9,"$potion_key_type":"is_healing_key"        ,"$remainder":"$brewing_guide:potion_of_healing"}},
+      {"potion_10@$grid_item":{"$has_duration": false                       ,"grid_position":[4,1],"$collection_index":10,"$potion_key_type":"is_harming_key"       ,"$remainder":"$brewing_guide:potion_of_harming"}},
 
-      { "potion_11@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [0, 2], "$collection_index": 11, "$localization_keys": "$poison_key"            , "$remainder": "$brewing_guide:potion_of_poison" } },
-      { "potion_12@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [1, 2], "$collection_index": 12, "$localization_keys": "$regeneration_key"      , "$remainder": "$brewing_guide:potion_of_regeneration" } },
-      { "potion_13@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [2, 2], "$collection_index": 13, "$localization_keys": "$strength_key"          , "$remainder": "$brewing_guide:potion_of_strength" } },
-      { "potion_14@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [3, 2], "$collection_index": 14, "$localization_keys": "$weakness_key"          , "$remainder": "$brewing_guide:potion_of_weakness" } },
-      { "potion_15@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [4, 2], "$collection_index": 15, "$localization_keys": "$the_turtle_master_key" , "$remainder": "$brewing_guide:potion_of_the_turtle_master" } },
+      {"potion11@$grid_item": {                                              "grid_position":[0,2],"$collection_index":11,"$potion_key_type":"is_poison_key"        ,"$remainder":"$brewing_guide:potion_of_poison"}},
+      {"potion12@$grid_item": {                                              "grid_position":[1,2],"$collection_index":12,"$potion_key_type":"is_regeneration_key"  ,"$remainder":"$brewing_guide:potion_of_regeneration"}},
+      {"potion13@$grid_item": {                                              "grid_position":[2,2],"$collection_index":13,"$potion_key_type":"is_strength_key"      ,"$remainder":"$brewing_guide:potion_of_strength"}},
+      {"potion14@$grid_item": {"$has_potency": false                        ,"grid_position":[3,2],"$collection_index":14,"$potion_key_type":"is_weakness_key"      ,"$remainder":"$brewing_guide:potion_of_weakness"}},
+      {"potion15@$grid_item": {                                              "grid_position":[4,2],"$collection_index":15,"$potion_key_type":"is_turtle_master_key" ,"$remainder":"$brewing_guide:potion_of_the_turtle_master"}},
 
-      { "potion_16@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [0, 3], "$collection_index": 16, "$localization_keys": "$slow_falling_key"      , "$remainder": "$brewing_guide:potion_of_slow_falling" } },
-      { "potion_17@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [1, 3], "$collection_index": 17, "$localization_keys": "$wind_charging_key"     , "$remainder": "$brewing_guide:potion_of_wind_charging" } },
-      { "potion_18@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [2, 3], "$collection_index": 18, "$localization_keys": "$weaving_key"           , "$remainder": "$brewing_guide:potion_of_weaving" } },
-      { "potion_19@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [3, 3], "$collection_index": 19, "$localization_keys": "$oozing_key"            , "$remainder": "$brewing_guide:potion_of_oozing" } },
-      { "potion_20@brewing_recipe_book_grid.recipe_grid_item": { "grid_position": [4, 3], "$collection_index": 20, "$localization_keys": "$infestation_key"       , "$remainder": "$brewing_guide:potion_of_infestation" } }
+      {"potion16@$grid_item": {"$has_potency": false                        ,"grid_position":[0,3],"$collection_index":16,"$potion_key_type":"is_slow_falling_key"  ,"$remainder":"$brewing_guide:potion_of_slow_falling"}},
+      {"potion17@$grid_item": {"$has_potency": false,"$has_duration": false ,"grid_position":[1,3],"$collection_index":17,"$potion_key_type":"is_wind_charging_key" ,"$remainder":"$brewing_guide:potion_of_wind_charging"}},
+      {"potion18@$grid_item": {"$has_potency": false,"$has_duration": false ,"grid_position":[2,3],"$collection_index":18,"$potion_key_type":"is_weaving_key"       ,"$remainder":"$brewing_guide:potion_of_weaving"}},
+      {"potion19@$grid_item": {"$has_potency": false,"$has_duration": false ,"grid_position":[3,3],"$collection_index":19,"$potion_key_type":"is_oozing_key"        ,"$remainder":"$brewing_guide:potion_of_oozing"}},
+      {"potion20@$grid_item": {"$has_potency": false,"$has_duration": false ,"grid_position":[4,3],"$collection_index":20,"$potion_key_type":"is_infested_key"      ,"$remainder":"$brewing_guide:potion_of_infestation"}}
     ],
 
     "collection_name": "$item_collection",
@@ -41,6 +49,7 @@
       }
     ]
   },
+
   "item_toggle@toggle.radio_toggle": {
     "$item_index_id|default": "($collection_index + $index_offset)"
   },
@@ -52,31 +61,128 @@
     "$toggle_control_name": "('potion_item_' + $item_index_id)",
     "$toggle_binding_value": "('#item_' + $item_index_id)",
 
-    "$localization_key|default": "",
+    "$secondary_index|default": "(1000 + $item_index_id)",
     "$controls": [
+      { "craftable_slot@brewing_recipe_book_grid.craftable_slot": {} },
+      {
+        "overlay_noclick_area@global.root_panel": {
+          "size": ["100%c", "100%c"],
+          "layer": 50,
+
+          "$potency_toggle_index|default": "(1000 + $secondary_index)",
+
+          //these anchors snap the element to the bottom outer middle
+          "anchor_from": "bottom_middle",
+          "anchor_to": "top_middle",
+
+          "ignored": "((not $has_potency) and (not $has_duration))",
+          "offset": [0, -1],
+          "controls": [
+            {
+              "recipe_overlay@screen_content.image_element": {
+                "size": ["100%c + 8px", "100%c + 8px"],
+                "nineslice_size": 3,
+                "texture": "sprites/crafting_overlay",
+                "controls": [
+                  {
+                    "additional_toggle_stack@global.empty_stack": {
+                      "size": ["100%c", 25],
+                      "orientation": "horizontal",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "controls": [
+                        {
+                          "duration_toggle@brewing_recipe_book_grid.potency_toggle": {
+                            "ignored": "(not $has_duration)",
+                            "$secondary_toggle_group_forced_index": "$secondary_index",
+                            "$secondary_toggle_control_name": "('potion_item_' + $secondary_index)",
+                            "$secondary_toggle_binding_value": "('#is_potion_item_' + $secondary_index)",
+                            "$potion_prefix|default": "duration_"
+                          }
+                        },
+                        { "potency_toggle@brewing_recipe_book_grid.potency_toggle": {} }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "('potion_item_' + $secondary_index)",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#is_secondary_1_selected"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "('potion_item_' + $potency_toggle_index)",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#is_secondary_2_selected"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "$toggle_control_name",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#is_parent_selected"
+            },
+            {
+              "binding_type": "view",
+              "binding_condition": "always",
+              "source_property_name": "(#is_secondary_1_selected or #is_secondary_2_selected or #is_parent_selected)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "craftable_slot@screen_content.image_element": {
+    "texture": "sprites/slot_craftable",
+    "layer": 2,
+    "size": [25, 25],
+    "$checkmark_bindings|default": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$toggle_control_name",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "hover_text@brewing_global.custom_hover_text_renderer": {} },
+      {
+        "checkmark@screen_content.image_element": {
+          "texture": "sprites/slot_craftable_secondary_checked",
+          "size": [25, 25],
+          "layer": 5,
+          "bindings": "$checkmark_bindings"
+        }
+      },
       {
         "renderer_holder@global.empty_panel": {
           "size": [24, 24],
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "controls": [
-            {
-              "renderer@brewing_global.item_renderer": {
-                "layer": 4
-              }
-            }
-          ]
+          "layer": 4,
+          "controls": [{ "renderer@brewing_global.item_renderer": { "layer": 4 } }]
         }
-      },
+      }
+    ]
+  },
+  "potency_toggle@toggle.secondary_radio_toggle": {
+    "size": [25, 25],
+    "ignored": "(not $has_potency)",
+    "$secondary_toggle_group_forced_index": "$potency_toggle_index",
+    "$secondary_toggle_control_name": "('potion_item_' + $potency_toggle_index)",
+    "$secondary_toggle_binding_value": "('#is_potion_item_' + $potency_toggle_index)",
+    "$potion_prefix|default": "potency_",
+    "$secondary_controls": [
       {
-        "recipe_button_bg@screen_content.image_element": {
-          "texture": "sprites/slot_craftable",
-          "layer": 2,
-          "size": [25, 25]
+        "slot_icon@brewing_recipe_book_grid.craftable_slot": {
+          "$toggle_control_name": "$secondary_toggle_control_name"
         }
-      },
-      {
-        "hover_text_area@brewing_global.custom_hover_text_renderer": {}
       }
     ]
   }

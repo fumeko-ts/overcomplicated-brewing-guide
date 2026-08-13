@@ -4,31 +4,56 @@
   "container_item_bridge@global.empty_panel": {
     "$custom_slot_content|default": "global.empty_panel",
     "$base_id|default": "$brewing_guide:potion",
+    "$potion_prefix|default": "",
     "variables": [
       {
-        "requires": "($item_collection = 'brewing_input_item')", //ingredient item slot
+        "requires": "($item_collection = 'brewing_input_item')",
         "$custom_slot_content": "compatibility_container_item.brewing_ingredient_item_slot"
       },
       {
-        "requires": "($item_collection = 'brewing_result_items')", //potion bottle slots
+        "requires": "($item_collection = 'brewing_result_items')",
         "$custom_slot_content": "compatibility_container_item.brewing_result_item_slot"
+      },
+      {
+        "requires": "($item_collection = 'brewing_fuel_item')",
+        "$custom_slot_content": "brewing_potion_slot.fuel_input_slot"
       }
     ]
   },
+
   "brewing_result_item_slot": {
     "type": "panel",
     "controls": [
-      { "potion@brewing_potion_slot.potion_factory": {} },
-      { "splash_potion@brewing_potion_slot.splash_potion_factory": {} },
-      { "lingering_potion@brewing_potion_slot.lingering_potion_factory": {} }
+      { "1@brewing_potion_slot.potion_factory": {} },
+      { "2@brewing_potion_slot.splash_potion_factory": {} },
+      { "3@brewing_potion_slot.lingering_potion_factory": {} },
+
+      { "4@modifier_brewing_potion_slot.duration_potion_factory": {} },
+      { "5@modifier_brewing_potion_slot.potency_potion_factory": {} },
+
+      { "6@modifier_brewing_potion_slot.duration_splash_potion_factory": {} },
+      { "7@modifier_brewing_potion_slot.potency_splash_potion_factory": {} },
+
+      { "8@modifier_brewing_potion_slot.duration_lingering_potion_factory": {} },
+      { "9@modifier_brewing_potion_slot.potency_lingering_potion_factory": {} }
     ]
   },
+
   "brewing_ingredient_item_slot": {
     "type": "panel",
     "controls": [
-      { "potion_ingredients@brewing_potion_slot.potion_ingredient_factory": {} },
-      { "splash_potion_ingredients@brewing_potion_slot.splash_potion_ingredient_factory": {} },
-      { "lingering_potion_ingredients@brewing_potion_slot.lingering_potion_ingredient_factory": {} }
+      { "1@brewing_potion_slot.potion_ingredient_factory": {} },
+      { "2@brewing_potion_slot.splash_potion_ingredient_factory": {} },
+      { "3@brewing_potion_slot.lingering_potion_ingredient_factory": {} },
+
+      { "4@modifier_brewing_potion_slot.duration_ingredient_potion_factory": {} },
+      { "5@modifier_brewing_potion_slot.potency_ingredient_potion_factory": {} },
+
+      { "6@modifier_brewing_potion_slot.duration_ingredient_splash_potion_factory": {} },
+      { "7@modifier_brewing_potion_slot.potency_ingredient_splash_potion_factory": {} },
+
+      { "8@modifier_brewing_potion_slot.duration_ingredient_lingering_potion_factory": {} },
+      { "9@modifier_brewing_potion_slot.potency_ingredient_lingering_potion_factory": {} }
     ]
   }
 }

@@ -27,7 +27,12 @@
       {"binding_type": "view","source_control_name": "('potion_item_' + $factory_bindings_index + '20')","source_property_name":"(#toggle_state * 20)","target_property_name":"#is_infestation"     },
       {
         "binding_type": "view",
-        "source_property_name": "('#item_index_' + (#is_awkward_potion + #is_night_vision + #is_invisibility + #is_leaping + #is_fire_resistance + #is_swiftness + #is_slowness + #is_water_breathing + #is_healing + #is_harming + #is_poison + #is_regeneration + #is_strength + #is_weakness + #is_turtle_master + #is_slow_falling + #is_wind_charging + #is_weaving + #is_oozing + #is_infestation))",
+        "source_property_name": "(#is_awkward_potion + #is_night_vision + #is_invisibility + #is_leaping + #is_fire_resistance + #is_swiftness + #is_slowness + #is_water_breathing + #is_healing + #is_harming + #is_poison + #is_regeneration + #is_strength + #is_weakness + #is_turtle_master + #is_slow_falling + #is_wind_charging + #is_weaving + #is_oozing + #is_infestation)",
+        "target_property_name": "#item_selected_index"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('#item_index_' + #item_selected_index)",
         "target_property_name": "#collection_length"
       }
     ]
@@ -37,5 +42,29 @@
   },
   "lingering_potion_bindings@factory_bindings.potion_bindings": {
     "$factory_bindings_index": 3
+  },
+
+  //modifiers
+  "duration_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 11
+  },
+  "potency_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 21
+  },
+
+  //splash modifiers
+  "duration_splash_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 12
+  },
+  "potency_splash_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 22
+  },
+
+  //lingering modifiers
+  "duration_lingering_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 13
+  },
+  "potency_lingering_potion_bindings@factory_bindings.potion_bindings": {
+    "$factory_bindings_index": 23
   }
 }

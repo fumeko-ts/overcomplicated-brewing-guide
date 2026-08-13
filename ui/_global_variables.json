@@ -1,12 +1,14 @@
 {
   "$is_overcomplicated_brewing_guide"          : true,
 
-  //base potion ids
+  //you can get item id and refined ids useing https://www.planetminecraft.com/texture-pack/item-id-visualizer-mcbe-mcpe/
+
+  //base potion item_id's
   "$brewing_guide:potion"                      : 430,
   "$brewing_guide:splash_potion"               : 571,
   "$brewing_guide:lingering_potion"            : 572,
 
-  //ingredients
+  //ingredients item_id's
   "$brewing_guide:nether_wart"                 : 294,
   "$brewing_guide:gunpowder"                   : 331,
   "$brewing_guide:rabbit_foot"                 : 538,
@@ -29,7 +31,7 @@
   "$brewing_guide:cobweb"                      : 30,
   "$brewing_guide:slime_block"                 : 165,
 
-  //potion remainder ids
+  //potion refined_id's
   "$brewing_guide:awkward_potion"              : 4,
   "$brewing_guide:potion_of_night_vision"      : 6,
   "$brewing_guide:potion_of_invisibility"      : 8,

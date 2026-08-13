@@ -1,9 +1,10 @@
 {
   "ui_defs": [
     "ui/ashur/brewing_guide/brewing_global.atemp",
-    "ui/ashur/brewing_guide/brewing_recipe_book.atemp",
     "ui/ashur/brewing_guide/factory_bindings.atemp",
     "ui/ashur/brewing_guide/inventory_area/brewing_potion_slot.atemp",
+    "ui/ashur/brewing_guide/inventory_area/modifier_brewing_potion_slot.atemp",
+    "ui/ashur/brewing_guide/recipe_book_area/brewing_recipe_book.atemp",
     "ui/ashur/brewing_guide/recipe_book_area/brewing_recipe_book_grid.atemp"
   ]
 }

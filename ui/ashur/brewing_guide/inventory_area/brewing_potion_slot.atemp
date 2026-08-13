@@ -12,8 +12,54 @@
         "source_property_name": "(#item_id_aux = -1)",
         "target_property_name": "#visible"
       }
+    ] 
+  },
+  "fuel_input_slot@brewing_global.text_keys": {
+    "$remainder|default": 0,
+    "controls": [
+      {
+        "fuel_slot@brewing_potion_slot.strength_ingredients": {
+          "bindings": [
+            {"binding_type":"view","source_control_name":"potion_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p1"},
+            {"binding_type":"view","source_control_name":"splash_potion_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p2"},
+            
+            {"binding_type":"view","source_control_name":"lingering_potion_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p3"},
+            {"binding_type":"view","source_control_name":"potion_ingredient_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p4"},
+
+            {"binding_type":"view","source_control_name":"splash_potion_ingredient_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p5"},
+            {"binding_type":"view","source_control_name":"lingering_potion_ingredient_slot_factory","source_property_name":"#item_selected_index","target_property_name":"#p6"},
+
+            {"binding_type":"view","source_control_name":"duration_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p7"},
+            {"binding_type":"view","source_control_name":"potency_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p8"},
+
+            {"binding_type":"view","source_control_name":"duration_splash_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p9"},
+            {"binding_type":"view","source_control_name":"potency_splash_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p10"},
+
+            {"binding_type":"view","source_control_name":"duration_lingering_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p11"},
+            {"binding_type":"view","source_control_name":"potency_lingering_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p12"},
+
+            {"binding_type":"view","source_control_name":"duration_ingredient_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p13"},
+            {"binding_type":"view","source_control_name":"potency_ingredient_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p14"},
+
+            {"binding_type":"view","source_control_name":"duration_ingredient_splash_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p15"},
+            {"binding_type":"view","source_control_name":"potency_ingredient_splash_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p16"},
+
+            {"binding_type":"view","source_control_name":"duration_ingredient_lingering_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p17"},
+            {"binding_type":"view","source_control_name":"potency_ingredient_lingering_potion_factory","source_property_name":"#item_selected_index","target_property_name":"#p18"},
+
+            {"binding_name": "#brewing_fuel_ratio","binding_condition": "always"},
+            {
+              "binding_type": "view",
+              "binding_condition": "always",
+              "source_property_name": "((((#p1 + #p2 + #p3 + #p4 + #p5 + #p6 + #p7 + #p8 + #p9 + #p10 + #p11 + #p12 + #p13 + #p14 + #p15 + #p16 + #p17 + #p18) * 1) > 0) and (#brewing_fuel_ratio = 1))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
     ]
   },
+
   //ingredient slot overlay  
   "potion_ingredient_factory@brewing_potion_slot.slot_factory_template": {
     "$factory_name": "potion_ingredient_slot_factory",
@@ -176,51 +222,50 @@
   },
 
   //potion slot items
-  "water_bottle@brewing_global.container_item_slot_overlay":            {                                                               "$localization_keys": "$water_bottle_key"   },
-  "awkward_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:awkward_potion"              , "$localization_keys": "$awkward_potion_key"  },
-  "night_vision_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_night_vision"      , "$localization_keys": "$night_vision_key"    },
-  "invisibility_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_invisibility"      , "$localization_keys": "$invisibility_key"    },
-  "leaping_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_leaping"           , "$localization_keys": "$leaping_key"         },
-  "fire_resistance_potion@brewing_global.container_item_slot_overlay" : { "$remainder" : "$brewing_guide:potion_of_fire_resistance"   , "$localization_keys": "$fire_resistance_key" },
-  "swiftness_potion@brewing_global.container_item_slot_overlay"       : { "$remainder" : "$brewing_guide:potion_of_swiftness"         , "$localization_keys": "$swiftness_key"       },
-  "slowness_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_slowness"          , "$localization_keys": "$slowness_key"        },
-  "water_breathing_potion@brewing_global.container_item_slot_overlay" : { "$remainder" : "$brewing_guide:potion_of_water_breathing"   , "$localization_keys": "$water_breathing_key" },
-  "healing_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_healing"           , "$localization_keys": "$healing_key"         },
-  "harming_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_harming"           , "$localization_keys": "$harming_key"         },
-  "poison_potion@brewing_global.container_item_slot_overlay"          : { "$remainder" : "$brewing_guide:potion_of_poison"            , "$localization_keys": "$poison_key"          },
-  "regeneration_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_regeneration"      , "$localization_keys": "$regeneration_key"    },
-  "strength_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_strength"          , "$localization_keys": "$strength_key"        },
-  "weakness_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_weakness"          , "$localization_keys": "$weakness_key"        },
-  "turtle_master_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_the_turtle_master" , "$localization_keys": "$the_turtle_master_key"   },
-  "slow_falling_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_slow_falling"      , "$localization_keys": "$slow_falling_key"    },
-  "wind_charging_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_wind_charging"     , "$localization_keys": "$wind_charging_key"   },
-  "weaving_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_weaving"           , "$localization_keys": "$weaving_key"         },
-  "oozing_potion@brewing_global.container_item_slot_overlay"          : { "$remainder" : "$brewing_guide:potion_of_oozing"            , "$localization_keys": "$oozing_key"          },
-  "infestation_potion@brewing_global.container_item_slot_overlay"     : { "$remainder" : "$brewing_guide:potion_of_infestation"       , "$localization_keys": "$infestation_key"     },
+  "water_bottle@brewing_global.container_item_slot_overlay":            {                                                               "$potion_key_type": "is_water_bottle_key"   },
+  "awkward_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:awkward_potion"              , "$potion_key_type": "is_awkward_potion_key"  },
+  "night_vision_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_night_vision"      , "$potion_key_type": "is_night_vision_key"    },
+  "invisibility_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_invisibility"      , "$potion_key_type": "is_invisibility_key"    },
+  "leaping_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_leaping"           , "$potion_key_type": "is_leaping_key"         },
+  "fire_resistance_potion@brewing_global.container_item_slot_overlay" : { "$remainder" : "$brewing_guide:potion_of_fire_resistance"   , "$potion_key_type": "is_fire_resistance_key" },
+  "swiftness_potion@brewing_global.container_item_slot_overlay"       : { "$remainder" : "$brewing_guide:potion_of_swiftness"         , "$potion_key_type": "is_swiftness_key"       },
+  "slowness_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_slowness"          , "$potion_key_type": "is_slowness_key"        },
+  "water_breathing_potion@brewing_global.container_item_slot_overlay" : { "$remainder" : "$brewing_guide:potion_of_water_breathing"   , "$potion_key_type": "is_water_breathing_key" },
+  "healing_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_healing"           , "$potion_key_type": "is_healing_key"         },
+  "harming_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_harming"           , "$potion_key_type": "is_harming_key"         },
+  "poison_potion@brewing_global.container_item_slot_overlay"          : { "$remainder" : "$brewing_guide:potion_of_poison"            , "$potion_key_type": "is_poison_key"          },
+  "regeneration_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_regeneration"      , "$potion_key_type": "is_regeneration_key"    },
+  "strength_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_strength"          , "$potion_key_type": "is_strength_key"        },
+  "weakness_potion@brewing_global.container_item_slot_overlay"        : { "$remainder" : "$brewing_guide:potion_of_weakness"          , "$potion_key_type": "is_weakness_key"        },
+  "turtle_master_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_the_turtle_master" , "$potion_key_type": "is_turtle_master_key"   },
+  "slow_falling_potion@brewing_global.container_item_slot_overlay"    : { "$remainder" : "$brewing_guide:potion_of_slow_falling"      , "$potion_key_type": "is_slow_falling_key"    },
+  "wind_charging_potion@brewing_global.container_item_slot_overlay"   : { "$remainder" : "$brewing_guide:potion_of_wind_charging"     , "$potion_key_type": "is_wind_charging_key"   },
+  "weaving_potion@brewing_global.container_item_slot_overlay"         : { "$remainder" : "$brewing_guide:potion_of_weaving"           , "$potion_key_type": "is_weaving_key"         },
+  "oozing_potion@brewing_global.container_item_slot_overlay"          : { "$remainder" : "$brewing_guide:potion_of_oozing"            , "$potion_key_type": "is_oozing_key"          },
+  "infestation_potion@brewing_global.container_item_slot_overlay"     : { "$remainder" : "$brewing_guide:potion_of_infestation"       , "$potion_key_type": "is_infested_key"     },
 
   //non potion items  
-  "awkward_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:nether_wart",          "$localization_keys": "$nether_wart_key"          },
-  "night_vision_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:golden_carrot",        "$localization_keys": "$golden_carrot_key"        },
-  "invisibility_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:fermented_spider_eye", "$localization_keys": "$fermented_spider_eye_key" },
-  "leaping_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:rabbit_foot",          "$localization_keys": "$rabbit_foot_key"          },
-  "fire_resistance_ingredients@brewing_global.container_item_slot_overlay" : {"$base_id": "$brewing_guide:magma_cream",          "$localization_keys": "$magma_cream_key"          },
-  "swiftness_ingredients@brewing_global.container_item_slot_overlay"       : {"$base_id": "$brewing_guide:sugar",                "$localization_keys": "$sugar_key"                },
-  "slowness_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:fermented_spider_eye", "$localization_keys": "$fermented_spider_eye_key" },
-  "water_breathing_ingredients@brewing_global.container_item_slot_overlay" : {"$base_id": "$brewing_guide:pufferfish",           "$localization_keys": "$pufferfish_key"           },
-  "healing_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:glistering_melon",     "$localization_keys": "$glistering_melon_key"     },
-  "harming_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:fermented_spider_eye", "$localization_keys": "$fermented_spider_eye_key" },
-  "poison_ingredients@brewing_global.container_item_slot_overlay"          : {"$base_id": "$brewing_guide:spider_eye",           "$localization_keys": "$spider_eye_key"           },
-  "regeneration_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:ghast_tear",           "$localization_keys": "$ghast_tear_key"           },
-  "strength_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:blaze_powder",         "$localization_keys": "$blaze_powder_key"         },
-  "weakness_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:fermented_spider_eye", "$localization_keys": "$fermented_spider_eye_key" },
-  "turtle_master_ingredients@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:turtle_shell",         "$localization_keys": "$turtle_shell_key"         },
-  "slow_falling_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:phantom_membrane",     "$localization_keys": "$phantom_membrane_key"     },
-  "wind_charging_ingredients@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:breeze_rod",           "$localization_keys": "$breeze_rod_key"           },
-  "weaving_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:cobweb",               "$localization_keys": "$cobweb_key"               },
-  "oozing_ingredients@brewing_global.container_item_slot_overlay"          : {"$base_id": "$brewing_guide:slime_block",          "$localization_keys": "$slime_block_key"          },
-  "infestation_ingredients@brewing_global.container_item_slot_overlay"     : {"$base_id": "$brewing_guide:stone",                "$localization_keys": "$stone_key"                },
+  "awkward_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:nether_wart",          "$potion_key_type": "is_nether_wart_key"          },
+  "night_vision_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:golden_carrot",        "$potion_key_type": "is_golden_carrot_key"        },
+  "invisibility_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:fermented_spider_eye", "$potion_key_type": "is_fermented_spider_eye_key" },
+  "leaping_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:rabbit_foot",          "$potion_key_type": "is_rabbit_foot_key"          },
+  "fire_resistance_ingredients@brewing_global.container_item_slot_overlay" : {"$base_id": "$brewing_guide:magma_cream",          "$potion_key_type": "is_magma_cream_key"          },
+  "swiftness_ingredients@brewing_global.container_item_slot_overlay"       : {"$base_id": "$brewing_guide:sugar",                "$potion_key_type": "is_sugar_key"                },
+  "slowness_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:fermented_spider_eye", "$potion_key_type": "is_fermented_spider_eye_key" },
+  "water_breathing_ingredients@brewing_global.container_item_slot_overlay" : {"$base_id": "$brewing_guide:pufferfish",           "$potion_key_type": "is_pufferfish_key"           },
+  "healing_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:glistering_melon",     "$potion_key_type": "is_glistering_melon_key"     },
+  "harming_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:fermented_spider_eye", "$potion_key_type": "is_fermented_spider_eye_key" },
+  "poison_ingredients@brewing_global.container_item_slot_overlay"          : {"$base_id": "$brewing_guide:spider_eye",           "$potion_key_type": "is_spider_eye_key"           },
+  "regeneration_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:ghast_tear",           "$potion_key_type": "is_ghast_tear_key"           },
+  "strength_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:blaze_powder",         "$potion_key_type": "is_blaze_powder_key"         },
+  "weakness_ingredients@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:fermented_spider_eye", "$potion_key_type": "is_fermented_spider_eye_key" },
+  "turtle_master_ingredients@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:turtle_shell",         "$potion_key_type": "is_turtle_shell_key"         },
+  "slow_falling_ingredients@brewing_global.container_item_slot_overlay"    : {"$base_id": "$brewing_guide:phantom_membrane",     "$potion_key_type": "is_phantom_membrane_key"     },
+  "wind_charging_ingredients@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:breeze_rod",           "$potion_key_type": "is_breeze_rod_key"           },
+  "weaving_ingredients@brewing_global.container_item_slot_overlay"         : {"$base_id": "$brewing_guide:cobweb",               "$potion_key_type": "is_cobweb_key"               },
+  "oozing_ingredients@brewing_global.container_item_slot_overlay"          : {"$base_id": "$brewing_guide:slime_block",          "$potion_key_type": "is_slime_block_key"          },
+  "infestation_ingredients@brewing_global.container_item_slot_overlay"     : {"$base_id": "$brewing_guide:stone",                "$potion_key_type": "is_stone_key"                },
  
-  "dragons_breath_ingredient@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:dragons_breath",       "$localization_keys": "$dragons_breath_key"       },
-  "gunpowder_ingredient@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:gunpowder",            "$localization_keys": "$gunpowder_key"            }
-  
+  "dragons_breath_ingredient@brewing_global.container_item_slot_overlay"   : {"$base_id": "$brewing_guide:dragons_breath",       "$potion_key_type": "is_dragons_breath_key"       },
+  "gunpowder_ingredient@brewing_global.container_item_slot_overlay"        : {"$base_id": "$brewing_guide:gunpowder",            "$potion_key_type": "is_gunpowder_key"            }
 }
