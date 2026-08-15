@@ -235,6 +235,12 @@
       }
     ]
   },
+  "recolourful_layout_toggle@compatibility_common.general_recipe_toggle": {
+    "$recipe_book_open_control_name": "brewing_guide_toggle",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [16, 49]
+  },
 
   "layout_toggle@brewing_toggle.recipe_layout_toggle": {
     "$recipe_book_open_control_name": "brewing_guide_toggle",
