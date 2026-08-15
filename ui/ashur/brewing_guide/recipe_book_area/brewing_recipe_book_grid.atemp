@@ -20,6 +20,10 @@
     "type": "grid",
     "grid_dimensions": [5, 4],
     "size": [125, 100],
+    
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [-11, 31],
 
     //shrinks the control horizontal size so i can see it all at once
     "$grid_item|default": "brewing_recipe_book_grid.recipe_grid_item",
@@ -77,80 +81,85 @@
     "$toggle_control_name": "('potion_item_' + $item_index_id)",
     "$toggle_binding_value": "('#item_' + $item_index_id)",
 
-    "$secondary_index|default": "(1000 + $item_index_id)",
     "$controls": [
       { "craftable_slot@brewing_recipe_book_grid.craftable_slot": {} },
       {
-        "overlay_noclick_area@brewing_global.root_panel": {
-          "size": ["100%c", "100%c"],
-          "layer": 13,
+        "overlay_noclick_area@$secondary_toggle_holder":{
+          "$duration_toggle_index|default": "(1000 + $item_index_id)"
+        }
+      }
+    ],
+    "$secondary_toggle_holder|default": "brewing_global.empty_panel",
+    "variables": {
+      "requires": "($has_potency or $has_duration)",
+      "$secondary_toggle_holder": "brewing_recipe_book_grid.secondary_toggles"
+    }
+  },
+  "secondary_toggles@brewing_global.root_panel": {
+    "size": ["100%c", "100%c"],
+    "layer": 13,
 
-          "$potency_toggle_index|default": "(1000 + $secondary_index)",
+    "$potency_toggle_index|default": "(1000 + $duration_toggle_index)",
 
-          //these anchors snap the element to the bottom outer middle
-          "anchor_from": "bottom_middle",
-          "anchor_to": "top_middle",
+    //these anchors snap the element to the bottom outer middle
+    "anchor_from": "bottom_middle",
+    "anchor_to": "top_middle",
 
-          "ignored": "((not $has_potency) and (not $has_duration))",
-          "offset": [0, -1],
+    "offset": [0, -1],
+    "controls": [
+      {
+        "recipe_overlay@brewing_global.empty_image": {
+          "size": ["100%c + 8px", "100%c + 8px"],
+          "nineslice_size": 3,
+          "texture": "$brewing_overlay_texture",
           "controls": [
             {
-              "recipe_overlay@brewing_global.empty_image": {
-                "size": ["100%c + 8px", "100%c + 8px"],
-                "nineslice_size": 3,
-                "texture": "assets/sprites/recipe_book/crafting_overlay",
+              "additional_toggle_stack@brewing_global.empty_stack": {
+                "size": ["100%c", 25],
+                "orientation": "horizontal",
+                "anchor_from": "center",
+                "anchor_to": "center",
                 "controls": [
                   {
-                    "additional_toggle_stack@brewing_global.empty_stack": {
-                      "size": ["100%c", 25],
-                      "orientation": "horizontal",
-                      "anchor_from": "center",
-                      "anchor_to": "center",
-                      "controls": [
-                        {
-                          "duration_toggle@brewing_recipe_book_grid.potency_toggle": {
-                            "ignored": "(not $has_duration)",
-                            "$secondary_toggle_group_forced_index": "$secondary_index",
-                            "$secondary_toggle_control_name": "('potion_item_' + $secondary_index)",
-                            "$secondary_toggle_binding_value": "('#is_potion_item_' + $secondary_index)",
-                            "$potion_prefix|default": "duration_"
-                          }
-                        },
-                        { "potency_toggle@brewing_recipe_book_grid.potency_toggle": {} }
-                      ]
+                    "duration_toggle@brewing_recipe_book_grid.potency_toggle": {
+                      "ignored": "(not $has_duration)",
+                      "$secondary_toggle_group_forced_index": "$duration_toggle_index",
+                      "$secondary_toggle_control_name": "('potion_item_' + $duration_toggle_index)",
+                      "$secondary_toggle_binding_value": "('#is_potion_item_' + $duration_toggle_index)",
+                      "$potion_prefix": "duration_"
                     }
-                  }
+                  },
+                  { "potency_toggle@brewing_recipe_book_grid.potency_toggle": {} }
                 ]
               }
             }
-          ],
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "('potion_item_' + $secondary_index)",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#is_secondary_1_selected"
-            },
-            {
-              "binding_type": "view",
-              "source_control_name": "('potion_item_' + $potency_toggle_index)",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#is_secondary_2_selected"
-            },
-            {
-              "binding_type": "view",
-              "source_control_name": "$toggle_control_name",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#is_parent_selected"
-            },
-            {
-              "binding_type": "view",
-              "binding_condition": "always",
-              "source_property_name": "(#is_secondary_1_selected or #is_secondary_2_selected or #is_parent_selected)",
-              "target_property_name": "#visible"
-            }
           ]
         }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "('potion_item_' + $duration_toggle_index)",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#is_secondary_1_selected"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "('potion_item_' + $potency_toggle_index)",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#is_secondary_2_selected"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$toggle_control_name",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#is_parent_selected"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#is_secondary_1_selected or #is_secondary_2_selected or #is_parent_selected)",
+        "target_property_name": "#visible"
       }
     ]
   },
@@ -164,18 +173,20 @@
     "$secondary_controls": [
       {
         "slot_icon@brewing_recipe_book_grid.craftable_slot": {
+          "texture": "$brewing_secondary_slot_texture",
           "$toggle_control_name": "$secondary_toggle_control_name"
         }
       }
     ]
   },
   "craftable_slot@brewing_global.empty_image": {
-    "texture": "assets/sprites/recipe_book/slot_craftable",
+    "texture": "$brewing_slot_texture",
     "layer": 2,
     "size": [25, 25],
     "$checkmark_bindings|default": [
       {
         "binding_type": "view",
+        "binding_condition": "always_when_visible",
         "source_control_name": "$toggle_control_name",
         "source_property_name": "#toggle_state",
         "target_property_name": "#visible"
@@ -185,19 +196,18 @@
       { "hover_text@brewing_global.custom_hover_text_renderer": {} },
       {
         "checkmark@brewing_global.empty_image": {
-          "texture": "assets/sprites/recipe_book/slot_craftable_secondary_checked",
+          "texture": "$brewing_slot_checkmark_texture",
           "size": [25, 25],
           "layer": 5,
           "bindings": "$checkmark_bindings"
         }
       },
       {
-        "renderer_holder@brewing_global.empty_panel": {
-          "size": [24, 24],
+        "renderer@brewing_global.item_renderer": {
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "layer": 4,
-          "controls": [{ "renderer@brewing_global.item_renderer": { "layer": 4 } }]
+          "offset": [4, 4],
+          "layer": 4
         }
       }
     ]

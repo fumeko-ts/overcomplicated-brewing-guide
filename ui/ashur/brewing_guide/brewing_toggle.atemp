@@ -16,6 +16,66 @@
 
 {
   "namespace": "brewing_toggle",
+  "recipe_toggle_base@brewing_toggle.radio_toggle": {
+    "size": "$layout_size",
+    "$unchecked": "brewing_toggle.recipe_toggle",
+    "$unchecked_hover": "brewing_toggle.recipe_hover_toggle",
+    "$checked": "brewing_toggle.recipe_toggle",
+    "$checked_hover": "brewing_toggle.recipe_hover_toggle",
+    "$toggle_name": "layout_toggle"
+  },
+  "recipe_toggle@brewing_global.empty_image": { "size": "$layout_size", "texture": "$default_layout_texture" },
+  "recipe_hover_toggle@brewing_global.empty_image": { "size": "$layout_size", "texture": "$hover_layout_texture" },
+  "recipe_layout_toggle@brewing_global.empty_panel": {
+    "$layout_size": [20, 18],
+    "$hover_layout_texture|default": "assets/brewing_guide/sprites/recipe_book/button_highlighted",
+    "$default_layout_texture|default": "assets/brewing_guide/sprites/recipe_book/button",
+    "$recipe_book_open_control_name": "recipe_book_toggle_open",
+    "$recipe_book_close_control_name": "recipe_book_toggle_close",
+    "size": "$layout_size",
+    "layer": 10,
+    "controls": [
+      {
+        "recipe_book_layout_toggle@brewing_toggle.recipe_toggle_base": {
+          "$toggle_group_forced_index": 0,
+          "$toggle_binding_value": "('#' + $recipe_book_open_control_name)",
+          "$toggle_control_name": "$recipe_book_open_control_name",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "$toggle_control_name",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "inventory_toggle@brewing_toggle.recipe_toggle_base": {
+          "$toggle_group_forced_index": 1,
+          "$toggle_binding_value": "('#' + $recipe_book_close_control_name)",
+          "$toggle_control_name": "$recipe_book_close_control_name",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "$recipe_book_open_control_name",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "general_recipe_toggle@brewing_toggle.recipe_layout_toggle": {
+    "$recipe_book_open_control_name": "brewing_guide_tog",
+    "$recipe_book_close_control_name": "brewing_guide_tog_1",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [16, 49]
+  },
+
+  //toggle content
   "tab_texture_template@brewing_global.empty_image": {
     "size": ["default", "default"],
     "anchor_from": "center",
@@ -48,11 +108,6 @@
     //icon offsets
     "$icon_unchecked_offset|default": [0, 0],
     "$icon_checked_offset|default": [0, 0],
-    //textures
-    "$unchecked_default_image|default": "assets/sprites/container/creative_inventory/tab_top_unselected_2.png",
-    "$unchecked_hover_image|default": "assets/sprites/container/creative_inventory/tab_top_unselected_2.png",
-    "$checked_default_image|default": "assets/sprites/container/creative_inventory/tab_top_selected_2.png",
-    "$checked_hover_image|default": "assets/sprites/container/creative_inventory/tab_top_selected_2.png",
     //bindings for tab texture
     "$tab_texture_bindings|default": [
       {
@@ -104,15 +159,6 @@
             }
           ]
         }
-      }
-    ],
-    "variables": [
-      {
-        "requires": "$is_left_tab",
-        "$unchecked_default_image|default": "assets/sprites/recipe_book/tab.png",
-        "$unchecked_hover_image|default": "assets/sprites/recipe_book/tab.png",
-        "$checked_default_image|default": "assets/sprites/recipe_book/tab_selected.png",
-        "$checked_hover_image|default": "assets/sprites/recipe_book/tab_selected.png"
       }
     ]
   },

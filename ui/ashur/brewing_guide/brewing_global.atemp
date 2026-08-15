@@ -67,7 +67,7 @@
         "hover_text_element@brewing_global.custom_hover_text_renderer": {
           "variables": {
             "requires": "$touch",
-            "$tooltip_offset": [-21, 0],
+            "$tooltip_offset": [-20, 0],
             "$tooltip_anchor": "top_right"
           },
           "size": [18, 18]
@@ -451,12 +451,12 @@
       custom text with bindings in the same label
     */
     "$tooltip_anchor|default": "top_left",
-    "$tooltip_offset|default": [21, 0],
+    "$tooltip_offset|default": [20, 0],
     "controls": [
       {
         "follow": {
           "type": "input_panel",
-          "size": ["100%", "100%"],
+          "size": [18, 18],
           "layer": 200,
           /*
             since this element is not stuck in the visible state it is always visible meaning the tooltip dosent jump around on rehover
