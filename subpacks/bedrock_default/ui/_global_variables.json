@@ -1,6 +1,6 @@
 {
   "$is_overcomplicated_brewing_guide"          : true,
-  "$brewing_guide_subpack_index": 0,
+  "$brewing_guide_subpack_index": 1,// version of the subpack / index of it : can be used to identify which subpacks enabled like ($is_overcomplicated_brewing_guide and ($brewing_guide_subpack_index = 1))
 
   //you can get item id and refined ids useing https://www.planetminecraft.com/texture-pack/item-id-visualizer-mcbe-mcpe/
 

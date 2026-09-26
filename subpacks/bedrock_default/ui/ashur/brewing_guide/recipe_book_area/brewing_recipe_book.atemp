@@ -1,0 +1,348 @@
+/**
+// © 2026 ashura_temps,    All Rights Reserved.
+//
+// This UI is custom-made. You are allowed to use it **only as-is**, inside the game.
+// Do not modify, extract, reuse, or share any part of this UI including .json, .atemp files,
+// layout structure, or design.
+//
+// Not allowed:
+//   - Editing the UI (even for private/personal use)
+//   - Using parts of the code or layout in your own pack
+//   - Reuploading, redistributing, or hosting these files elsewhere
+//   - Converting texture packs to Bedrock using this UI
+//
+// By using this project, you agree to these terms.
+*/
+
+{
+  "namespace": "brewing_recipe_book",
+  "recolourful_recipe_book@brewing_recipe_book.recipe_book": {},
+  "recipe_book@brewing_global.empty_panel": {
+    "size": ["100%c", "100%c"],
+    "$brewing_recipe_book_texture|default": "assets/brewing_guide/recipe_book",
+    "$brewing_text_field_texture|default": "textures/ui/edit_box_indent",
+    "$brewing_filter_texture|default": "textures/ui/craft_toggle_off",
+    "$brewing_overlay_texture|default": "textures/ui/hud_mob_effect_background",
+    "$brewing_slot_texture|default": "textures/ui/recipe_book_item_bg",
+    "$brewing_secondary_slot_texture|default": "textures/ui/recipe_book_item_bg",
+    "$brewing_slot_checkmark_texture|default": "textures/ui/recipe_book_touch_cell_selected.png",
+
+    "$java_unchecked_default_image|default": "assets/brewing_guide/sprites/recipe_book/tab",
+    "$java_checked_default_image|default": "assets/brewing_guide/sprites/recipe_book/tab_selected",
+
+    "$bedrock_unchecked_default_image|default": "textures/ui/TabTopBack",
+    "$bedrock_checked_default_image|default": "textures/ui/TabTopFront",
+    "$bedrock_unchecked_hover_image|default": "textures/ui/TabTopBackHover",
+    "$bedrock_checked_hover_image|default": "textures/ui/TabTopFrontHover",
+
+    "$bedrock_unchecked_default_image_left|default": "textures/ui/TabTopBackLeftMost",
+    "$bedrock_checked_default_image_left|default": "textures/ui/TabTopFrontLeftMost",
+    "$bedrock_unchecked_hover_image_left|default": "textures/ui/TabTopBackLeftMostHover",
+    "$bedrock_checked_hover_image_left|default": "textures/ui/TabTopFrontLeftMostHover",
+
+    "$brewing_grid_dimensions|default": [7, 3],
+    "$brewing_grid_size|default": [126, 54],
+
+    "$brewing_grid_anchor_from|default": "top_right",
+    "$brewing_grid_anchor_to|default": "top_right",
+    "$brewing_grid_offset|default": [-10, 37],
+
+    "$brewing_grid_position_0|default": [0, 0],
+    "$brewing_grid_position_1|default": [1, 0],
+    "$brewing_grid_position_2|default": [2, 0],
+    "$brewing_grid_position_3|default": [3, 0],
+    "$brewing_grid_position_4|default": [4, 0],
+    "$brewing_grid_position_5|default": [5, 0],
+    "$brewing_grid_position_6|default": [6, 0],
+
+    "$brewing_grid_position_7|default": [0, 1],
+    "$brewing_grid_position_8|default": [1, 1],
+    "$brewing_grid_position_9|default": [2, 1],
+    "$brewing_grid_position_10|default": [3, 1],
+    "$brewing_grid_position_11|default": [4, 1],
+    "$brewing_grid_position_12|default": [5, 1],
+    "$brewing_grid_position_13|default": [6, 1],
+
+    "$brewing_grid_position_14|default": [0, 2],
+    "$brewing_grid_position_15|default": [1, 2],
+    "$brewing_grid_position_16|default": [2, 2],
+    "$brewing_grid_position_17|default": [3, 2],
+    "$brewing_grid_position_18|default": [4, 2],
+    "$brewing_grid_position_19|default": [5, 2],
+    "$brewing_grid_filler_control|default": "brewing_recipe_book.grid_filler_panel",
+
+    "$grid_item_size|default": [18, 18],
+    "$recipe_overlay_size|default": ["100%c + 8px", "100%c + 8px"],
+    "$recipe_overlay_nineslice_size|default": 3,
+    "$recipe_overlay_offset|default": [0, 0],
+
+    "$grid_item_renderer_offset|default": [0, 0],
+    "$grid_item_renderer_anchor_point|default": "center",
+
+    "$slot_hover_controller|default": "brewing_recipe_book.highlight_slot_panel",
+
+    "$checkmark_texture_nineslice_size|default": 1,
+
+    "$tab_toggle_type|default": "bedrock",
+    "layer": 1,
+    "controls": [
+      {
+        "recipe_book_content@brewing_global.root_panel": {
+          "size": [146, 166],
+          "offset": [-4, 0],
+          "controls": [
+            {
+              "edit_box_image@brewing_global.empty_image": {
+                "texture": "$brewing_text_field_texture",
+                "size": [104, 16],
+                "nineslice_size": 2,
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [6, 19],
+                "controls": [
+                  {
+                    "disabled_notif@brewing_global.custom_hover_text_renderer": {
+                      "$translation_keys": "options.dev_nethernet_logging_verbosity.disabled"
+                    }
+                  },
+                  {
+                    "filter_locked@brewing_global.empty_image": {
+                      "size": [27, 15],
+                      "anchor_from": "bottom_right",
+                      "anchor_to": "bottom_left",
+                      "offset": [3, 0],
+                      "texture": "$brewing_filter_texture",
+                      "controls": [
+                        {
+                          "disabled_notif@brewing_global.custom_hover_text_renderer": {
+                            "$translation_keys": "options.dev_nethernet_logging_verbosity.disabled"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "tab_selected_label": {
+                "type": "label",
+                "size": ["100% - 6px", 10],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "text_alignment": "right",
+                "color": "$title_text_color",
+                "layer": 2,
+                "offset": [0, 8],
+                "text": "#text",
+                "localize": true,
+                "property_bag": {
+                  "#tab_index_1": "itemGroup.name.potion",
+                  "#tab_index_2": "itemGroup.name.splashPotion",
+                  "#tab_index_3": "itemGroup.name.lingeringPotion"
+                },
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "potion_tab",
+                    "source_property_name": "(#toggle_state * 1)",
+                    "target_property_name": "#tab_value_1"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "splash_potion_tab",
+                    "source_property_name": "(#toggle_state * 2)",
+                    "target_property_name": "#tab_value_2"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "lingering_potion_tab",
+                    "source_property_name": "(#toggle_state * 3)",
+                    "target_property_name": "#tab_value_3"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "('#tab_index_' + (#tab_value_1 + #tab_value_2 + #tab_value_3))",
+                    "target_property_name": "#text"
+                  }
+                ]
+              }
+            },
+            {
+              "tabs@brewing_global.empty_stack": {
+                "orientation": "horizontal",
+                "size": [75, 27],
+                "anchor_from": "top_left",
+                "anchor_to": "bottom_left",
+                "offset": [0, 4],
+                "$base_id|default": "$brewing_guide:potion",
+                "controls": [
+                  {
+                    "potion_tab_toggle@brewing_recipe_book.tab_template": {
+                      "$toggle_starts_active": true,
+                      "$toggle_control_name": "potion_tab",
+                      "$toggle_forced_index": 0
+                    }
+                  },
+                  {
+                    "splash_potion_tab_toggle@brewing_recipe_book.tab_template": {
+                      "$toggle_control_name": "splash_potion_tab",
+                      "$base_id": "$brewing_guide:splash_potion",
+                      "$toggle_forced_index": 1
+                    }
+                  },
+                  {
+                    "lingering_potion_tab_toggle@brewing_recipe_book.tab_template": {
+                      "$toggle_control_name": "lingering_potion_tab",
+                      "$base_id": "$brewing_guide:lingering_potion",
+                      "$toggle_forced_index": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "book_half@brewing_global.empty_image": {
+                "texture": "textures/ui/dialog_background_opaque",
+                "size": [146, 166],
+                "layer": 1,
+                "$base_id|default": "$brewing_guide:potion",
+                "$visible_condition|default": "potion_tab",
+                "$index_offset|default": 100,
+                "controls": [
+                  {
+                    "center_bg": {
+                      "type": "image",
+                      "texture": "textures/ui/recipe_back_panel",
+                      "size": [12, 160],
+                      "offset": [-4, 0],
+                      "anchor_from": "right_middle",
+                      "anchor_to": "left_middle",
+                      "layer": -1
+                    }
+                  },
+                  {
+                    "recipe_underlay": {
+                      "type": "image",
+                      "texture": "textures/ui/recipe_book_pane_bg",
+                      "size": [134, 123],
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "layer": 1,
+                      "offset": [6, 37],
+                      "controls": [
+                        {
+                          "shadow_container": {
+                            "type": "panel",
+                            "layer": 10,
+                            "size": [134, 2],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                              {
+                                "top_shadow": {
+                                  "type": "image",
+                                  "size": ["100%", "2px"],
+                                  "layer": 20,
+                                  "texture": "textures/ui/White",
+                                  "color": [0, 0, 0],
+                                  "alpha": 0.5,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "keep_ratio": false
+                                }
+                              },
+                              {
+                                "top_overlay": {
+                                  "type": "image",
+                                  "size": ["100%", 1],
+                                  "offset": [0, -1],
+                                  "layer": 20,
+                                  "texture": "textures/ui/White",
+                                  "color": [0.75, 0.75, 0.75],
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "keep_ratio": false
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  { "potion@brewing_recipe_book.recipe_grid": {} },
+                  {
+                    "splash_potion@brewing_recipe_book.recipe_grid": {
+                      "$base_id": "$brewing_guide:splash_potion",
+                      "$visible_condition": "splash_potion_tab",
+                      "$index_offset": 200
+                    }
+                  },
+                  {
+                    "lingering_potion@brewing_recipe_book.recipe_grid": {
+                      "$base_id": "$brewing_guide:lingering_potion",
+                      "$visible_condition": "lingering_potion_tab",
+                      "$index_offset": 300
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "brewing_guide_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  "recipe_grid@brewing_recipe_book_grid.recipe_book_grid": {
+    "layer": 3
+  },
+  "grid_filler_panel@brewing_global.empty_panel": {
+    "grid_position": [6, 2]
+  },
+  "highlight_slot_panel": {
+    "type": "panel",
+    "controls": [{ "highlight@common.highlight_slot": {} }, { "white_border@common.white_border_slot": {} }]
+  },
+  "tab_template@brewing_toggle.tab_toggle": {
+    "$extra_contents": "brewing_recipe_book.center_item_icon"
+  },
+
+  "center_item_icon@brewing_global.empty_panel": {
+    "$remainder|default": 0,
+    "controls": [
+      {
+        "single_tab_icons@brewing_global.item_renderer": {
+          "layer": 7,
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      }
+    ]
+  },
+
+  "recolourful_layout_toggle@compatibility_common.general_recipe_toggle": {
+    "$recipe_book_open_control_name": "brewing_guide_toggle",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [16, 49]
+  },
+
+  "layout_toggle@brewing_toggle.recipe_layout_toggle": {
+    "$recipe_book_open_control_name": "brewing_guide_toggle",
+    "$hover_layout_texture": "assets/brewing_guide/sprites/recipe_book/bedrock/button_highlighted",
+    "$default_layout_texture": "assets/brewing_guide/sprites/recipe_book/bedrock/button",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [15, 50]
+  }
+}

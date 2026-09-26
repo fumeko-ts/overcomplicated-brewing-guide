@@ -3,16 +3,16 @@
   "header": {
     "name": "§lOvercomplicated brewing guide§r",
     "description": "By @Ashura_temps\n§fDiscord: §bhttps://discord.gg/sFnE7zv75t§r",
-    "uuid": "3442d616-dd02-430d-9d76-7db6a6e6a1a6",
-    "version": "1.0.8",
+    "uuid": "6c85d21f-2d8c-4c9f-897d-53555a0be755",
+    "version": "1.1.0",
     "min_engine_version": "1.26.40"
   },
   "modules": [
     {
       "type": "resources",
       "description": "Created by Ashura_temps",
-      "uuid": "cc95655b-6262-4bf6-a617-188ed587dfb8",
-      "version": "1.0.8"
+      "uuid": "9ab64b87-c649-43d5-8403-4ed355716a53",
+      "version": "1.1.0"
     }
   ],
   "metadata": {
@@ -23,5 +23,23 @@
       "https://discord.gg/sFnE7zv75t"
     ]
   },
-  "capabilities": ["pbr"]
+  "capabilities": ["pbr"],
+
+  "subpacks": [
+    {
+      "folder_name": "java_ore-ui_dark",
+      "name": "Java UI Layout : Ore-ui dark theme",
+      "memory_performance_tier": 0
+    },
+    {
+      "folder_name": "bedrock_default",
+      "name": "Bedrock UI Layout",
+      "memory_performance_tier": 0
+    },
+    {
+      "folder_name": "java_default",
+      "name": "Java UI Layout",
+      "memory_performance_tier": 0
+    }
+  ]
 }

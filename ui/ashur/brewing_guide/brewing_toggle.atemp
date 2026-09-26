@@ -16,28 +16,230 @@
 
 {
   "namespace": "brewing_toggle",
-  "recipe_toggle_base@brewing_toggle.radio_toggle": {
-    "size": "$layout_size",
-    "$unchecked": "brewing_toggle.recipe_toggle",
-    "$unchecked_hover": "brewing_toggle.recipe_hover_toggle",
-    "$checked": "brewing_toggle.recipe_toggle",
-    "$checked_hover": "brewing_toggle.recipe_hover_toggle",
-    "$toggle_name": "layout_toggle"
+  /*
+    changed how toggles inside this pack are done because the old way was hard to extend cleantly and minimaly
+  */
+  "secondary_toggle_properties": {},
+  "secondary_toggle@brewing_global.empty_panel": {
+    "$toggle_click_sound_volume|default": 1,
+    "$toggle_collection_name|default": "<collection_group_name>",
+    "$secondary_toggle_control_name|default": "<control_name>",
+    
+    "$secondary_toggle_mapping_type|default": "pressed",
+
+    "$secondary_toggle_binding_value|default": "#toggle_state",
+    "$secondary_toggle_starts_active|default": false,
+    "$secondary_toggle_default_checked_index|default": 0,
+    "$secondary_toggle_forced_index|default": -1,
+
+    "$secondary_toggle_extra_properties|default": "brewing_toggle.secondary_toggle_properties",
+    "$secondary_toggle_bindings|default": [
+      { "binding_type": "collection_details" },
+      {
+        "binding_type": "global",
+        "binding_condition": "always_when_visible",
+        "binding_name": "$secondary_toggle_binding_value",
+        "binding_name_override": "#toggle_state"
+      }
+    ],
+
+    "controls": [
+      {
+        "$secondary_toggle_control_name@$secondary_toggle_extra_properties": {
+          "type": "toggle",
+          "size": ["100%", "100%"],
+          "property_bag": {
+            "#toggle_state": true
+          },
+          "button_mappings": [
+            {"from_button_id":"button.menu_select"                 ,"to_button_id":"button.menu_ok","mapping_type":"$secondary_toggle_mapping_type"},
+            {"from_button_id":"button.menu_secondary_select"       ,"to_button_id":"button.menu_ok","mapping_type":"$secondary_toggle_mapping_type"},
+            {"from_button_id":"button.menu_ok"                     ,"to_button_id":"button.menu_ok","mapping_type":"$secondary_toggle_mapping_type"},
+            {"from_button_id":"button.controller_select"           ,"to_button_id":"button.menu_ok","mapping_type":"$secondary_toggle_mapping_type"},
+            {"from_button_id":"button.controller_secondary_select" ,"to_button_id":"button.menu_ok","mapping_type":"$secondary_toggle_mapping_type"}
+          ],
+          "sound_name": "random.click",
+          "sound_volume": "$toggle_click_sound_volume",
+          "sound_pitch": 1.0,
+
+          "toggle_group_forced_index": "$secondary_toggle_forced_index",
+          "toggle_group_default_selected": "$secondary_toggle_default_checked_index",
+          "toggle_default_state": "$secondary_toggle_starts_active",
+          
+          "radio_toggle_group": true,
+
+          "toggle_name": "$toggle_collection_name",
+          "bindings": "$secondary_toggle_bindings",
+          "focus_enabled": "$game_pad",
+          "reset_on_focus_lost": true,
+          "focus_wrap_enabled": false,
+          "focus_magnet_enabled": false,
+          "default_focus_precedence": 1
+        }
+      }
+    ]
   },
-  "recipe_toggle@brewing_global.empty_image": { "size": "$layout_size", "texture": "$default_layout_texture" },
-  "recipe_hover_toggle@brewing_global.empty_image": { "size": "$layout_size", "texture": "$hover_layout_texture" },
+
+  "toggle_properties": {},
+  "toggle@brewing_global.empty_panel": {
+    "$toggle_click_sound_volume|default": 1,
+    "$toggle_collection_name|default": "<collection_group_name>",
+    "$toggle_control_name|default": "<control_name>",
+    
+    "$toggle_mapping_type|default": "pressed",
+
+    "$toggle_binding_value|default": "#toggle_state",
+    "$toggle_starts_active|default": false,
+    "$toggle_default_checked_index|default": 0,
+    "$toggle_forced_index|default": -1,
+
+    "$toggle_extra_properties|default": "brewing_toggle.toggle_properties",
+    "$toggle_bindings|default": [
+      { "binding_type": "collection_details" },
+      {
+        "binding_type": "global",
+        "binding_condition": "always_when_visible",
+        "binding_name": "$toggle_binding_value",
+        "binding_name_override": "#toggle_state"
+      }
+    ],
+    "controls": [
+      {
+        "$toggle_control_name@$toggle_extra_properties": {
+          "type": "toggle",
+          "size": ["100%", "100%"],
+          "property_bag": {
+            "#toggle_state": true
+          },
+          "button_mappings": [
+            {"from_button_id":"button.menu_select"                 ,"to_button_id":"button.menu_ok","mapping_type":"$toggle_mapping_type"},
+            {"from_button_id":"button.menu_secondary_select"       ,"to_button_id":"button.menu_ok","mapping_type":"$toggle_mapping_type"},
+            {"from_button_id":"button.menu_ok"                     ,"to_button_id":"button.menu_ok","mapping_type":"$toggle_mapping_type"},
+            {"from_button_id":"button.controller_select"           ,"to_button_id":"button.menu_ok","mapping_type":"$toggle_mapping_type"},
+            {"from_button_id":"button.controller_secondary_select" ,"to_button_id":"button.menu_ok","mapping_type":"$toggle_mapping_type"}
+          ],
+          "sound_name": "random.click",
+          "sound_volume": "$toggle_click_sound_volume",
+          "sound_pitch": 1.0,
+          "toggle_name": "$toggle_collection_name",
+          "bindings": "$toggle_bindings",
+
+          "toggle_group_forced_index": "$toggle_forced_index",
+          "toggle_group_default_selected": "$toggle_default_checked_index",
+          "toggle_default_state": "$toggle_starts_active",
+
+          "radio_toggle_group": true,
+
+          "focus_enabled": "$game_pad",
+          "reset_on_focus_lost": true,
+          "focus_wrap_enabled": false,
+          "focus_magnet_enabled": false,
+          "default_focus_precedence": 1
+        }
+      }
+    ]
+  },
+
+  //region tabs
+
+  "tab_toggle@brewing_toggle.toggle": {
+    "size": "$tab_toggle_size",
+    "$toggle_collection_name": "recipe_book_tab_toggles",
+
+    "$toggle_starts_active": false,
+    "$toggle_default_checked_index": 0,
+    "$toggle_forced_index": 0,
+
+    "$tab_toggle_size": [35, 27],
+
+    "$toggle_extra_properties": "brewing_toggle.java_tab_toggle_properties",
+    "variables": [
+      {
+        "requires": "($tab_toggle_type = 'bedrock')",
+        "$toggle_extra_properties": "brewing_toggle.bedrock_tab_toggle_properties",
+        "$tab_toggle_size": [25, 27]
+      }
+    ]
+  },
+  "bedrock_tab_toggle_properties": {
+    "$extra_contents|default": "brewing_global.empty_panel",
+    "unchecked_control": "unchecked",
+    "checked_control": "checked",
+    "unchecked_hover_control": "unchecked_hover",
+    "checked_hover_control": "checked_hover",
+
+    "$tab_checked_texture|default": "$bedrock_checked_default_image",
+    "$tab_unchecked_texture|default": "$bedrock_unchecked_default_image",
+    "$tab_checked_hover_texture|default": "$bedrock_checked_hover_image",
+    "$tab_unchecked_hover_texture|default": "$bedrock_unchecked_hover_image",
+
+    "variables": {
+      "requires": "$toggle_starts_active",
+      "$tab_checked_texture": "$bedrock_checked_default_image_left",
+      "$tab_unchecked_texture": "$bedrock_unchecked_default_image_left",
+      "$tab_checked_hover_texture": "$bedrock_checked_hover_image_left",
+      "$tab_unchecked_hover_texture": "$bedrock_unchecked_hover_image_left"
+    },
+
+    "controls": [
+      {"checked@brewing_global.empty_image": {"texture":"$tab_checked_texture","layer": 3}},
+      {"unchecked@brewing_global.empty_image": {"texture":"$tab_unchecked_texture","layer": 0}},
+      {"checked_hover@brewing_global.empty_image": {"texture":"$tab_checked_hover_texture","layer": 3}},
+      {"unchecked_hover@brewing_global.empty_image": {"texture":"$tab_unchecked_hover_texture","layer": 0}},
+      {"$extra_contents@$extra_contents": {}}
+    ]
+  },
+  "java_tab_toggle_properties": {
+    "$extra_contents|default": "brewing_global.empty_panel",
+    "unchecked_hover_control": "unchecked",
+    "checked_hover_control": "checked",
+    "unchecked_control": "unchecked",
+    "checked_control": "checked",
+    "controls": [
+      {"checked@brewing_global.empty_image": {"offset": [3, 0],"texture":"$java_checked_default_image","layer": 3}},
+      {"unchecked@brewing_global.empty_image": {"offset": [5, 0],"texture":"$java_unchecked_default_image","layer": 0}},
+      {
+        "$extra_contents@$extra_contents": {
+          "offset": "#offset",
+          "property_bag": {
+            "#icon_offset_false": [0, 0],
+            "#icon_offset_true": [-2, 0]
+          },
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "$toggle_control_name",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#tab_selected"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('#icon_offset_' + #tab_selected)",
+              "target_property_name": "#offset"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "layout_toggle@brewing_toggle.toggle": {
+    "size": "$layout_size",
+    "$toggle_extra_properties": "brewing_toggle.layout_toggle_properties",
+    "$toggle_collection_name": "layout_toggle"
+  },
   "recipe_layout_toggle@brewing_global.empty_panel": {
     "$layout_size": [20, 18],
+    "$recipe_book_open_control_name|default": "brewing_guide_toggle_1",
+    "$recipe_book_close_control_name|default": "brewing_guide_toggle_2",
     "$hover_layout_texture|default": "assets/brewing_guide/sprites/recipe_book/button_highlighted",
     "$default_layout_texture|default": "assets/brewing_guide/sprites/recipe_book/button",
-    "$recipe_book_open_control_name": "recipe_book_toggle_open",
-    "$recipe_book_close_control_name": "recipe_book_toggle_close",
     "size": "$layout_size",
     "layer": 10,
     "controls": [
       {
-        "recipe_book_layout_toggle@brewing_toggle.recipe_toggle_base": {
-          "$toggle_group_forced_index": 0,
+        "recipe_book_layout_toggle@brewing_toggle.layout_toggle": {
+          "$toggle_forced_index": 0,
           "$toggle_binding_value": "('#' + $recipe_book_open_control_name)",
           "$toggle_control_name": "$recipe_book_open_control_name",
           "bindings": [
@@ -51,8 +253,8 @@
         }
       },
       {
-        "inventory_toggle@brewing_toggle.recipe_toggle_base": {
-          "$toggle_group_forced_index": 1,
+        "inventory_toggle@brewing_toggle.layout_toggle": {
+          "$toggle_forced_index": 1,
           "$toggle_binding_value": "('#' + $recipe_book_close_control_name)",
           "$toggle_control_name": "$recipe_book_close_control_name",
           "bindings": [
@@ -67,270 +269,16 @@
       }
     ]
   },
-  "general_recipe_toggle@brewing_toggle.recipe_layout_toggle": {
-    "$recipe_book_open_control_name": "brewing_guide_tog",
-    "$recipe_book_close_control_name": "brewing_guide_tog_1",
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "offset": [16, 49]
-  },
-
-  //toggle content
-  "tab_texture_template@brewing_global.empty_image": {
-    "size": ["default", "default"],
-    "anchor_from": "center",
-    "anchor_to": "center",
-    "offset": "#offset",
-    "property_bag": {
-      "#tab_texture_offset_0": "$tab_texture_unchecked_offset",
-      "#tab_texture_offset_1": "$tab_texture_checked_offset"
-    },
-    "bindings": "$tab_texture_bindings"
-  },
-  "tab_toggle@brewing_toggle.radio_toggle": {
-    "$is_top_left_tab|default": false,
-    "$is_top_right_tab|default": false,
-    "$is_bottom_right_tab|default": false,
-    "$is_left_tab|default": false,
-    //tab sprite templates incase you want to nineslice or uv map seprate the tabs
-    "$tab_texture_template_default|default": "brewing_toggle.tab_texture_template",
-    "$tab_texture_template_default_hover|default": "brewing_toggle.tab_texture_template",
-    "$tab_texture_template_checked|default": "brewing_toggle.tab_texture_template",
-    "$tab_texture_template_checked_hover|default": "brewing_toggle.tab_texture_template",
-    //tab_sprite offsets checked/unchecked no hover
-    "$tab_texture_unchecked_offset|default": [0, 0],
-    "$tab_texture_checked_offset|default": [0, 0],
-    //tab texture layers (for when they need to be ontop and below a element)
-    "$checked_hover_layer|default": 5,
-    "$checked_layer|default": 5,
-    "$default_hover_layer|default": 5,
-    "$default_layer|default": 5,
-    //icon offsets
-    "$icon_unchecked_offset|default": [0, 0],
-    "$icon_checked_offset|default": [0, 0],
-    //bindings for tab texture
-    "$tab_texture_bindings|default": [
-      {
-        "binding_type": "view",
-        "source_control_name": "$toggle_control_name",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#tab_selected"
-      },
-      {
-        "binding_type": "view",
-        "source_property_name": "('#tab_texture_offset_' + (#tab_selected * 1))",
-        "target_property_name": "#offset"
-      }
-    ],
-    //tab_controls
-    "$controls": [
-      { "default@$tab_texture_template_default": { "layer": "$default_layer", "texture": "$unchecked_default_image" } },
-      {
-        "default_hover@$tab_texture_template_default_hover": {
-          "layer": "$default_hover_layer",
-          "texture": "$unchecked_hover_image"
-        }
-      },
-      { "checked@$tab_texture_template_checked": { "layer": "$checked_layer", "texture": "$checked_default_image" } },
-      {
-        "checked_hover@$tab_texture_template_checked_hover": {
-          "layer": "$checked_hover_layer",
-          "texture": "$checked_hover_image"
-        }
-      },
-      {
-        "$extra_contents@$extra_contents": {
-          "offset": "#offset",
-          "property_bag": {
-            "#icon_offset_0": "$icon_unchecked_offset",
-            "#icon_offset_1": "$icon_checked_offset"
-          },
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "$toggle_control_name",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#tab_selected"
-            },
-            {
-              "binding_type": "view",
-              "source_property_name": "('#icon_offset_' + (#tab_selected * 1))",
-              "target_property_name": "#offset"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  "radio_toggle@brewing_global.empty_panel": {
-    "size": [18, 18],
-    "$toggle_control_name|default": "Toggle",
-    "$toggle_name|default": "Default_toggle",
-    "$toggle_variables|default": "brewing_toggle.variables",
-    "$default_selected_index|default": 0,
-    "$sound_name|default": "random.click",
-    "$button_volume|default": 1.0,
-    "$toggle_focus_enabled|default": "$game_pad",
-    "$is_radio_toggle|default": true,
-    "$is_default_active|default": false,
-    "$toggle_group_forced_index|default": -1,
-    "$toggle_enabled_binding_name|default": "",
-    "$toggle_binding_value|default": "#toggle_state",
-    "$toggle_binding_condition|default": "always",
-    "$pressed_action|default": "button.menu_ok",
-    "$hover_action|default": "button.filter_toggle_hovered",
-    "$button_mappings|default": [
-      { "ignored": "($hover_action = '')", "to_button_id": "$hover_action", "mapping_type": "pressed" },
-      {
-        "from_button_id": "button.menu_select",
-        "to_button_id": "$pressed_action",
-        "mapping_type": "$mapping_type"
-      },
-      {
-        "from_button_id": "button.menu_ok",
-        "to_button_id": "$pressed_action",
-        "mapping_type": "$mapping_type"
-      }
-    ],
-    "$mapping_type|default": "pressed",
-    "$property_bag|default": {
-      "#enabled": true,
-      "#toggle_state": true
-    },
-    "$bindings|default": [
-      { "binding_type": "collection_details" },
-      {
-        "binding_type": "global",
-        "binding_condition": "$toggle_binding_condition",
-        "binding_name": "$toggle_binding_value",
-        "binding_name_override": "#toggle_state"
-      },
-      {
-        "binding_type": "global",
-        "binding_condition": "always",
-        "ignored": "($toggle_enabled_binding_name = '')",
-        "binding_name": "$toggle_enabled_binding_name",
-        "binding_name_override": "#enabled"
-      }
-    ],
-    "$unchecked_control_name|default": "default",
-    "$unchecked_hover_control_name|default": "default_hover",
-    "$checked_control_name|default": "checked",
-    "$checked_hover_control_name|default": "checked_hover",
-    "$locked_control_name|default": "locked",
-
-    "$extra_contents|default": "brewing_global.empty_panel",
-
-    "$unchecked|default": "brewing_global.empty_panel",
-    "$unchecked_hover|default": "brewing_global.empty_panel",
-    "$checked|default": "brewing_global.empty_panel",
-    "$checked_hover|default": "brewing_global.empty_panel",
-    "$locked|default": "brewing_global.empty_panel",
-    "$controls|default": [
-      { "default@$unchecked": {} },
-      { "default_hover@$unchecked_hover": {} },
-      { "checked@$checked": {} },
-      { "checked_hover@$checked_hover": {} },
-      { "locked@$locked": {} },
-      { "$extra_contents@$extra_contents": {} }
-    ],
-    "$toggle_enabled|default": "#enabled",
+  "layout_toggle_properties": {
+    "unchecked_control": "unchecked",
+    "checked_control": "checked",
+    "unchecked_hover_control": "unchecked_hover",
+    "checked_hover_control": "checked_hover",
     "controls": [
-      {
-        "$toggle_control_name@$toggle_variables": {
-          "type": "toggle",
-          "size": ["100%", "100%"],
-          "sound_name": "$sound_name",
-          "sound_volume": "$button_volume",
-          "sound_pitch": 1.0,
-          "toggle_name": "$toggle_name",
-          "unchecked_control": "$unchecked_control_name",
-          "unchecked_hover_control": "$unchecked_hover_control_name",
-          "checked_control": "$checked_control_name",
-          "checked_hover_control": "$checked_hover_control_name",
-          "checked_locked_control": "locked",
-          "checked_locked_hover_control": "locked",
-          "unchecked_locked_control": "locked",
-          "unchecked_locked_hover_control": "locked",
-          "radio_toggle_group": "$is_radio_toggle",
-          "toggle_group_forced_index": "$toggle_group_forced_index",
-          "toggle_group_default_selected": "$default_selected_index",
-          "toggle_default_state": "$is_default_active",
-          "property_bag": "$property_bag",
-          "controls": "$controls",
-          "bindings": "$bindings",
-          "button_mappings": "$button_mappings",
-          "enabled": "$toggle_enabled",
-          "focus_enabled": "$toggle_focus_enabled",
-          "reset_on_focus_lost": true,
-          "focus_wrap_enabled": false,
-          "focus_magnet_enabled": false,
-          "default_focus_precedence": 1
-        }
-      }
-    ]
-  },
-  "variables": {},
-
-  //used to avoid loop crash when a toggle is defined inside a toggle
-  "secondary_radio_toggle@brewing_toggle.radio_toggle": {
-    "size": [18, 18],
-    "$secondary_toggle_control_name|default": "Toggle",
-    "$toggle_name|default": "Default_toggle",
-
-    "$secondary_toggle_group_forced_index|default": -1,
-    "$secondary_toggle_binding_value|default": "#toggle_state",
-    "$secondary_button_mappings|default": [
-      {
-        "from_button_id": "button.menu_select",
-        "to_button_id": "$pressed_action",
-        "mapping_type": "pressed"
-      },
-      {
-        "from_button_id": "button.menu_ok",
-        "to_button_id": "$pressed_action",
-        "mapping_type": "pressed"
-      }
-    ],
-    "$secondary_property_bag|default": {
-      "#enabled": true,
-      "#toggle_state": true
-    },
-    "$secondary_bindings|default": [
-      { "binding_type": "collection_details" },
-      {
-        "binding_type": "global",
-        "binding_condition": "$toggle_binding_condition",
-        "binding_name": "$secondary_toggle_binding_value",
-        "binding_name_override": "#toggle_state"
-      }
-    ],
-    "$secondary_controls|default": [],
-    "controls": [
-      {
-        "$secondary_toggle_control_name@$toggle_variables": {
-          "type": "toggle",
-          "size": ["100%", "100%"],
-          "sound_name": "$sound_name",
-          "sound_volume": "$button_volume",
-          "sound_pitch": 1.0,
-          "toggle_name": "$toggle_name",
-          "radio_toggle_group": "$is_radio_toggle",
-          "toggle_group_forced_index": "$secondary_toggle_group_forced_index",
-          "toggle_group_default_selected": "$default_selected_index",
-          "property_bag": "$secondary_property_bag",
-          "controls": "$secondary_controls",
-          "bindings": "$secondary_bindings",
-          "button_mappings": "$secondary_button_mappings",
-          "toggle_default_state": "$is_default_active",
-          "enabled": "#enabled",
-          "focus_enabled": "$toggle_focus_enabled",
-          "reset_on_focus_lost": true,
-          "focus_wrap_enabled": false,
-          "focus_magnet_enabled": false,
-          "default_focus_precedence": 1
-        }
-      }
+      {"checked@brewing_global.empty_image": {"texture":"$default_layout_texture"}},
+      {"unchecked@brewing_global.empty_image": {"texture":"$default_layout_texture"}},
+      {"checked_hover@brewing_global.empty_image": {"texture":"$hover_layout_texture"}},
+      {"unchecked_hover@brewing_global.empty_image": {"texture":"$hover_layout_texture"}}
     ]
   }
 }
