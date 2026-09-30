@@ -130,31 +130,7 @@
     "$factory_binding_refrence": "factory_bindings.potency_lingering_potion_bindings"
   },
 
-  // Potion items
-
-  "awkward_potion@brewing_potion_slot.awkward_potion": { "$potion_key_type": "is_awkward_potion_key" },
-  "night_vision_potion@brewing_potion_slot.night_vision_potion": { "$potion_key_type": "is_night_vision_key" },
-  "invisibility_potion@brewing_potion_slot.invisibility_potion": { "$potion_key_type": "is_invisibility_key" },
-  "leaping_potion@brewing_potion_slot.leaping_potion": { "$potion_key_type": "is_leaping_key" },
-  "fire_resistance_potion@brewing_potion_slot.fire_resistance_potion": { "$potion_key_type": "is_fire_resistance_key" },
-  "swiftness_potion@brewing_potion_slot.swiftness_potion": { "$potion_key_type": "is_swiftness_key" },
-  "slowness_potion@brewing_potion_slot.slowness_potion": { "$potion_key_type": "is_slowness_key" },
-  "water_breathing_potion@brewing_potion_slot.water_breathing_potion": { "$potion_key_type": "is_water_breathing_key" },
-  "healing_potion@brewing_potion_slot.healing_potion": { "$potion_key_type": "is_healing_key" },
-  "harming_potion@brewing_potion_slot.harming_potion": { "$potion_key_type": "is_harming_key" },
-  "poison_potion@brewing_potion_slot.poison_potion": { "$potion_key_type": "is_poison_key" },
-  "regeneration_potion@brewing_potion_slot.regeneration_potion": { "$potion_key_type": "is_regeneration_key" },
-  "strength_potion@brewing_potion_slot.strength_potion": { "$potion_key_type": "is_strength_key" },
-  "weakness_potion@brewing_potion_slot.weakness_potion": { "$potion_key_type": "is_weakness_key" },
-  "turtle_master_potion@brewing_potion_slot.turtle_master_potion": { "$potion_key_type": "is_turtle_master_key" },
-  "slow_falling_potion@brewing_potion_slot.slow_falling_potion": { "$potion_key_type": "is_slow_falling_key" },
-  "wind_charging_potion@brewing_potion_slot.wind_charging_potion": { "$potion_key_type": "is_wind_charging_key" },
-  "weaving_potion@brewing_potion_slot.weaving_potion": { "$potion_key_type": "is_weaving_key" },
-  "oozing_potion@brewing_potion_slot.oozing_potion": { "$potion_key_type": "is_oozing_key" },
-  "infestation_potion@brewing_potion_slot.infestation_potion": { "$potion_key_type": "is_infested_key" },
-
   // Modifier ingredients
-
   "glowstone_ingredient@brewing_global.container_item_slot_overlay": {
     "$base_id": "$brewing_guide:glowstone_dust",
     "$potion_key_type": "is_glowstone_key"

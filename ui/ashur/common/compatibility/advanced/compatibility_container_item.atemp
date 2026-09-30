@@ -2,18 +2,24 @@
   "container_item_bridge": {
     "$base_id|default": "$brewing_guide:potion",
     "$potion_prefix|default": "",
-    "variables": [
+    "modifications": [
       {
-        "requires": "($item_collection = 'brewing_input_item')",
-        "$custom_slot_content": "brewing_potion_slot.brewing_ingredient_item_slot"
-      },
-      {
-        "requires": "($item_collection = 'brewing_result_items')",
-        "$custom_slot_content": "brewing_potion_slot.brewing_result_item_slot"
-      },
-      {
-        "requires": "($item_collection = 'brewing_fuel_item')",
-        "$custom_slot_content": "brewing_potion_slot.fuel_input_slot"
+        "operation": "insert_back",
+        "array_name": "variables",
+        "value": [
+          {
+            "requires": "($item_collection = 'brewing_input_item')",
+            "$custom_slot_content": "brewing_potion_slot.brewing_ingredient_item_slot"
+          },
+          {
+            "requires": "($item_collection = 'brewing_result_items')",
+            "$custom_slot_content": "brewing_potion_slot.brewing_result_item_slot"
+          },
+          {
+            "requires": "($item_collection = 'brewing_fuel_item')",
+            "$custom_slot_content": "brewing_potion_slot.fuel_input_slot"
+          }
+        ]
       }
     ]
   }
